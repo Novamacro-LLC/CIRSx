@@ -1,10 +1,9 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CIRSx Home Page</title>
+    <title>Home</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -29,12 +28,12 @@
         class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
       >
         <a
-          href="{% url 'index' %}"
+          href="home.html"
           class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
         >
           <img
             class="d-block mx-auto mb-4"
-            src="{% static 'home/Transparent-gold.jpg' %}"
+            src="../Static/Transparent-gold.jpg"
             alt=""
             width="150"
             height="100"
@@ -43,20 +42,20 @@
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
           <li>
-            <a href="{% url 'index' %}" class="nav-link px-2 link-secondary">Home</a>
+            <a href="home.html" class="nav-link px-2 link-secondary">Home</a>
           </li>
           <li>
-            <a href="{% url 'subscribe' %}" class="nav-link px-2 link-dark"
-              >Subscribe</a
-            >
-          </li>
-          <li>
-            <a href="{% url 'conference' %}" class="nav-link px-2 link-dark"
+            <a href="conference.html" class="nav-link px-2 link-dark"
               >Conference</a
             >
           </li>
           <li>
-            <a href="{% url 'about_us' %}" class="nav-link px-2 link-dark">About Us</a>
+            <a href="subscibe.html" class="nav-link px-2 link-dark"
+              >Subscribe</a
+            >
+          </li>
+          <li>
+            <a href="about_us.html" class="nav-link px-2 link-dark">About Us</a>
           </li>
         </ul>
 
@@ -83,8 +82,8 @@
           <!-- 4.1.1.1.1.3 Primary Button -->
           <!-- 4.1.1.1.1.3.2 Text -->
           <!-- 4.1.1.1.1.3.1 Link -->
-          <button type="button" class="btn btn-primary btn-lg px-4 gap-3">
-            Learn More
+          <a class="btn btn-primary" href="about_us.html"> Learn More »</a>
+
           </button>
         </div>
       </div>
@@ -111,13 +110,13 @@
     <!-- 4.1.1.1.2.4 Features -->
     <!--4.1.1.1.2.4.1 Get Help -->
     <!-- 4.1.1.1.2.4.1.1 Icon -->
-    <!--Question-Mark-Circle-->
+
     <div class="container pt-5 pb-5">
       <div class="row">
-        <div class="col-4 text-center border">
-          <div class="h-100 p-5 rounded-3">
+        <div class="col-4 text-center">
+          <div class="h-100 p-5 rounded-3 bg-light">
             <!-- 4.1.1.1.2.4.1.2 Title-->
-
+           <!--Question-Mark-Circle-->
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="50"
@@ -125,7 +124,7 @@
               fill="currentColor"
               class="bi bi-question-circle mb-3"
               viewBox="0 0 16 16"
-            >
+              color="blue">
               <path
                 d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
               />
@@ -146,20 +145,32 @@
 
             <!-- 4.1.1.1.2.4.1.4 Button -->
             <!-- 4.1.1.1.2.4.1.4.1 Link -->
-            <a class="btn btn-primary" type="button" href="subscribe.html">
+            <a class="btn btn-primary" type="button" href="subscibe.html">
               Subscribe
             </a>
-            <!-- 4.1.1.1.2.4.1.4 Button -->
-            <!-- 4.1.1.1.2.4.1.4.1 Link -->
           </div>
         </div>
 
-        <!-- 4.1.1.1.2.4.2 Get Educated -->
-        <!-- 4.1.1.1.2.4.2.1 Icon -->
-        <!--Lightblub-->
 
+
+
+        <!-- 4.1.1.1.2.4.2 Get Educated -->
         <div class="col-4 text-center">
-          <div class="h-100 p-5 text-white bg-dark rounded-3">
+          <div class="h-100 p-5 rounded-3 bg-light">
+            <!-- 4.1.1.1.2.4.2.1 Icon -->
+            <!--Lightblub-->
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 width="50"
+                 height="50"
+                 fill="currentColor"
+                 class="bi bi-lightbulb mb-3"
+                 viewBox="0 0 16 16"
+                 color="blue">
+
+            <path d="M2 6a6 6 0 1 1 10.174 4.31c-.203.196-.359.4-.453.619l-.762 1.769A.5.5 0 0 1 10.5 13a.5.5 0 0 1 0 1 .5.5 0 0 1 0 1l-.224.447a1 1 0 0 1-.894.553H6.618a1 1 0 0
+                  1-.894-.553L5.5 15a.5.5 0 0 1 0-1 .5.5 0 0 1 0-1 .5.5 0 0 1-.46-.302l-.761-1.77a1.964 1.964 0 0 0-.453-.618A5.984 5.984 0 0 1 2 6zm6-5a5 5 0 0 0-3.479 8.592c.263.254.514.564.676.941L5.83 12h4.342l.632-1.467c.162-.377.413-.687.676-.941A5 5 0 0 0 8 1z"/>
+            </svg>
+
             <!-- 4.1.1.1.2.4.2.2 Title-->
             <h2>Get Educated</h2>
 
@@ -170,20 +181,34 @@
               certification, or continuing education credits, our comprehensive
               subscription is your one stop shop for all things CIRS.
             </p>
-
+            <br>
             <!-- 4.1.1.1.2.4.2.4 Button -->
             <!-- 4.1.1.1.2.4.2.4.1 Link -->
             <!-- 4.1.1.1.2.4.2.4.2 Text -->
-            <button class="btn btn-outline-light" type="button">Learn</button>
+            <a class="btn btn-primary" type="button" href="medical_glossary.html">
+              Learn
+            </a>
           </div>
         </div>
 
         <!-- 4.1.1.1.2.4.3 Get Involved -->
-        <!-- 4.1.1.1.2.4.3.1 Icon -->
-        <!--People-circle-->
+
+
 
         <div class="col-4 text-center">
-          <div class="h-100 p-5 text-white bg-dark rounded-3">
+          <div class="h-100 p-5 rounded-3 bg-light">
+            <!-- 4.1.1.1.2.4.3.1 Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 width="50"
+                 height="50"
+                 fill="currentColor"
+                 class="bi bi-people mb-3"
+                 viewBox="0 0 16 16"
+                 color="blue">
+                 <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274
+                  0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+</svg>
+
             <!-- 4.1.1.1.2.4.3.2 Title-->
             <h2>Get Involved</h2>
 
@@ -199,92 +224,14 @@
             <!-- 4.1.1.1.2.4.3.4 Button -->
             <!-- 4.1.1.1.2.4.3.4.1 Link -->
             <!-- 4.1.1.1.2.4.3.4.2 Text -->
-            <button class="btn btn-outline-light" type="button">
+            <a class="btn btn-primary" type="button" href="conference.html">
               Register
-            </button>
+            </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-lg-4">
-      <svg
-        class="bd-placeholder-img rounded-circle"
-        width="140"
-        height="140"
-        xmlns="http://www.w3.org/2000/svg"
-        role="img"
-        aria-label="Placeholder: 140x140"
-        preserveAspectRatio="xMidYMid slice"
-        focusable="false"
-      >
-        <title>Get Help</title>
-        <rect width="100%" height="100%" fill="#777"></rect>
-        <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-      </svg>
-
-      <h2 class="fw-normal text-center">Get Help</h2>
-      <p>
-        Connect with environmental and medical professionals providing treatment
-        and remediation services to those suffering from CIRS and other
-        mold-based illnesses, while building the knowledge and skills required
-        to prevent future mold, and its dangerous impact.
-      </p>
-      <p><a class="btn btn-secondary" href="subscribe.html"> Subscribe »</a></p>
-    </div>
-    <!-- /.col-lg-4 -->
-    <div class="col-lg-4">
-      <svg
-        class="bd-placeholder-img rounded-circle"
-        width="140"
-        height="140"
-        xmlns="http://www.w3.org/2000/svg"
-        role="img"
-        aria-label="Placeholder: 140x140"
-        preserveAspectRatio="xMidYMid slice"
-        focusable="false"
-      >
-        <title>Get Educated</title>
-        <rect width="100%" height="100%" fill="#777"></rect>
-        <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-      </svg>
-
-      <h2 class="fw-normal text-center">Get Educated</h2>
-      <p>
-        Whether you are a member of the medical community or an environmental
-        professional looking for general education, certification, or continuing
-        education credits, our comprehensive subscription is your one stop shop
-        for all things CIRS.
-      </p>
-      <p><a class="btn btn-secondary" href="about_us.html"> Learn »</a></p>
-    </div>
-    <!-- /.col-lg-4 -->
-    <div class="col-lg-4">
-      <svg
-        class="bd-placeholder-img rounded-circle"
-        width="140"
-        height="140"
-        xmlns="http://www.w3.org/2000/svg"
-        role="img"
-        aria-label="Placeholder: 140x140"
-        preserveAspectRatio="xMidYMid slice"
-        focusable="false"
-      >
-        <title>Get Involved</title>
-        <rect width="100%" height="100%" fill="#777"></rect>
-        <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-      </svg>
-
-      <h2 class="fw-normal text-center">Get Involved</h2>
-      <p>
-        Join the movement toward reducing the impact of mold and restoring
-        health to individuals suffering with environmentally acquired illnesses
-        by collaborating at events and conferences designed to share clinical
-        best practices, remediation techniques, testing solutions and research.
-      </p>
-      <p><a class="btn btn-secondary" href="conference.html"> Register »</a></p>
-    </div>
-    <!-- /.col-lg-4 -->
 
     <!-- 4.1.1.1.3 Jumbotron Quote -->
     <!-- 4.1.1.1.3.1 Jumbotron Text -->
@@ -292,8 +239,8 @@
       <div class="container-fluid py-5 text-center">
         <h3 class="display-5">
           <q
-            >“Surviving Mold is the beginning of what we'd all like to see. An
-            illness defeated and lives restored all over the world.”</q
+            >Surviving Mold is the beginning of what we'd all like to see. An
+            illness defeated and lives restored all over the world.</q
           >
         </h3>
         <br />
@@ -303,6 +250,54 @@
 
     <!--4.1.1.1.3.2 Jumbotron Background -->
     <!--4.1.1.1.4 Blog/Announcements/News -->
+    <div class="container pt-5 pb-5">
+        <div class="row">
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+
+        <h2 class="fw-normal">Blog</h2>
+        <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+        <p><a class="btn btn-secondary" href="#">View details »</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+
+        <h2 class="fw-normal">News</h2>
+        <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
+        <p><a class="btn btn-secondary" href="#">View details »</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+
+        <h2 class="fw-normal">Annoucements</h2>
+        <p>And lastly this, the third column of representative placeholder content.</p>
+        <p><a class="btn btn-secondary" href="#">View details »</a></p>
+      </div><!-- /.col-lg-4 -->
+
+        <div class="row">
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+
+        <h2 class="fw-normal">Blog</h2>
+        <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+        <p><a class="btn btn-secondary" href="#">View details »</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+
+        <h2 class="fw-normal">News</h2>
+        <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
+        <p><a class="btn btn-secondary" href="#">View details »</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+
+        <h2 class="fw-normal">Annoucements</h2>
+        <p>And lastly this, the third column of representative placeholder content.</p>
+        <p><a class="btn btn-secondary" href="#">View details »</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div>
+
     <!-- 4.1.1.1.5 Section Title -->
     <!-- 4.1.1.1.6 Section Content -->
     <!-- 4.1.1.1.6.1 Announcement Management -->
@@ -339,21 +334,31 @@
           <div
             class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3"
           >
-            <a class="btn btn-secondary" href="subscribe.html"> Subscribe »</a>
+            <a class="btn btn-primary" href="subscibe.html"> Subscribe »</a>
           </div>
         </div>
 
         <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
           <img
             class="rounded-lg-3"
-            src="../../Static/home/Transparent-gold.jpg"
+            src="../Static/Transparent-gold.jpg"
             alt=""
-            width="720"
+            width="620"
           />
         </div>
       </div>
     </div>
+   </div>
+  </div>
+
+
+    <footer>
+      <div class="container pt-3 text-center">
+           CIRSx LLC All Rights Reserved | 2021 - 2022
+      </div>
+    </footer>
   </body>
+
 </html>
 
-<!-- Work on Headers, Heroes, Pricing, Jumbotron, and Carousel -->
+<!--   -->
