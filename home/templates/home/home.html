@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Home</title>
+    <title>CIRSx Home Page</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -28,12 +29,12 @@
         class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
       >
         <a
-          href="home.html"
+          href="{% url 'index' %}"
           class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
         >
           <img
             class="d-block mx-auto mb-4"
-            src="../Static/Transparent-gold.jpg"
+            src="{% static 'home/Transparent-gold.jpg' %}"
             alt=""
             width="150"
             height="100"
@@ -42,20 +43,20 @@
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
           <li>
-            <a href="home.html" class="nav-link px-2 link-secondary">Home</a>
+            <a href="{% url 'index' %}" class="nav-link px-2 link-secondary">Home</a>
           </li>
           <li>
-            <a href="subscibe.html" class="nav-link px-2 link-dark"
+            <a href="{% url 'subscribe' %}" class="nav-link px-2 link-dark"
               >Subscribe</a
             >
           </li>
           <li>
-            <a href="conference.html" class="nav-link px-2 link-dark"
+            <a href="{% url 'conference' %}" class="nav-link px-2 link-dark"
               >Conference</a
             >
           </li>
           <li>
-            <a href="about_us.html" class="nav-link px-2 link-dark">About Us</a>
+            <a href="{% url 'about_us' %}" class="nav-link px-2 link-dark">About Us</a>
           </li>
         </ul>
 
@@ -145,7 +146,7 @@
 
             <!-- 4.1.1.1.2.4.1.4 Button -->
             <!-- 4.1.1.1.2.4.1.4.1 Link -->
-            <a class="btn btn-primary" type="button" href="subscibe.html">
+            <a class="btn btn-primary" type="button" href="subscribe.html">
               Subscribe
             </a>
             <!-- 4.1.1.1.2.4.1.4 Button -->
@@ -229,7 +230,7 @@
         mold-based illnesses, while building the knowledge and skills required
         to prevent future mold, and its dangerous impact.
       </p>
-      <p><a class="btn btn-secondary" href="subscibe.html"> Subscribe »</a></p>
+      <p><a class="btn btn-secondary" href="subscribe.html"> Subscribe »</a></p>
     </div>
     <!-- /.col-lg-4 -->
     <div class="col-lg-4">
@@ -338,14 +339,14 @@
           <div
             class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3"
           >
-            <a class="btn btn-secondary" href="subscibe.html"> Subscribe »</a>
+            <a class="btn btn-secondary" href="subscribe.html"> Subscribe »</a>
           </div>
         </div>
 
         <div class="col-lg-4 offset-lg-1 p-0 overflow-hidden shadow-lg">
           <img
             class="rounded-lg-3"
-            src="../Static/Transparent-gold.jpg"
+            src="../../Static/home/Transparent-gold.jpg"
             alt=""
             width="720"
           />
