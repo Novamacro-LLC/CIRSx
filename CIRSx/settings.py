@@ -57,7 +57,7 @@ ROOT_URLCONF = 'CIRSx.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
+        'DIRS': [BASE_DIR / 'home/templates']
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -76,6 +76,7 @@ WSGI_APPLICATION = 'CIRSx.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+# After Development will need to switch over to Postgres Database
 
 DATABASES = {
     'default': {

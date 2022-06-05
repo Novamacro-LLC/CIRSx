@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Home</title>
+    <!--Bootstrap CDN-->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -12,18 +13,8 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
-      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
-      crossorigin="anonymous"
-    ></script>
-
+  <body onload="pageInit()">
+    <!--Header-->
     <div class="container-fluid sticky-top bg-white">
       <header
         class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
@@ -43,29 +34,52 @@
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
           <li>
-            <a href="{% url 'index' %}" class="nav-link px-2 link-secondary"
+            <a
+              href="{% url 'index' %}"
+              class="nav-link px-2 link-dark"
+              id="homeLink"
               >Home</a
             >
           </li>
           <li>
-            <a href="{% url 'conference' %}" class="nav-link px-2 link-dark"
+            <a
+              href="{% url 'conference' %}"
+              class="nav-link px-2 link-dark"
+              id="conferenceLink"
               >Conference</a
             >
           </li>
           <li>
-            <a href="{% url 'sponsor' %}" class="nav-link px-2 link-dark"
+            <a
+              href="{% url 'sponsor' %}"
+              class="nav-link px-2 link-dark"
+              id="sponsorLink"
               >Sponsor</a
             >
           </li>
 
           <li>
-            <a href="{% url 'subscribe' %}" class="nav-link px-2 link-dark"
+            <a
+              href="{% url 'subscribe' %}"
+              class="nav-link px-2 link-dark"
+              id="subscribeLink"
               >Subscribe</a
             >
           </li>
           <li>
-            <a href="{% url 'about_us' %}" class="nav-link px-2 link-dark"
+            <a
+              href="{% url 'about_us' %}"
+              class="nav-link px-2 link-dark"
+              id="aboutUsLink"
               >About Us</a
+            >
+          </li>
+          <li>
+            <a
+              href="{% url 'contact_us' %}"
+              class="nav-link px-2 link-dark"
+              id="contactUsLink"
+              >Contact Us</a
             >
           </li>
         </ul>
@@ -79,20 +93,14 @@
       </header>
     </div>
 
-    <!-- 4.1.1.1.1 Welcome Hero -->
-    <!-- 4.1.1.1.1.1 Header Text -->
+    <!--Welcome Hero-->
     <div class="px-4 py-5 my-5 text-center">
-      <!--4.1.1.1.1.2 Background -->
-
       <h1 class="display-5 fw-bold">
         CIRSx: A Comprehensive Solution for CIRS Education, Training and
         Remediation
       </h1>
       <div class="col-lg-6 mx-auto">
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-          <!-- 4.1.1.1.1.3 Primary Button -->
-          <!-- 4.1.1.1.1.3.2 Text -->
-          <!-- 4.1.1.1.1.3.1 Link -->
           <a class="btn btn-primary" href="{% url 'about_us' %}">
             Learn More »</a
           >
@@ -101,34 +109,24 @@
     </div>
 
     <!-- 4.1.1.1.2 Join the Mission Feature w/Jumbotron -->
-
-    <!-- 4.1.1.1.2.1 Jumbotron Title Text -->
     <div class="container">
       <div class="d-grid gap-2 d-sm-flex justify-content-sm-center text-center">
         <div class="h-100 p-5 text-white bg-dark rounded-3">
           <h2>Join the Mission</h2>
-          <!-- 4.1.1.1.2.2 Jumbotron Text -->
           <p>
             Providing science-based training, education, and awareness to
             environmental and medical professionals treating Chronic
-            Inflammatory Response Syndrome (CIRS) patients.
+            Inflammatory Response Syndrome (CIRS) patients
           </p>
         </div>
       </div>
     </div>
-    <!-- 4.1.1.1.2.3 Jumbotron Background -->
-
     <!-- 4.1.1.1.2.4 Features -->
     <!--4.1.1.1.2.4.1 Get Help -->
-    <!-- 4.1.1.1.2.4.1.1 Icon -->
-
     <div class="container pt-5 pb-5">
       <div class="row">
         <div class="col-4 text-center">
           <div class="h-100 p-5 rounded-3 bg-light">
-            <!-- 4.1.1.1.2.4.1.2 Title-->
-            <!--Question-Mark-Circle-->
-
             <img
               class="d-block mx-auto mb-4"
               src="{% static 'home/questionmark-circle.png' %}"
@@ -139,7 +137,6 @@
 
             <h2>Get Help</h2>
 
-            <!-- 4.1.1.1.2.4.1.3 Text -->
             <p>
               Connect with environmental and medical professionals providing
               treatment and remediation services to those suffering from CIRS
@@ -147,8 +144,6 @@
               skills required to prevent future mold, and its dangerous impact.
             </p>
 
-            <!-- 4.1.1.1.2.4.1.4 Button -->
-            <!-- 4.1.1.1.2.4.1.4.1 Link -->
             <a
               class="btn btn-primary"
               type="button"
@@ -162,8 +157,6 @@
         <!-- 4.1.1.1.2.4.2 Get Educated -->
         <div class="col-4 text-center">
           <div class="h-100 p-5 rounded-3 bg-light">
-            <!-- 4.1.1.1.2.4.2.1 Icon -->
-            <!--Lightblub-->
             <img
               class="d-block mx-auto mb-4"
               src="{% static 'home/lightbulb.png' %}"
@@ -172,10 +165,8 @@
               height="100"
             />
 
-            <!-- 4.1.1.1.2.4.2.2 Title-->
             <h2>Get Educated</h2>
 
-            <!-- 4.1.1.1.2.4.2.3 Text -->
             <p>
               Whether you are a member of the medical community or an
               environmental professional looking for general education,
@@ -183,9 +174,6 @@
               subscription is your one stop shop for all things CIRS.
             </p>
             <br />
-            <!-- 4.1.1.1.2.4.2.4 Button -->
-            <!-- 4.1.1.1.2.4.2.4.1 Link -->
-            <!-- 4.1.1.1.2.4.2.4.2 Text -->
             <a
               class="btn btn-primary"
               type="button"
@@ -452,7 +440,6 @@
                 height="315"
                 src="https://vimeo.com/684756974/a565deca6b?embedded=true&source=video_title&owner=118339223"
                 title=""
-                frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
               ></iframe>
@@ -467,6 +454,17 @@
         CIRSx LLC All Rights Reserved | 2021 - 2022
       </div>
     </footer>
+    <script async src="{% static 'home/js_scripts.js' %}"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
 
