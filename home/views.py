@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 
 def home(request):
@@ -28,3 +27,7 @@ def medical_glossary(request):
 
 def speakers(request):
     return render(request, 'home/speakers.html', {})
+
+
+def contact_us(request):
+    return render(request, 'home/contact_us.html', {})

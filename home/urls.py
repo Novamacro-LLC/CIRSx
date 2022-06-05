@@ -8,5 +8,6 @@ urlpatterns = [
     path('conference/', views.conference, name='conference'),
     path('sponsor/', views.sponsor, name='sponsor'),
     path('medical_glossary/', views.medical_glossary, name='medical_glossary'),
-    path('speakers/', views.speakers, name='speakers')
+    path('speakers/', views.speakers, name='speakers'),
+    path('contact_us/', views.contact_us, name='contact_us')
 ]
