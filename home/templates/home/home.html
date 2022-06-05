@@ -1,471 +1,346 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Home</title>
-    <!--Bootstrap CDN-->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body onload="pageInit()">
-    <!--Header-->
-    <div class="container-fluid sticky-top bg-white">
-      <header
-        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
-      >
-        <a
-          href="{% url 'index' %}"
-          class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
-        >
-          <img
-            class="d-block mx-auto mb-4"
-            src="{% static 'home/Transparent-gold.jpg' %}"
-            alt=""
-            width="150"
-            height="100"
-          />
+{% extends 'home/base.html' %} {% load static %} {% block content %}
+
+<!--Welcome Hero-->
+<div class="px-4 py-5 my-5 text-center">
+  <h1 class="display-5 fw-bold">
+    CIRSx: A Comprehensive Solution for CIRS Education, Training and Remediation
+  </h1>
+  <div class="col-lg-6 mx-auto">
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <a class="btn btn-primary" href="{% url 'about_us' %}"> Learn More »</a>
+    </div>
+  </div>
+</div>
+
+<!-- 4.1.1.1.2 Join the Mission Feature w/Jumbotron -->
+<div class="container">
+  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center text-center">
+    <div class="h-100 p-5 text-white bg-dark rounded-3">
+      <h2>Join the Mission</h2>
+      <p>
+        Providing science-based training, education, and awareness to
+        environmental and medical professionals treating Chronic Inflammatory
+        Response Syndrome (CIRS) patients
+      </p>
+    </div>
+  </div>
+</div>
+<!-- 4.1.1.1.2.4 Features -->
+<!--4.1.1.1.2.4.1 Get Help -->
+<div class="container pt-5 pb-5">
+  <div class="row">
+    <div class="col-4 text-center">
+      <div class="h-100 p-5 rounded-3 bg-light">
+        <img
+          class="d-block mx-auto mb-4"
+          src="{% static 'home/questionmark-circle.png' %}"
+          alt=""
+          width="300"
+          height="100"
+        />
+
+        <h2>Get Help</h2>
+
+        <p>
+          Connect with environmental and medical professionals providing
+          treatment and remediation services to those suffering from CIRS and
+          other mold-based illnesses, while building the knowledge and skills
+          required to prevent future mold, and its dangerous impact.
+        </p>
+
+        <a class="btn btn-primary" type="button" href="{% url 'subscribe' %}">
+          Subscribe
         </a>
-
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-          <li>
-            <a
-              href="{% url 'index' %}"
-              class="nav-link px-2 link-dark"
-              id="homeLink"
-              >Home</a
-            >
-          </li>
-          <li>
-            <a
-              href="{% url 'conference' %}"
-              class="nav-link px-2 link-dark"
-              id="conferenceLink"
-              >Conference</a
-            >
-          </li>
-          <li>
-            <a
-              href="{% url 'sponsor' %}"
-              class="nav-link px-2 link-dark"
-              id="sponsorLink"
-              >Sponsor</a
-            >
-          </li>
-
-          <li>
-            <a
-              href="{% url 'subscribe' %}"
-              class="nav-link px-2 link-dark"
-              id="subscribeLink"
-              >Subscribe</a
-            >
-          </li>
-          <li>
-            <a
-              href="{% url 'about_us' %}"
-              class="nav-link px-2 link-dark"
-              id="aboutUsLink"
-              >About Us</a
-            >
-          </li>
-          <li>
-            <a
-              href="{% url 'contact_us' %}"
-              class="nav-link px-2 link-dark"
-              id="contactUsLink"
-              >Contact Us</a
-            >
-          </li>
-        </ul>
-
-        <div class="col-md-3 text-end">
-          <button type="button" class="btn btn-outline-primary me-2">
-            Login
-          </button>
-          <button type="button" class="btn btn-primary">Sign-up</button>
-        </div>
-      </header>
-    </div>
-
-    <!--Welcome Hero-->
-    <div class="px-4 py-5 my-5 text-center">
-      <h1 class="display-5 fw-bold">
-        CIRSx: A Comprehensive Solution for CIRS Education, Training and
-        Remediation
-      </h1>
-      <div class="col-lg-6 mx-auto">
-        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-          <a class="btn btn-primary" href="{% url 'about_us' %}">
-            Learn More »</a
-          >
-        </div>
       </div>
     </div>
 
-    <!-- 4.1.1.1.2 Join the Mission Feature w/Jumbotron -->
-    <div class="container">
-      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center text-center">
-        <div class="h-100 p-5 text-white bg-dark rounded-3">
-          <h2>Join the Mission</h2>
-          <p>
-            Providing science-based training, education, and awareness to
-            environmental and medical professionals treating Chronic
-            Inflammatory Response Syndrome (CIRS) patients
-          </p>
-        </div>
-      </div>
-    </div>
-    <!-- 4.1.1.1.2.4 Features -->
-    <!--4.1.1.1.2.4.1 Get Help -->
-    <div class="container pt-5 pb-5">
-      <div class="row">
-        <div class="col-4 text-center">
-          <div class="h-100 p-5 rounded-3 bg-light">
-            <img
-              class="d-block mx-auto mb-4"
-              src="{% static 'home/questionmark-circle.png' %}"
-              alt=""
-              width="300"
-              height="100"
-            />
+    <!-- 4.1.1.1.2.4.2 Get Educated -->
+    <div class="col-4 text-center">
+      <div class="h-100 p-5 rounded-3 bg-light">
+        <img
+          class="d-block mx-auto mb-4"
+          src="{% static 'home/lightbulb.png' %}"
+          alt=""
+          width="300"
+          height="100"
+        />
 
-            <h2>Get Help</h2>
+        <h2>Get Educated</h2>
 
-            <p>
-              Connect with environmental and medical professionals providing
-              treatment and remediation services to those suffering from CIRS
-              and other mold-based illnesses, while building the knowledge and
-              skills required to prevent future mold, and its dangerous impact.
-            </p>
-
-            <a
-              class="btn btn-primary"
-              type="button"
-              href="{% url 'subscribe' %}"
-            >
-              Subscribe
-            </a>
-          </div>
-        </div>
-
-        <!-- 4.1.1.1.2.4.2 Get Educated -->
-        <div class="col-4 text-center">
-          <div class="h-100 p-5 rounded-3 bg-light">
-            <img
-              class="d-block mx-auto mb-4"
-              src="{% static 'home/lightbulb.png' %}"
-              alt=""
-              width="300"
-              height="100"
-            />
-
-            <h2>Get Educated</h2>
-
-            <p>
-              Whether you are a member of the medical community or an
-              environmental professional looking for general education,
-              certification, or continuing education credits, our comprehensive
-              subscription is your one stop shop for all things CIRS.
-            </p>
-            <br />
-            <a
-              class="btn btn-primary"
-              type="button"
-              href="{% url 'medical_glossary' %}"
-            >
-              Learn
-            </a>
-          </div>
-        </div>
-
-        <!-- 4.1.1.1.2.4.3 Get Involved -->
-
-        <div class="col-4 text-center">
-          <div class="h-100 p-5 rounded-3 bg-light">
-            <!-- 4.1.1.1.2.4.3.1 Icon -->
-            <img
-              class="d-block mx-auto mb-4"
-              src="{% static 'home/people_circle.png' %}"
-              alt=""
-              width="300"
-              height="100"
-            />
-
-            <!-- 4.1.1.1.2.4.3.2 Title-->
-            <h2>Get Involved</h2>
-
-            <!-- 4.1.1.1.2.4.3.3 Text -->
-            <p>
-              Join the movement toward reducing the impact of mold and restoring
-              health to individuals suffering with environmentally acquired
-              illnesses by collaborating at events and conferences designed to
-              share clinical best practices, remediation techniques, testing
-              solutions and research.
-            </p>
-
-            <!-- 4.1.1.1.2.4.3.4 Button -->
-            <!-- 4.1.1.1.2.4.3.4.1 Link -->
-            <!-- 4.1.1.1.2.4.3.4.2 Text -->
-            <a
-              class="btn btn-primary"
-              type="button"
-              href="{% url 'conference' %}"
-            >
-              Register
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 4.1.1.1.3 Jumbotron Quote -->
-    <!-- 4.1.1.1.3.1 Jumbotron Text -->
-    <div class="p-5 bg-light mb-4 rounded-3">
-      <div class="container-fluid py-5 text-center">
-        <h3 class="display-5">
-          <q
-            >Surviving Mold is the beginning of what we'd all like to see. An
-            illness defeated and lives restored all over the world.</q
-          >
-        </h3>
+        <p>
+          Whether you are a member of the medical community or an environmental
+          professional looking for general education, certification, or
+          continuing education credits, our comprehensive subscription is your
+          one stop shop for all things CIRS.
+        </p>
         <br />
-        <p class="col-md-12 fs-4 text-center">— Ritchie Shoemaker, MD</p>
+        <a
+          class="btn btn-primary"
+          type="button"
+          href="{% url 'medical_glossary' %}"
+        >
+          Learn
+        </a>
       </div>
     </div>
 
-    <!--4.1.1.1.3.2 Jumbotron Background -->
-    <!--4.1.1.1.4 Blog/Announcements/News -->
-    <div class="container pt-5 pb-5">
-      <div class="row">
-        <div class="col-lg-4">
-          <svg
-            class="bd-placeholder-img rounded-circle"
-            width="140"
-            height="140"
-            xmlns="http://www.w3.org/2000/svg"
-            role="img"
-            aria-label="Placeholder: 140x140"
-            preserveAspectRatio="xMidYMid slice"
-            focusable="false"
-          >
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#777"></rect>
-            <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-          </svg>
+    <!-- 4.1.1.1.2.4.3 Get Involved -->
 
-          <h2 class="fw-normal">Blog</h2>
-          <p>
-            Some representative placeholder content for the three columns of
-            text below the carousel. This is the first column.
+    <div class="col-4 text-center">
+      <div class="h-100 p-5 rounded-3 bg-light">
+        <!-- 4.1.1.1.2.4.3.1 Icon -->
+        <img
+          class="d-block mx-auto mb-4"
+          src="{% static 'home/people_circle.png' %}"
+          alt=""
+          width="300"
+          height="100"
+        />
+
+        <!-- 4.1.1.1.2.4.3.2 Title-->
+        <h2>Get Involved</h2>
+
+        <!-- 4.1.1.1.2.4.3.3 Text -->
+        <p>
+          Join the movement toward reducing the impact of mold and restoring
+          health to individuals suffering with environmentally acquired
+          illnesses by collaborating at events and conferences designed to share
+          clinical best practices, remediation techniques, testing solutions and
+          research.
+        </p>
+
+        <!-- 4.1.1.1.2.4.3.4 Button -->
+        <!-- 4.1.1.1.2.4.3.4.1 Link -->
+        <!-- 4.1.1.1.2.4.3.4.2 Text -->
+        <a class="btn btn-primary" type="button" href="{% url 'conference' %}">
+          Register
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 4.1.1.1.3 Jumbotron Quote -->
+<!-- 4.1.1.1.3.1 Jumbotron Text -->
+<div class="p-5 bg-light mb-4 rounded-3">
+  <div class="container-fluid py-5 text-center">
+    <h3 class="display-5">
+      <q
+        >Surviving Mold is the beginning of what we'd all like to see. An
+        illness defeated and lives restored all over the world.</q
+      >
+    </h3>
+    <br />
+    <p class="col-md-12 fs-4 text-center">— Ritchie Shoemaker, MD</p>
+  </div>
+</div>
+
+<!--4.1.1.1.3.2 Jumbotron Background -->
+<!--4.1.1.1.4 Blog/Announcements/News -->
+<div class="container pt-5 pb-5">
+  <div class="row">
+    <div class="col-lg-4">
+      <svg
+        class="bd-placeholder-img rounded-circle"
+        width="140"
+        height="140"
+        xmlns="http://www.w3.org/2000/svg"
+        role="img"
+        aria-label="Placeholder: 140x140"
+        preserveAspectRatio="xMidYMid slice"
+        focusable="false"
+      >
+        <title>Placeholder</title>
+        <rect width="100%" height="100%" fill="#777"></rect>
+        <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+      </svg>
+
+      <h2 class="fw-normal">Blog</h2>
+      <p>
+        Some representative placeholder content for the three columns of text
+        below the carousel. This is the first column.
+      </p>
+      <p><a class="btn btn-secondary" href="#">View details »</a></p>
+    </div>
+    <!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <svg
+        class="bd-placeholder-img rounded-circle"
+        width="140"
+        height="140"
+        xmlns="http://www.w3.org/2000/svg"
+        role="img"
+        aria-label="Placeholder: 140x140"
+        preserveAspectRatio="xMidYMid slice"
+        focusable="false"
+      >
+        <title>Placeholder</title>
+        <rect width="100%" height="100%" fill="#777"></rect>
+        <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+      </svg>
+
+      <h2 class="fw-normal">News</h2>
+      <p>
+        Another exciting bit of representative placeholder content. This time,
+        we've moved on to the second column.
+      </p>
+      <p><a class="btn btn-secondary" href="#">View details »</a></p>
+    </div>
+    <!-- /.col-lg-4 -->
+    <div class="col-lg-4">
+      <svg
+        class="bd-placeholder-img rounded-circle"
+        width="140"
+        height="140"
+        xmlns="http://www.w3.org/2000/svg"
+        role="img"
+        aria-label="Placeholder: 140x140"
+        preserveAspectRatio="xMidYMid slice"
+        focusable="false"
+      >
+        <title>Placeholder</title>
+        <rect width="100%" height="100%" fill="#777"></rect>
+        <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+      </svg>
+
+      <h2 class="fw-normal">Annoucements</h2>
+      <p>
+        And lastly this, the third column of representative placeholder content.
+      </p>
+      <p><a class="btn btn-secondary" href="#">View details »</a></p>
+    </div>
+    <!-- /.col-lg-4 -->
+
+    <div class="row">
+      <div class="col-lg-4">
+        <svg
+          class="bd-placeholder-img rounded-circle"
+          width="140"
+          height="140"
+          xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          aria-label="Placeholder: 140x140"
+          preserveAspectRatio="xMidYMid slice"
+          focusable="false"
+        >
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#777"></rect>
+          <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+        </svg>
+
+        <h2 class="fw-normal">Blog</h2>
+        <p>
+          Some representative placeholder content for the three columns of text
+          below the carousel. This is the first column.
+        </p>
+        <p><a class="btn btn-secondary" href="#">View details »</a></p>
+      </div>
+      <!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg
+          class="bd-placeholder-img rounded-circle"
+          width="140"
+          height="140"
+          xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          aria-label="Placeholder: 140x140"
+          preserveAspectRatio="xMidYMid slice"
+          focusable="false"
+        >
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#777"></rect>
+          <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+        </svg>
+
+        <h2 class="fw-normal">News</h2>
+        <p>
+          Another exciting bit of representative placeholder content. This time,
+          we've moved on to the second column.
+        </p>
+        <p><a class="btn btn-secondary" href="#">View details »</a></p>
+      </div>
+      <!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <svg
+          class="bd-placeholder-img rounded-circle"
+          width="140"
+          height="140"
+          xmlns="http://www.w3.org/2000/svg"
+          role="img"
+          aria-label="Placeholder: 140x140"
+          preserveAspectRatio="xMidYMid slice"
+          focusable="false"
+        >
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#777"></rect>
+          <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+        </svg>
+
+        <h2 class="fw-normal">Annoucements</h2>
+        <p>
+          And lastly this, the third column of representative placeholder
+          content.
+        </p>
+        <p><a class="btn btn-secondary" href="#">View details »</a></p>
+      </div>
+      <!-- /.col-lg-4 -->
+    </div>
+
+    <!-- 4.1.1.1.5 Section Title -->
+    <!-- 4.1.1.1.6 Section Content -->
+    <!-- 4.1.1.1.6.1 Announcement Management -->
+
+    <!-- 4.1.1.1.7 Trusted Source Hero -->
+
+    <div class="container-fluid" style="background-color: #ebeadf">
+      <div
+        class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg"
+      >
+        <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+          <!-- 4.1.1.1.7.1 Title -->
+          <h1 class="display-4 fw-bold lh-1">
+            A Trusted Source for CIRS Information
+          </h1>
+          <!-- 4.1.1.1.7.2 Text -->
+          <p class="lead">
+            At CIRSx, we believe in delivering a product that is backed by
+            peer-reviewed scientific data. Our vast online content repository
+            provides physicians, environmental professionals, and patients
+            suffering from mold related illnesses with direct access to
+            scientifically proven, authentic content like articles,
+            bibliographies, podcasts, and training.
+            <br />
+            <br />
+            Get direct access to this proprietary content and more as a CIRSx
+            Professional Subscriber. You have full access to the CIRSx database
+            and four special educational events annually, a $900 value.
           </p>
-          <p><a class="btn btn-secondary" href="#">View details »</a></p>
-        </div>
-        <!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <svg
-            class="bd-placeholder-img rounded-circle"
-            width="140"
-            height="140"
-            xmlns="http://www.w3.org/2000/svg"
-            role="img"
-            aria-label="Placeholder: 140x140"
-            preserveAspectRatio="xMidYMid slice"
-            focusable="false"
-          >
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#777"></rect>
-            <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-          </svg>
 
-          <h2 class="fw-normal">News</h2>
-          <p>
-            Another exciting bit of representative placeholder content. This
-            time, we've moved on to the second column.
-          </p>
-          <p><a class="btn btn-secondary" href="#">View details »</a></p>
-        </div>
-        <!-- /.col-lg-4 -->
-        <div class="col-lg-4">
-          <svg
-            class="bd-placeholder-img rounded-circle"
-            width="140"
-            height="140"
-            xmlns="http://www.w3.org/2000/svg"
-            role="img"
-            aria-label="Placeholder: 140x140"
-            preserveAspectRatio="xMidYMid slice"
-            focusable="false"
-          >
-            <title>Placeholder</title>
-            <rect width="100%" height="100%" fill="#777"></rect>
-            <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-          </svg>
-
-          <h2 class="fw-normal">Annoucements</h2>
-          <p>
-            And lastly this, the third column of representative placeholder
-            content.
-          </p>
-          <p><a class="btn btn-secondary" href="#">View details »</a></p>
-        </div>
-        <!-- /.col-lg-4 -->
-
-        <div class="row">
-          <div class="col-lg-4">
-            <svg
-              class="bd-placeholder-img rounded-circle"
-              width="140"
-              height="140"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder: 140x140"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="#777"></rect>
-              <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-            </svg>
-
-            <h2 class="fw-normal">Blog</h2>
-            <p>
-              Some representative placeholder content for the three columns of
-              text below the carousel. This is the first column.
-            </p>
-            <p><a class="btn btn-secondary" href="#">View details »</a></p>
-          </div>
-          <!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <svg
-              class="bd-placeholder-img rounded-circle"
-              width="140"
-              height="140"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder: 140x140"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="#777"></rect>
-              <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-            </svg>
-
-            <h2 class="fw-normal">News</h2>
-            <p>
-              Another exciting bit of representative placeholder content. This
-              time, we've moved on to the second column.
-            </p>
-            <p><a class="btn btn-secondary" href="#">View details »</a></p>
-          </div>
-          <!-- /.col-lg-4 -->
-          <div class="col-lg-4">
-            <svg
-              class="bd-placeholder-img rounded-circle"
-              width="140"
-              height="140"
-              xmlns="http://www.w3.org/2000/svg"
-              role="img"
-              aria-label="Placeholder: 140x140"
-              preserveAspectRatio="xMidYMid slice"
-              focusable="false"
-            >
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="#777"></rect>
-              <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
-            </svg>
-
-            <h2 class="fw-normal">Annoucements</h2>
-            <p>
-              And lastly this, the third column of representative placeholder
-              content.
-            </p>
-            <p><a class="btn btn-secondary" href="#">View details »</a></p>
-          </div>
-          <!-- /.col-lg-4 -->
-        </div>
-
-        <!-- 4.1.1.1.5 Section Title -->
-        <!-- 4.1.1.1.6 Section Content -->
-        <!-- 4.1.1.1.6.1 Announcement Management -->
-
-        <!-- 4.1.1.1.7 Trusted Source Hero -->
-
-        <div class="container-fluid" style="background-color: #ebeadf">
+          <!-- 4.1.1.1.7.4 Button -->
+          <!-- 4.1.1.1.7.4.2 Text -->
+          <!-- 4.1.1.1.7.4.1 Link -->
           <div
-            class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg"
+            class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3"
           >
-            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-              <!-- 4.1.1.1.7.1 Title -->
-              <h1 class="display-4 fw-bold lh-1">
-                A Trusted Source for CIRS Information
-              </h1>
-              <!-- 4.1.1.1.7.2 Text -->
-              <p class="lead">
-                At CIRSx, we believe in delivering a product that is backed by
-                peer-reviewed scientific data. Our vast online content
-                repository provides physicians, environmental professionals, and
-                patients suffering from mold related illnesses with direct
-                access to scientifically proven, authentic content like
-                articles, bibliographies, podcasts, and training.
-                <br />
-                <br />
-                Get direct access to this proprietary content and more as a
-                CIRSx Professional Subscriber. You have full access to the CIRSx
-                database and four special educational events annually, a $900
-                value.
-              </p>
-
-              <!-- 4.1.1.1.7.4 Button -->
-              <!-- 4.1.1.1.7.4.2 Text -->
-              <!-- 4.1.1.1.7.4.1 Link -->
-              <div
-                class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3"
-              >
-                <a class="btn btn-primary" href="{% url 'subscribe' %}">
-                  Subscribe »</a
-                >
-              </div>
-            </div>
-
-            <div class="col-lg-4 offset-lg-1 p-0">
-              <iframe
-                width="560"
-                height="315"
-                src="https://vimeo.com/684756974/a565deca6b?embedded=true&source=video_title&owner=118339223"
-                title=""
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div>
+            <a class="btn btn-primary" href="{% url 'subscribe' %}">
+              Subscribe »</a
+            >
           </div>
+        </div>
+
+        <div class="col-lg-4 offset-lg-1 p-0">
+          <iframe
+            width="560"
+            height="315"
+            src="https://vimeo.com/684756974/a565deca6b?embedded=true&source=video_title&owner=118339223"
+            title=""
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
     </div>
+  </div>
+</div>
 
-    <footer>
-      <div class="container pt-3 text-center">
-        CIRSx LLC All Rights Reserved | 2021 - 2022
-      </div>
-    </footer>
-    <script async src="{% static 'home/js_scripts.js' %}"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
-      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
-      crossorigin="anonymous"
-    ></script>
-  </body>
-</html>
-
-<!--   -->
+{% endblock content %}
