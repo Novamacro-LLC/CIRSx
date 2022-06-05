@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 
 def home(request):
@@ -16,3 +15,19 @@ def about_us(request):
 
 def conference(request):
     return render(request, 'home/conference.html', {})
+
+
+def sponsor(request):
+    return render(request, 'home/sponsor.html', {})
+
+
+def medical_glossary(request):
+    return render(request, 'home/medical_glossary.html', {})
+
+
+def speakers(request):
+    return render(request, 'home/speakers.html', {})
+
+
+def contact_us(request):
+    return render(request, 'home/contact_us.html', {})
