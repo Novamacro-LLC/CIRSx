@@ -5,5 +5,8 @@ urlpatterns = [
     path('', views.home, name='index'),
     path('subscribe/', views.subscribe, name='subscribe'),
     path('about_us/', views.about_us, name='about_us'),
-    path('conference/', views.conference, name='conference')
+    path('conference/', views.conference, name='conference'),
+    path('sponsor/', views.sponsor, name='sponsor'),
+    path('medical_glossary/', views.medical_glossary, name='medical_glossary'),
+    path('speakers/', views.speakers, name='speakers')
 ]

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,12 +29,12 @@
         class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
       >
         <a
-          href="home.html"
+          href="{% url 'index' %}"
           class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
         >
           <img
             class="d-block mx-auto mb-4"
-            src="../../Static/home/Transparent-gold.jpg"
+            src="{% static 'home/Transparent-gold.jpg' %}"
             alt=""
             width="150"
             height="100"
@@ -42,24 +43,30 @@
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
           <li>
-            <a href="home.html" class="nav-link px-2 link-secondary">Home</a>
+            <a href="{% url 'index' %}" class="nav-link px-2 link-secondary"
+              >Home</a
+            >
           </li>
           <li>
-            <a href="conference.html" class="nav-link px-2 link-dark"
+            <a href="{% url 'conference' %}" class="nav-link px-2 link-dark"
               >Conference</a
             >
           </li>
-            <li>
-            <a href="sponsor.html" class="nav-link px-2 link-dark"
+          <li>
+            <a href="{% url 'sponsor' %}" class="nav-link px-2 link-dark"
               >Sponsor</a
             >
+          </li>
+
           <li>
-            <a href="subscribe.html" class="nav-link px-2 link-dark"
+            <a href="{% url 'subscribe' %}" class="nav-link px-2 link-dark"
               >Subscribe</a
             >
           </li>
           <li>
-            <a href="about_us.html" class="nav-link px-2 link-dark">About Us</a>
+            <a href="{% url 'about_us' %}" class="nav-link px-2 link-dark"
+              >About Us</a
+            >
           </li>
         </ul>
 
@@ -86,8 +93,9 @@
           <!-- 4.1.1.1.1.3 Primary Button -->
           <!-- 4.1.1.1.1.3.2 Text -->
           <!-- 4.1.1.1.1.3.1 Link -->
-          <a class="btn btn-primary" href="about_us.html"> Learn More »</a>
-
+          <a class="btn btn-primary" href="{% url 'about_us' %}">
+            Learn More »</a
+          >
         </div>
       </div>
     </div>
@@ -119,14 +127,15 @@
         <div class="col-4 text-center">
           <div class="h-100 p-5 rounded-3 bg-light">
             <!-- 4.1.1.1.2.4.1.2 Title-->
-           <!--Question-Mark-Circle-->
+            <!--Question-Mark-Circle-->
 
-            <img class="d-block mx-auto mb-4"
-            src="../../../Static/CIRSX CONF_icons (500 × 500 px) (1500 × 500 px) (4).png"
-            alt=""
-            width="300"
-            height="100">
-
+            <img
+              class="d-block mx-auto mb-4"
+              src="{% static 'home/questionmark-circle.png' %}"
+              alt=""
+              width="300"
+              height="100"
+            />
 
             <h2>Get Help</h2>
 
@@ -140,25 +149,28 @@
 
             <!-- 4.1.1.1.2.4.1.4 Button -->
             <!-- 4.1.1.1.2.4.1.4.1 Link -->
-            <a class="btn btn-primary" type="button" href="subscibe.html">
+            <a
+              class="btn btn-primary"
+              type="button"
+              href="{% url 'subscribe' %}"
+            >
               Subscribe
             </a>
           </div>
         </div>
-
-
-
 
         <!-- 4.1.1.1.2.4.2 Get Educated -->
         <div class="col-4 text-center">
           <div class="h-100 p-5 rounded-3 bg-light">
             <!-- 4.1.1.1.2.4.2.1 Icon -->
             <!--Lightblub-->
-            <img class="d-block mx-auto mb-4"
-            src="../../../Static/CIRSX CONF_icons (500 × 500 px) (1500 × 500 px) (3).png"
-            alt=""
-            width="300"
-            height="100">
+            <img
+              class="d-block mx-auto mb-4"
+              src="{% static 'home/lightbulb.png' %}"
+              alt=""
+              width="300"
+              height="100"
+            />
 
             <!-- 4.1.1.1.2.4.2.2 Title-->
             <h2>Get Educated</h2>
@@ -170,11 +182,15 @@
               certification, or continuing education credits, our comprehensive
               subscription is your one stop shop for all things CIRS.
             </p>
-            <br>
+            <br />
             <!-- 4.1.1.1.2.4.2.4 Button -->
             <!-- 4.1.1.1.2.4.2.4.1 Link -->
             <!-- 4.1.1.1.2.4.2.4.2 Text -->
-            <a class="btn btn-primary" type="button" href="medical_glossary.html">
+            <a
+              class="btn btn-primary"
+              type="button"
+              href="{% url 'medical_glossary' %}"
+            >
               Learn
             </a>
           </div>
@@ -182,16 +198,16 @@
 
         <!-- 4.1.1.1.2.4.3 Get Involved -->
 
-
-
         <div class="col-4 text-center">
           <div class="h-100 p-5 rounded-3 bg-light">
             <!-- 4.1.1.1.2.4.3.1 Icon -->
-            <img class="d-block mx-auto mb-4"
-            src="../../../Static/CIRSX CONF_icons (500 × 500 px) (1500 × 500 px) (5).png"
-            alt=""
-            width="300"
-            height="100">
+            <img
+              class="d-block mx-auto mb-4"
+              src="{% static 'home/people_circle.png' %}"
+              alt=""
+              width="300"
+              height="100"
+            />
 
             <!-- 4.1.1.1.2.4.3.2 Title-->
             <h2>Get Involved</h2>
@@ -208,18 +224,21 @@
             <!-- 4.1.1.1.2.4.3.4 Button -->
             <!-- 4.1.1.1.2.4.3.4.1 Link -->
             <!-- 4.1.1.1.2.4.3.4.2 Text -->
-            <a class="btn btn-primary" type="button" href="conference.html">
+            <a
+              class="btn btn-primary"
+              type="button"
+              href="{% url 'conference' %}"
+            >
               Register
             </a>
-            </div>
           </div>
         </div>
       </div>
-
+    </div>
 
     <!-- 4.1.1.1.3 Jumbotron Quote -->
     <!-- 4.1.1.1.3.1 Jumbotron Text -->
-    <div class="p-5 bg-light mb-4 rounded-3" >
+    <div class="p-5 bg-light mb-4 rounded-3">
       <div class="container-fluid py-5 text-center">
         <h3 class="display-5">
           <q
@@ -235,109 +254,220 @@
     <!--4.1.1.1.3.2 Jumbotron Background -->
     <!--4.1.1.1.4 Blog/Announcements/News -->
     <div class="container pt-5 pb-5">
-        <div class="row">
-      <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
-        <h2 class="fw-normal">Blog</h2>
-        <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-        <p><a class="btn btn-secondary" href="#">View details »</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
-        <h2 class="fw-normal">News</h2>
-        <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-        <p><a class="btn btn-secondary" href="#">View details »</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
-        <h2 class="fw-normal">Annoucements</h2>
-        <p>And lastly this, the third column of representative placeholder content.</p>
-        <p><a class="btn btn-secondary" href="#">View details »</a></p>
-      </div><!-- /.col-lg-4 -->
-
-        <div class="row">
-      <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
-        <h2 class="fw-normal">Blog</h2>
-        <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
-        <p><a class="btn btn-secondary" href="#">View details »</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
-        <h2 class="fw-normal">News</h2>
-        <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
-        <p><a class="btn btn-secondary" href="#">View details »</a></p>
-      </div><!-- /.col-lg-4 -->
-      <div class="col-lg-4">
-        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"></rect><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
-
-        <h2 class="fw-normal">Annoucements</h2>
-        <p>And lastly this, the third column of representative placeholder content.</p>
-        <p><a class="btn btn-secondary" href="#">View details »</a></p>
-      </div><!-- /.col-lg-4 -->
-    </div>
-
-    <!-- 4.1.1.1.5 Section Title -->
-    <!-- 4.1.1.1.6 Section Content -->
-    <!-- 4.1.1.1.6.1 Announcement Management -->
-
-    <!-- 4.1.1.1.7 Trusted Source Hero -->
-
-    <div class="container my-5">
-      <div
-        class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg"
-      >
-        <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
-          <!-- 4.1.1.1.7.1 Title -->
-          <h1 class="display-4 fw-bold lh-1">
-            A Trusted Source for CIRS Information
-          </h1>
-          <!-- 4.1.1.1.7.2 Text -->
-          <p class="lead">
-            At CIRSx, we believe in delivering a product that is backed by
-            peer-reviewed scientific data. Our vast online content repository
-            provides physicians, environmental professionals, and patients
-            suffering from mold related illnesses with direct access to
-            scientifically proven, authentic content like articles,
-            bibliographies, podcasts, and training.
-            <br />
-            <br />
-            Get direct access to this proprietary content and more as a CIRSx
-            Professional Subscriber. You have full access to the CIRSx database
-            and four special educational events annually, a $900 value.
-          </p>
-
-          <!-- 4.1.1.1.7.4 Button -->
-          <!-- 4.1.1.1.7.4.2 Text -->
-          <!-- 4.1.1.1.7.4.1 Link -->
-          <div
-            class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3"
+      <div class="row">
+        <div class="col-lg-4">
+          <svg
+            class="bd-placeholder-img rounded-circle"
+            width="140"
+            height="140"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="Placeholder: 140x140"
+            preserveAspectRatio="xMidYMid slice"
+            focusable="false"
           >
-            <a class="btn btn-primary" href="subscribe.html"> Subscribe »</a>
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#777"></rect>
+            <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+          </svg>
+
+          <h2 class="fw-normal">Blog</h2>
+          <p>
+            Some representative placeholder content for the three columns of
+            text below the carousel. This is the first column.
+          </p>
+          <p><a class="btn btn-secondary" href="#">View details »</a></p>
+        </div>
+        <!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <svg
+            class="bd-placeholder-img rounded-circle"
+            width="140"
+            height="140"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="Placeholder: 140x140"
+            preserveAspectRatio="xMidYMid slice"
+            focusable="false"
+          >
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#777"></rect>
+            <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+          </svg>
+
+          <h2 class="fw-normal">News</h2>
+          <p>
+            Another exciting bit of representative placeholder content. This
+            time, we've moved on to the second column.
+          </p>
+          <p><a class="btn btn-secondary" href="#">View details »</a></p>
+        </div>
+        <!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <svg
+            class="bd-placeholder-img rounded-circle"
+            width="140"
+            height="140"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="Placeholder: 140x140"
+            preserveAspectRatio="xMidYMid slice"
+            focusable="false"
+          >
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#777"></rect>
+            <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+          </svg>
+
+          <h2 class="fw-normal">Annoucements</h2>
+          <p>
+            And lastly this, the third column of representative placeholder
+            content.
+          </p>
+          <p><a class="btn btn-secondary" href="#">View details »</a></p>
+        </div>
+        <!-- /.col-lg-4 -->
+
+        <div class="row">
+          <div class="col-lg-4">
+            <svg
+              class="bd-placeholder-img rounded-circle"
+              width="140"
+              height="140"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Placeholder: 140x140"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            >
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#777"></rect>
+              <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+            </svg>
+
+            <h2 class="fw-normal">Blog</h2>
+            <p>
+              Some representative placeholder content for the three columns of
+              text below the carousel. This is the first column.
+            </p>
+            <p><a class="btn btn-secondary" href="#">View details »</a></p>
           </div>
+          <!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <svg
+              class="bd-placeholder-img rounded-circle"
+              width="140"
+              height="140"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Placeholder: 140x140"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            >
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#777"></rect>
+              <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+            </svg>
+
+            <h2 class="fw-normal">News</h2>
+            <p>
+              Another exciting bit of representative placeholder content. This
+              time, we've moved on to the second column.
+            </p>
+            <p><a class="btn btn-secondary" href="#">View details »</a></p>
+          </div>
+          <!-- /.col-lg-4 -->
+          <div class="col-lg-4">
+            <svg
+              class="bd-placeholder-img rounded-circle"
+              width="140"
+              height="140"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Placeholder: 140x140"
+              preserveAspectRatio="xMidYMid slice"
+              focusable="false"
+            >
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#777"></rect>
+              <text x="50%" y="50%" fill="#777" dy=".3em">140x140</text>
+            </svg>
+
+            <h2 class="fw-normal">Annoucements</h2>
+            <p>
+              And lastly this, the third column of representative placeholder
+              content.
+            </p>
+            <p><a class="btn btn-secondary" href="#">View details »</a></p>
+          </div>
+          <!-- /.col-lg-4 -->
         </div>
 
-        <div class="col-lg-4 offset-lg-1 p-0">
-            <iframe width="560" height="315" src="https://vimeo.com/684756974/a565deca6b?embedded=true&source=video_title&owner=118339223" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <!-- 4.1.1.1.5 Section Title -->
+        <!-- 4.1.1.1.6 Section Content -->
+        <!-- 4.1.1.1.6.1 Announcement Management -->
+
+        <!-- 4.1.1.1.7 Trusted Source Hero -->
+
+        <div class="container-fluid" style="background-color: #ebeadf">
+          <div
+            class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg"
+          >
+            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+              <!-- 4.1.1.1.7.1 Title -->
+              <h1 class="display-4 fw-bold lh-1">
+                A Trusted Source for CIRS Information
+              </h1>
+              <!-- 4.1.1.1.7.2 Text -->
+              <p class="lead">
+                At CIRSx, we believe in delivering a product that is backed by
+                peer-reviewed scientific data. Our vast online content
+                repository provides physicians, environmental professionals, and
+                patients suffering from mold related illnesses with direct
+                access to scientifically proven, authentic content like
+                articles, bibliographies, podcasts, and training.
+                <br />
+                <br />
+                Get direct access to this proprietary content and more as a
+                CIRSx Professional Subscriber. You have full access to the CIRSx
+                database and four special educational events annually, a $900
+                value.
+              </p>
+
+              <!-- 4.1.1.1.7.4 Button -->
+              <!-- 4.1.1.1.7.4.2 Text -->
+              <!-- 4.1.1.1.7.4.1 Link -->
+              <div
+                class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3"
+              >
+                <a class="btn btn-primary" href="{% url 'subscribe' %}">
+                  Subscribe »</a
+                >
+              </div>
+            </div>
+
+            <div class="col-lg-4 offset-lg-1 p-0">
+              <iframe
+                width="560"
+                height="315"
+                src="https://vimeo.com/684756974/a565deca6b?embedded=true&source=video_title&owner=118339223"
+                title=""
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-   </div>
-  </div>
-
 
     <footer>
       <div class="container pt-3 text-center">
-           CIRSx LLC All Rights Reserved | 2021 - 2022
+        CIRSx LLC All Rights Reserved | 2021 - 2022
       </div>
     </footer>
   </body>
-
 </html>
 
 <!--   -->

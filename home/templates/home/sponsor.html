@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,12 +29,12 @@
         class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
       >
         <a
-          href="home.html"
+          href="{% url 'index' %}"
           class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
         >
           <img
             class="d-block mx-auto mb-4"
-            src="../../Static/home/Transparent-gold.jpg"
+            src="{% static 'home/Transparent-gold.jpg' %} "
             alt=""
             width="150"
             height="100"
@@ -42,24 +43,24 @@
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
           <li>
-            <a href="home.html" class="nav-link px-2 link-dark">Home</a>
+            <a href="{% url 'index' %}" class="nav-link px-2 link-dark">Home</a>
           </li>
           <li>
-            <a href="conference.html" class="nav-link px-2 link-dark"
+            <a href="{% url 'conference' %}" class="nav-link px-2 link-dark"
               >Conference</a
             >
           </li>
             <li>
-            <a href="sponsor.html" class="nav-link px-2 link-secondary"
+            <a href="{% url 'sponsor' %}" class="nav-link px-2 link-secondary"
               >Sponsor</a
             >
           <li>
-            <a href="subscribe.html" class="nav-link px-2 link-dark"
+            <a href="{% url 'subscribe' %}" class="nav-link px-2 link-dark"
               >Subscribe</a
             >
           </li>
           <li>
-            <a href="about_us.html" class="nav-link px-2 link-dark">About Us</a>
+            <a href="{% url 'about_us' %}" class="nav-link px-2 link-dark">About Us</a>
           </li>
         </ul>
 

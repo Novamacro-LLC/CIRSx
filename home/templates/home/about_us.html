@@ -1,9 +1,10 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title> About Us </title>
+    <title>About Us</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -28,12 +29,12 @@
         class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
       >
         <a
-          href="home.html"
+          href="{% url 'index' %}"
           class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
         >
           <img
             class="d-block mx-auto mb-4"
-            src="../../Static/home/Transparent-gold.jpg"
+            src="{% static 'home/Transparent-gold.jpg' %}"
             alt=""
             width="150"
             height="100"
@@ -42,25 +43,25 @@
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
           <li>
-            <a href="home.html" class="nav-link px-2 link-dark">Home</a>
+            <a href="{% url 'index' %}" class="nav-link px-2 link-dark">Home</a>
           </li>
           <li>
-            <a href="conference.html" class="nav-link px-2 link-dark"
+            <a href="{% url 'conference' %}" class="nav-link px-2 link-dark"
               >Conference</a
             >
           </li>
           <li>
-            <a href="sponsor.html" class="nav-link px-2 link-dark"
-              >Sponsor</a
-            >
+            <a href="{% url 'sponsor' %}" class="nav-link px-2 link-dark">Sponsor</a>
           </li>
           <li>
-            <a href="subscribe.html" class="nav-link px-2 link-dark"
+            <a href="{% url 'subscribe' %}" class="nav-link px-2 link-dark"
               >Subscribe</a
             >
           </li>
           <li>
-            <a href="about_us.html" class="nav-link px-2 link-secondary">About Us</a>
+            <a href="{% url 'about_us' %}" class="nav-link px-2 link-secondary"
+              >About Us</a
+            >
           </li>
         </ul>
 
@@ -72,7 +73,6 @@
         </div>
       </header>
     </div>
-<body>
 
     <!-- 4.1.1.2 About Us Page -->
 
@@ -81,60 +81,75 @@
     <!-- 4.1.1.2.2 Purpose Jumbotron -->
 
     <!-- 4.1.1.2.2.1 Title -->
-        <h2> Our Purpose </h2>
+    <h2>Our Purpose</h2>
 
     <!-- 4.1.1.2.2.2 Text -->
-        <ul>
-            <li> To create and refine standards, while staying on the cutting edge and using an evidence-based
-                approach. </li>
+    <ul>
+      <li>
+        To create and refine standards, while staying on the cutting edge and
+        using an evidence-based approach.
+      </li>
 
-            <li> To transform multiple industries and their approaches toward Chronic Inflammatory Response
-                Syndrome (CIRS) and other environmentally related health challenges. </li>
+      <li>
+        To transform multiple industries and their approaches toward Chronic
+        Inflammatory Response Syndrome (CIRS) and other environmentally related
+        health challenges.
+      </li>
 
-            <li> Work with well-known methods to test new technology for better outcomes. </li>
-        </ul>
+      <li>
+        Work with well-known methods to test new technology for better outcomes.
+      </li>
+    </ul>
 
     <!-- 4.1.1.2.3 Vision Jumbotron -->
 
     <!-- 4.1.1.2.3.1 Title -->
-        <h2> Our Vision </h2>
+    <h2>Our Vision</h2>
 
     <!-- 4.1.1.2.3.2 Text -->
-        <ul>
+    <ul>
+      <li>
+        To identify the environmental problems, identify knowledge gaps,
+        contribute to and perform research, develop solutions and teach both the
+        problems and solutions to the environmental and medical worlds.
+      </li>
 
-            <li>To identify the environmental problems, identify knowledge gaps, contribute to and perform research,
-                develop solutions and teach both the problems and solutions to the environmental and medical worlds. </li>
+      <li>
+        To further educate other realms such as legal, layperson, medical and
+        residential/commercial insurance worlds.
+      </li>
 
-            <li> To further educate other realms such as legal, layperson, medical and residential/commercial
-                insurance worlds. </li>
+      <li>
+        To create new standards and refine older standards by reviewing
+        literature, professional experiences and collected data allowing the
+        evidence to guide best practices.
+      </li>
 
-            <li> To create new standards and refine older standards by reviewing literature, professional
-                experiences and collected data allowing the evidence to guide best practices. </li>
+      <li>
+        To create a safe place for varying disciplines, such as environmental
+        professionals, healthcare providers and others, to interface and
+        interact to develop multi-industry solutions for environmental problems.
+      </li>
 
-            <li> To create a safe place for varying disciplines, such as environmental professionals, healthcare
-                providers and others, to interface and interact to develop multi-industry solutions for
-                environmental problems. </li>
-
-            <li> To develop a repository of trusted educational and research materials and make these resources
-                available to the different worlds. </li>
+      <li>
+        To develop a repository of trusted educational and research materials
+        and make these resources available to the different worlds.
+      </li>
+    </ul>
 
     <!-- 4.1.1.2.4 Meet the Team Album -->
 
     <!-- 4.1.1.2.4.1 Title -->
-        <h2> Meet The Team </h2>
+    <h2>Meet The Team</h2>
 
     <!-- 4.1.1.2.4.2 Cards -->
 
-
     <!-- 4.1.1.2.4.3 Team Management -->
 
-
-
-  <footer>
+    <footer>
       <div class="container pt-3 text-center">
-           CIRSx LLC All Rights Reserved | 2021 - 2022
+        CIRSx LLC All Rights Reserved | 2021 - 2022
       </div>
     </footer>
- </body>
-
+  </body>
 </html>
