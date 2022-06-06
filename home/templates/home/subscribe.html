@@ -1,134 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title> Subscribe </title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
-      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
-      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
-      crossorigin="anonymous"
-    ></script>
+{% extends "home/base.html" %}{% load static %}{% block content %}
+<!-- 4.1.1.3 Subscription Page -->
 
-    <div class="container-fluid sticky-top bg-white">
-      <header
-        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
-      >
-        <a
-          href="home.html"
-          class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none"
-        >
-          <img
-            class="d-block mx-auto mb-4"
-            src="../../Static/home/Transparent-gold.jpg"
-            alt=""
-            width="150"
-            height="100"
-          />
-        </a>
+<!-- 4.1.1.3.1 Subscription Pricing Element -->
 
-        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-          <li>
-            <a href="home.html" class="nav-link px-2 link-dark">Home</a>
-          </li>
-           <li>
-            <a href="conference.html" class="nav-link px-2 link-dark"
-              >Conference</a
-            >
-          </li>
-          <li>
-            <a href="sponsor.html" class="nav-link px-2 link-dark"
-              >Sponsor</a
-            >
-          </li>
-          <li>
-            <a href="subscribe.html" class="nav-link px-2 link-secondary"
-              >Subscribe</a
-            >
-          </li>
-          <li>
-            <a href="about_us.html" class="nav-link px-2 link-dark">About Us</a>
-          </li>
-          <li>
-            <a href="contact_us.html" class="nav-link px-2 link-dark">Contact Us</a>
-          </li>
-        </ul>
+<!-- 4.1.1.3.1.1 Pricing Title -->
+<h2>Your ‘Go-To Resource’ for All Aspects of Biotoxin/Mold Illness</h2>
 
-        <div class="col-md-3 text-end">
-          <button type="button" class="btn btn-outline-primary me-2">
-            Login
-          </button>
-          <button type="button" class="btn btn-primary">Sign-up</button>
-        </div>
-      </header>
-    </div>
-<body>
+<!-- 4.1.1.3.1.2 Pricing Text -->
+Welcome! By subscribing, you will gain access to a comprehensive, up-to-date,
+and relevant search engine of medical and environmental research papers,
+bibliographies, past conference content, and video tutorials relating to all
+aspects of biotoxin/mold illness.
 
-    <!-- 4.1.1.3 Subscription Page -->
+<!-- 4.1.1.3.1.3 Price Card -->
+<!-- The Price Card will have a Title with the tier, Price of the tier, Tier Description, Items that come with subscription level -->
 
-    <!-- 4.1.1.3.1 Subscription Pricing Element -->
+<!-- 4.1.1.3.1.4 Compare Plan List -->
+TBD
 
-    <!-- 4.1.1.3.1.1 Pricing Title -->
-        <h2> Your ‘Go-To Resource’ for All Aspects of Biotoxin/Mold Illness </h2>
+<!-- 4.1.1.3.2 Free Content -->
 
-    <!-- 4.1.1.3.1.2 Pricing Text -->
-        Welcome!  By subscribing, you will gain access to a comprehensive, up-to-date, and relevant search engine
-        of medical and environmental research papers, bibliographies, past conference content, and video tutorials
-        relating to all aspects of biotoxin/mold illness.
+<!-- 4.1.1.3.2.1 Title -->
+<h2>What You can Expect from CIRSx Content</h2>
 
-    <!-- 4.1.1.3.1.3 Price Card -->
-    <!-- The Price Card will have a Title with the tier, Price of the tier, Tier Description, Items that come with subscription level -->
+<!-- 4.1.1.3.2.2 Text -->
+<p>
+  These free beginner’s video guides will provide you with expert tips for
+  medical & environmental professionals and patients.
+</p>
+<!-- 4.1.1.3.2.3 Buttons -->
 
-    <!-- 4.1.1.3.1.4 Compare Plan List -->
-        TBD
+<!-- 4.1.1.3.3 Training Partners -->
 
-    <!-- 4.1.1.3.2 Free Content -->
+<!-- 4.1.1.3.3.1 Title -->
+<h2>Services and Training Courses from our Partners</h2>
 
-    <!-- 4.1.1.3.2.1 Title -->
-        <h2> What You can Expect from CIRSx Content </h2>
-
-    <!-- 4.1.1.3.2.2 Text -->
-        These free beginner’s video guides will provide you with expert tips for medical & environmental professionals
-        and patients.
-
-    <!-- 4.1.1.3.2.3 Buttons -->
-
-
-    <!-- 4.1.1.3.3 Training Partners -->
-
-    <!-- 4.1.1.3.3.1 Title -->
-        <h2> Services and Training Courses from our Partners </h2>
-
-    <!-- 4.1.1.3.3.2 Text w/links -->
-        SurvivingMold “Proficiency Partner Online”  Dr. Ritchie Shoemaker
-
-        SurvivingMold Online VCS Screening Test
-
-        SurvivingMold Online NeuroQuant Analysis
-
-        “Medical-Grade Remediation” Training and Certification Greg Weatherman, Certified Microbial Consultant
-        Coming 1st quarter 2022
-
-
-
-  <footer>
-      <div class="container pt-3 text-center">
-           CIRSx LLC All Rights Reserved | 2021 - 2022
-      </div>
-    </footer>
- </body>
-
-</html>
+<!-- 4.1.1.3.3.2 Text w/links -->
+<p>
+  SurvivingMold “Proficiency Partner Online” Dr. Ritchie Shoemaker SurvivingMold
+  Online VCS Screening Test SurvivingMold Online NeuroQuant Analysis
+  “Medical-Grade Remediation” Training and Certification Greg Weatherman,
+  Certified Microbial Consultant Coming 1st quarter 2022
+</p>
+{% endblock content %}
