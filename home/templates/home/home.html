@@ -12,7 +12,7 @@
       <!-- 4.1.1.1.1.3 Primary Button -->
       <!-- 4.1.1.1.1.3.2 Text -->
       <!-- 4.1.1.1.1.3.1 Link -->
-      <a class="btn btn-primary" href="about_us.html"> Learn More »</a>
+      <a class="btn btn-primary" href="{% url "about_us" %}"> Learn More »</a>
     </div>
   </div>
 </div>
@@ -42,13 +42,13 @@
 <div class="container pt-5 pb-5">
   <div class="row">
     <div class="col-4 text-center">
-      <div class="h-100 p-5 rounded-3 bg-light">
+      <div class="h-100 p-4 rounded-3 bg-light">
         <!-- 4.1.1.1.2.4.1.2 Title-->
         <!--Question-Mark-Circle-->
 
         <img
-          class="d-block mx-auto mb-4"
-          src="../../../Static/CIRSX CONF_icons (500 × 500 px) (1500 × 500 px) (4).png"
+          class="d-block mb-4"
+          src="{% static "home/questionmark-circle.png" %}"
           alt=""
           width="300"
           height="100"
@@ -66,7 +66,7 @@
 
         <!-- 4.1.1.1.2.4.1.4 Button -->
         <!-- 4.1.1.1.2.4.1.4.1 Link -->
-        <a class="btn btn-primary" type="button" href="subscibe.html">
+        <a class="btn btn-primary" type="button" href="{% url "subscribe" %}">
           Subscribe
         </a>
       </div>
@@ -74,12 +74,12 @@
 
     <!-- 4.1.1.1.2.4.2 Get Educated -->
     <div class="col-4 text-center">
-      <div class="h-100 p-5 rounded-3 bg-light">
+      <div class="h-100 p-4 rounded-3 bg-light">
         <!-- 4.1.1.1.2.4.2.1 Icon -->
         <!--Lightblub-->
         <img
-          class="d-block mx-auto mb-4"
-          src="../../../Static/CIRSX CONF_icons (500 × 500 px) (1500 × 500 px) (3).png"
+          class="d-block mb-4"
+          src="{% static "home/lightbulb.png" %}"
           alt=""
           width="300"
           height="100"
@@ -99,7 +99,7 @@
         <!-- 4.1.1.1.2.4.2.4 Button -->
         <!-- 4.1.1.1.2.4.2.4.1 Link -->
         <!-- 4.1.1.1.2.4.2.4.2 Text -->
-        <a class="btn btn-primary" type="button" href="medical_glossary.html">
+        <a class="btn btn-primary" type="button" href="{% url "medical_glossary" %}">
           Learn
         </a>
       </div>
@@ -108,11 +108,11 @@
     <!-- 4.1.1.1.2.4.3 Get Involved -->
 
     <div class="col-4 text-center">
-      <div class="h-100 p-5 rounded-3 bg-light">
+      <div class="h-100 p-4 rounded-3 bg-light">
         <!-- 4.1.1.1.2.4.3.1 Icon -->
         <img
           class="d-block mx-auto mb-4"
-          src="../../../Static/CIRSX CONF_icons (500 × 500 px) (1500 × 500 px) (5).png"
+          src="{% static "home/people_circle.png" %}"
           alt=""
           width="300"
           height="100"
@@ -133,7 +133,7 @@
         <!-- 4.1.1.1.2.4.3.4 Button -->
         <!-- 4.1.1.1.2.4.3.4.1 Link -->
         <!-- 4.1.1.1.2.4.3.4.2 Text -->
-        <a class="btn btn-primary" type="button" href="conference.html">
+        <a class="btn btn-primary" type="button" href="{% url "subscribe" %}">
           Register
         </a>
       </div>
@@ -343,7 +343,7 @@
           <div
             class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3"
           >
-            <a class="btn btn-primary" href="subscribe.html"> Subscribe »</a>
+            <a class="btn btn-primary" href="{% url "subscribe" %}"> Subscribe »</a>
           </div>
         </div>
 
