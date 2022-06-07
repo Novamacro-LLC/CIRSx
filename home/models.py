@@ -4,6 +4,7 @@ from django.conf import settings
 from django.contrib.auth.models import User
 from django_currentuser.db.models import CurrentUserField
 
+
 class news(models.Model):
     title = models.CharField(max_length=150)
     body = models.TextField()
