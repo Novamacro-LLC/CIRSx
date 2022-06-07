@@ -1,73 +1,224 @@
 {% extends "home/base.html" %}{% load static %}{% block content %}
-<!-- 4.1.1.2 About Us Page -->
+        <!-- 4.1.1.2 About Us Page -->
+    <div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold">
+    About Us
+    </h1>
+    </div>
+        <!-- 4.1.1.2.1 Video Section -->
+        <div class="container py-5 px-5 rounded-3 border shadow-lg">
 
-<!-- 4.1.1.2.1 Video Section -->
+          <iframe
+            width="560"
+            height="315"
+            src="https://vimeo.com/685586533/7df223a631?embedded=true&source=video_title&owner=118339223"
+            title=""
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        </div>
 
-<!-- 4.1.1.2.2 Purpose Jumbotron -->
 
-<!-- 4.1.1.2.2.1 Title -->
-<h2>Our Purpose</h2>
+        <!-- 4.1.1.2.2 Purpose Jumbotron -->
+    <div class="container py-5">
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center text-center">
+    <div class="h-100 p-5 text-white bg-dark rounded-3">
+        <!-- 4.1.1.2.2.1 Title -->
+      <h2>Our Purpose</h2>
+      <!-- 4.1.1.1.2.2 Jumbotron Text -->
+      <!-- 4.1.1.2.2.2 Text -->
+       <div style="text-align: left">
+        <ul>
+          <li>
+            To create and refine standards, while staying on the cutting edge and using
+            an evidence-based approach.
+          </li>
 
-<!-- 4.1.1.2.2.2 Text -->
-<ul>
-  <li>
-    To create and refine standards, while staying on the cutting edge and using
-    an evidence-based approach.
-  </li>
+          <li>
+            To transform multiple industries and their approaches toward Chronic
+            Inflammatory Response Syndrome (CIRS) and other environmentally related
+            health challenges.
+          </li>
 
-  <li>
-    To transform multiple industries and their approaches toward Chronic
-    Inflammatory Response Syndrome (CIRS) and other environmentally related
-    health challenges.
-  </li>
+          <li>
+            Work with well-known methods to test new technology for better outcomes.
+          </li>
+        </ul>
+       </div>
+    </div>
+    </div>
+    </div>
 
-  <li>
-    Work with well-known methods to test new technology for better outcomes.
-  </li>
-</ul>
 
-<!-- 4.1.1.2.3 Vision Jumbotron -->
+        <!-- 4.1.1.2.3 Vision Jumbotron -->
+        <div class="container py-5">
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center text-center">
+    <div class="h-100 p-5 text-white bg-dark rounded-3">
+        <!-- 4.1.1.2.3.1 Title -->
+      <h2>Our Vision</h2>
+        <!-- 4.1.1.2.3.2 Text -->
+       <div style="text-align: left">
+        <ul>
+          <li>
+            To identify the environmental problems, identify knowledge gaps, contribute
+            to and perform research, develop solutions and teach both the problems and
+            solutions to the environmental and medical worlds.
+          </li>
 
-<!-- 4.1.1.2.3.1 Title -->
-<h2>Our Vision</h2>
+          <li>
+            To further educate other realms such as legal, layperson, medical and
+            residential/commercial insurance worlds.
+          </li>
 
-<!-- 4.1.1.2.3.2 Text -->
-<ul>
-  <li>
-    To identify the environmental problems, identify knowledge gaps, contribute
-    to and perform research, develop solutions and teach both the problems and
-    solutions to the environmental and medical worlds.
-  </li>
+          <li>
+            To create new standards and refine older standards by reviewing literature,
+            professional experiences and collected data allowing the evidence to guide
+            best practices.
+          </li>
 
-  <li>
-    To further educate other realms such as legal, layperson, medical and
-    residential/commercial insurance worlds.
-  </li>
+          <li>
+            To create a safe place for varying disciplines, such as environmental
+            professionals, healthcare providers and others, to interface and interact to
+            develop multi-industry solutions for environmental problems.
+          </li>
 
-  <li>
-    To create new standards and refine older standards by reviewing literature,
-    professional experiences and collected data allowing the evidence to guide
-    best practices.
-  </li>
+          <li>
+            To develop a repository of trusted educational and research materials and
+            make these resources available to the different worlds.
+          </li>
+        </ul>
+       </div>
+    </div>
+    </div>
+    </div>
 
-  <li>
-    To create a safe place for varying disciplines, such as environmental
-    professionals, healthcare providers and others, to interface and interact to
-    develop multi-industry solutions for environmental problems.
-  </li>
 
-  <li>
-    To develop a repository of trusted educational and research materials and
-    make these resources available to the different worlds.
-  </li>
-</ul>
-<!-- 4.1.1.2.4 Meet the Team Album -->
 
-<!-- 4.1.1.2.4.1 Title -->
-<h2>Meet The Team</h2>
 
-<!-- 4.1.1.2.4.2 Cards -->
 
-<!-- 4.1.1.2.4.3 Team Management -->
+
+        <!-- 4.1.1.2.4 Meet the Team Album -->
+        <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+          <!-- 4.1.1.2.4.1 Title -->
+        <h1 class="display-5 fw-bold text-center">Meet The Team</h1>
+        <br>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col text-center">
+          <img src="{% static 'home/scott About.png' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Scott McMahon, MD</h5>
+        <p>  Founder <br>
+            Medical Expert </p>
+      </div>
+  </div>
+  <div class="col text-center">
+          <img src="{% static 'home/Greg.png' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Greg Weatherman, CMC</h5>
+        <p>  Founder <br>
+             Environmental Expert </p>
+      </div>
+  </div>
+    <div class="col text-center">
+          <img src="{% static 'home/marcia.png' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Marcia Cash</h5>
+        <p>  Founder <br>
+             Project Manager </p>
+      </div>
+  </div>
+    <div class="col text-center">
+          <img src="{% static 'home/Eric2.png' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Eric Dorninger, ND</h5>
+        <p>  Sponsorship and Attendee Liason </p>
+      </div>
+  </div>
+    <div class="col text-center">
+          <img src="{% static 'home/Chloe  2.png' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Chloe Celusnek, PA-C</h5>
+        <p>  Social Media Specialist</p>
+      </div>
+  </div>
+  </div>
+        <!-- 4.1.1.2.4.3 Team Management -->
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+          <!-- 4.1.1.2.4.1 Title -->
+        <h1 class="display-5 fw-bold text-center">Strategic Partners</h1>
+        <br>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col text-center">
+          <img src="{% static 'home/Karen.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Karen Johnson, MD</h5>
+
+      </div>
+  </div>
+  <div class="col text-center">
+          <img src="{% static 'home/Meinhardt Headshot copy.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Jacki Meinhardt, DNP</h5>
+
+      </div>
+  </div>
+    <div class="col text-center">
+          <img src="{% static 'home/Carder Louise Carder.jpeg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Louise Carder, BSc, Nutr. Med</h5>
+
+      </div>
+  </div>
+  </div>
+
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+          <!-- 4.1.1.2.4.1 Title -->
+        <h1 class="display-5 fw-bold text-center">Support Partners</h1>
+        <br>
+
+        <div class="row row-cols-1 row-cols-md-3 g-4 align-items-center">
+  <div class="col text-center">
+          <img src="{% static 'home/purple hippo.png' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+
+      </div>
+  </div>
+  <div class="col text-center">
+          <img src="{% static 'home/novamacro.png' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+
+      </div>
+  </div>
+    <div class="col text-center">
+          <img src="{% static 'home/CDLOGO.png' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+
+      </div>
+  </div>
+  </div>
+
+
+
+    <div class="px-4 py-5 my-5 text-center">
+  <h1 class="display-5 fw-bold">
+    Want to Know More?
+  </h1>
+  <div class="col-lg-6 mx-auto">
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <!-- 4.1.1.1.1.3 Primary Button -->
+      <!-- 4.1.1.1.1.3.2 Text -->
+      <!-- 4.1.1.1.1.3.1 Link -->
+      <a class="btn btn-primary" href="{% url "contact_us" %}"> Contact Us »</a>
+    </div>
+  </div>
+</div>
+
 
 {% endblock content %}
