@@ -1,8 +1,16 @@
+import datetime
+
 from django.shortcuts import render
+from .models import news
+from datetime import date
 
 
 def home(request):
-    return render(request, 'home/home.html', {})
+    end_date = datetime.datetime.now()
+    st_date = datetime.datetime.now() - datetime.timedelta(days=90)
+    front = news.objects.filter(date_added__range=[st_date, end_date])
+    context = {'front': front}
+    return render(request, 'home/home.html', context)
 
 
 def subscribe(request):
@@ -31,4 +39,5 @@ def speakers(request):
 
 def contact_us(request):
     return render(request, 'home/contact_us.html', {})
+
 
