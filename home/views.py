@@ -2,7 +2,6 @@ import datetime
 
 from django.shortcuts import render
 from .models import news
-from datetime import date
 
 
 def home(request):
