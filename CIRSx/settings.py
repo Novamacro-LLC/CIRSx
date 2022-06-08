@@ -127,3 +127,8 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#Setting up emails for the forms
+
+DEFAULT_FROM_EMAIL = 'brad.davison@novamacro.net'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
