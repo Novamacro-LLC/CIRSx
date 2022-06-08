@@ -40,3 +40,5 @@ def contact_us(request):
     return render(request, 'home/contact_us.html', {})
 
 
+def environmental_glossary(request):
+    return render(request, 'home/environmental_glossary.html', {})
