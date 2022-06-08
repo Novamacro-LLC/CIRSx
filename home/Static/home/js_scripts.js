@@ -35,5 +35,10 @@ function pageInit() {
       let subscribe = document.getElementById("subscribeLink");
       subscribe.classList.replace("link-dark", "link-secondary");
       break;
+
+    case "/shoey/":
+      let shoey = document.getElementById("shoeyLink");
+      shoey.classList.replace("link-dark", "link-secondary");
+      break;
   }
 }
