@@ -57,3 +57,7 @@ def contact_us(request):
 
 def environmental_glossary(request):
     return render(request, 'home/environmental_glossary.html', {})
+
+
+def shoey_awards(request):
+    return render(request, 'home/shoey_awards.html', {})
