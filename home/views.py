@@ -51,7 +51,7 @@ def contact_us(request):
                 send_mail(subject, message, email, ['brad.davison@novamacro.net'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found')
-            return redirect('home')
+            return HttpResponse('Message has been sent')
     return render(request, 'home/contact_us.html', {'form': form})
 
 

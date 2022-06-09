@@ -12,10 +12,13 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+      <link rel="stylesheet" href="{% static 'home/style.css' %}" type="text/css">
+      <script src="{% static 'home/js_scripts.js' %}"></script>
+
   </head>
   <body onload="pageInit()">
     <!--Header-->
-    <div class="container-fluid sticky-top bg-white">
+    <div class="container-fluid sticky-top bg-grey">
       <header
         class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
       >
@@ -25,7 +28,7 @@
         >
           <img
             class="d-block mx-auto mb-4"
-            src="{% static 'home/Transparent-gold.jpg' %}"
+            src="{% static 'home/Transparent-gold.png' %}"
             alt=""
             width="150"
             height="100"
@@ -93,10 +96,10 @@
         </ul>
 
         <div class="col-md-3 text-end">
-          <button type="button" class="btn btn-outline-primary me-2">
+          <button type="button" class="btn btn-outline-dark me-2">
             Login
           </button>
-          <button type="button" class="btn btn-primary">Sign-up</button>
+          <button type="button" class="btn btn-dark">Sign-up</button>
         </div>
       </header>
     </div>
@@ -108,7 +111,7 @@
         CIRSx LLC All Rights Reserved | 2021 - 2022
       </div>
     </footer>
-    <script async src="{% static 'home/js_scripts.js' %}"></script>
+
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
       integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"

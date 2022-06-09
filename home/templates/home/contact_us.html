@@ -1,51 +1,56 @@
 {%extends "home/base.html" %}{% load static %}{% block content %}
 
-    <div class="container col-xl-10 col-xxl-8 px-4 py-5">
-    <div class="row align-items-center g-lg-5 py-5">
-      <div class="col-lg-7 text-lg-start">
-        <img src="{%static "home/cirsx_contact.jpg" %}"alt="" width="700" height="550" />
-        <p class="col-lg-10 fs-4 text-center fw-bold">Have a question about CIRSx programs?</p>
-      </div>
-      <div class="col-md-10 mx-auto col-lg-5">
-        <form class="p-4 p-md-5 border rounded-3 bg-light">
-          <div class="form-floating mb-3">
-            <div class="row g-9 align-items-center">
-        <div class="col-auto">
-      <label for="exampleFormControlInput1" class="form-label">Name*</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-        <div class="col-auto">
-            <span id="firstname" class="form-text">
-              First Name
-            </span>
-        <label for="exampleFormControlInput1" class="form-label"></label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-        <div class="col-auto">
-            <span id="lastname" class="form-text">
-              Last Name
-            </span>
-        </div>
-        </div>
-        </div>
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+  <div class="row align-items-center g-lg-5 py-5">
+    <div class="col-lg-7 text-lg-start">
+      <img src="{%static "home/cirsx_contact.jpg" %}" alt="" width="700"
+      height="550" />
+      <p class="col-lg-10 fs-4 text-center fw-bold">
+        Have a question about CIRSx programs?
+      </p>
     </div>
-     <br>
-    <div class="mb-3 w-100">
-      <label for="exampleFormControlInput1" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-    </div>
-    <div class="mb-3 w-100">
-      <label for="exampleFormControlInput1" class="form-label">Subject*</label>
-      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
-    </div>
-    <div class="mb-3 w-100">
-      <label for="exampleFormControlTextarea1" class="form-label">Message*</label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-    </div>
+    <div class="col-md-10 mx-auto col-lg-5">
+      <form class="p-4 p-md-5 border rounded-3 bg-light" method="post">
+          {% csrf_token %}
+        <div class="form-floating mb-3">
+          <div class="row g-9 align-items-center">
+            <div class="col-auto">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Name*</label
+              >
+              {{ form.first_name }}
+              <label for="firstName" class="form-label form-text"
+                >First Name</label
+              >
+            </div>
+            <div class="col-auto">
+              {{ form.last_name }}
+              <label for="lastName" class="form-label form-text"
+                >Last Name</label
+              >
+            </div>
+            <div class="mb-3 w-100">
+              <label for="email" class="form-label">Email address</label>
+              {{ form.email }}
+            </div>
+            <div class="mb-3 w-100">
+              <label for="subject" class="form-label">Subject*</label>
+              {{ form.subject }}
+            </div>
+            <div class="mb-3 w-100">
+              <label for="message" class="form-label"
+                >Message*</label
+              >
+              {{ form.message }}
+            </div>
           </div>
-          <button class="w-30 btn btn-lg btn-primary" type="submit">Submit</button>
-        </form>
-      </div>
+          <button class="w-30 btn btn-primary" type="submit">
+            Submit
+          </button>
+        </div>
+      </form>
     </div>
   </div>
- </div>
+</div>
 
 {% endblock content %}
