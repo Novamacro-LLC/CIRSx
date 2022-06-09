@@ -2,18 +2,18 @@
 <!-- 4.1.1.4 Conference Page -->
 
 <!-- 4.1.1.4.1 Conference Jumbotron -->
-<div class="p-5 mb-4 bg-light rounded-3">
+<div class="p-5 mb-4 bg-secondary rounded-3">
   <div class="container-fluid py-5">
     <!-- 4.1.1.4.1.1 Title -->
-    <h1 class="display-5 fw-bold text-center">2022 CIRSx Annual Conference</h1>
+    <h1 class="display-5 fw-bold text-white text-center">2022 CIRSx Annual Conference</h1>
     <br />
     <!-- 4.1.1.4.1.2 Subheadline -->
-    <h2 class="text-center color-blue">
+    <h2 class="text-center fs-3 text-warning">
       Hosted by CIRSx in Partnership with SurvivningMold
     </h2>
     <br />
     <!-- 4.1.1.4.1.3 Text -->
-    <p class="text-center">
+    <p class="text-center fs-4 text-white">
       April 28, 2022 - May 1, 2022 | Ft. Lauderdale, Florida
     </p>
   </div>
@@ -21,40 +21,42 @@
 </div>
 
 <!-- 4.1.1.4.2 Conference Special Hero -->
-<div class="px-4 pt-5 my-5 text-center border-bottom">
+<div class="px-4 pt-5 my-5 text-center bg-primary border-bottom">
   <!-- Header -->
-  <h1 class="display-4 fw-bold">
+  <h1 class="display-3 text-warning">
     Annual Conference + CIRSx SubscriptionCentered
   </h1>
   <div class="col-lg-6 mx-auto">
     <!-- 4.1.1.4.2.2 Details -->
-    <p class="lead mb-4 fw-bold">
+    <p class="lead mb-4 fs-3 fw-bold text-white">
       YOU CAN STILL WATCH THE CONFERENCE ONLINE! <br />
       RECORDINGS OF THE CONFERENCE WILL BE AVAILABLE SHORTLY.
     </p>
-    <br />
+    <br>
 
-    <p class="lead mb-4 fw-bold">
+    <p class="lead mb-4 fs-3 fw-bold text-white">
       Become a member of the Professional Tier and watch the entire conference
       in the CIRSx Library
     </p>
-    <br />
+    <br>
 
-    <p class="lead mb-4 fw-bold">
-      19 AMA PRA Category 1 Credits Awarded for Full Conference <br />
+    <p class="lead mb-4 fs-3 fw-bold text-white">
+      <a class="text-warning" href="cme_accreditation.html"> AMA PRA Category 1 Credits Awarded for Full Conference</a> <br />
       Available for online attendance also.
     </p>
     <br />
 
-    <p>
+    <p class="text-white fs-3">
       Your subscription includes attendance to four special events throughout
       the year, and access to a vast library of medical and environmental
-      research papers, data and bibliographies specific to CIRS. <br />
+      research papers, data and bibliographies specific to CIRS.
+    <br>
+    <br>
       Create your Professional Tier Account and watch the Conference.
     </p>
 
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
-      <a class="btn btn-primary" href="subscribe.html"> Register »</a>
+      <a class="btn btn-warning btn-lg btn-outline-secondary text-black py-4" href="{% url "subscribe" %}".> Register »</a>
     </div>
   </div>
 </div>
@@ -121,38 +123,38 @@
 </div>
 
 <!-- 4.1.1.4.4 Registration Hero -->
-<div class="row featurette">
+<div class="row featurette bg-light py-5">
   <div class="col-md-7 order-md-2">
     <!-- 4.1.1.4.4.2 Header -->
     <h1 class="featurette-heading fw-normal lh-1">
       Why the CIRSx Annual Conference?
-      <span class="text-muted">See for yourself.</span>
     </h1>
+
     <!-- 4.1.1.4.4.3 Text -->
-    <p class="lead">
+    <p class="lead fs-3 pt-4">
       Connect with 100+ physicians, environmental experts, and patients for two
       immersive days focused on addressing the challenges and best practices of
       identifying and treating CIRS and other mold-related illnesses.
-      <br />
-      <br />
+      <br>
+      <br>
       Our conference is designed to help you:
     </p>
 
     <ul>
-      <li class="p-1">
+      <li class="p-1 fs-3">
         Build connections with leaders in the medical and environmental
         industries.
       </li>
-      <li class="p-1">
+      <li class="p-1 fs-3">
         Stay current with emerging trends and best practices in identification
         and treatment of mold-related illnesses.
       </li>
-      <li class="p-1">
+      <li class="p-1 fs-3">
         Join the mission to serve people impacted by mold related illnesses,
         specifically, CIRS.
       </li>
       <li class="p-1">Learn from downloadable and actionable take-aways.</li>
-      <li class="p-1 fw-bold">
+      <li class="p-1 fs-3 fw-bold">
         19 AMA PRA Category 1 Credits Awarded for Full Conference
       </li>
     </ul>
@@ -160,63 +162,63 @@
 
     <!-- 4.1.1.4.4.4.1 Link -->
     <!-- 4.1.1.4.4.4.2 Text -->
-    <a class="btn btn-primary" href="subscribe.html"> Register »</a>
+    <a class="btn btn-dark btn-lg btn-outline-secondary text-white py-4" href="{% url "subscribe" %}"> Register »</a>
   </div>
   <!-- 4.1.1.4.4.1 Meeting Image -->
 
   <div class="col-md-5 order-md-1">
-    <img class="d-block mx-auto mb-4" src="{% static "home/conf_network.png" %}"
+    <img class="mx-auto mb-4" src="{% static "home/conf_network.png" %}"
     alt="" width="500" height="500" />
   </div>
 </div>
 
 <!-- 4.1.1.4.5 Venue Hero -->
 <div class="container col-xxl-8 px-4 py-5">
-  <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+        <!-- 4.1.1.4.5.1 Header -->
+    <h1 class="display-5 fw-bold lh-1 mb-3 text-center">Venue</h1>
+  <div class="row flex-lg-row-reverse g-5 py-5">
     <div class="col-10 col-sm-8 col-lg-6">
-      <!-- 4.1.1.4.5.3 Image -->
-      <img src="{% static "home/FLL_Beach.png" %}" class="d-block mx-lg-auto
+        <!-- 4.1.1.4.5.3 Image -->
+      <img src="{% static "home/FLL_Beach.png" %}" class="mx-lg-auto
       img-fluid" alt="" width="700" height="500" loading="lazy" />
     </div>
     <div class="col-lg-6">
-      <!-- 4.1.1.4.5.1 Header -->
-      <h1 class="display-5 fw-bold lh-1 mb-3">Venue</h1>
+
       <!-- 4.1.1.4.5.2 Text -->
-      <p class="lead">
-        The sun. The surf. The soft, sandy beach—all just steps away from the
+      <div class="lead fs-3">
+        <p class=" pt-3 pb-3"> The sun. The surf. The soft, sandy beach—all just steps away from the
         laid-back sophistication of Sonesta Fort Lauderdale hotel. With sweeping
         beachside views, unforgettable service and winner of the TripAdvisor
         Certificate of Excellence—it’s clear why Sonesta is a preferred
-        destination for meetings and events in Fort Lauderdale Beach.
-        <br />
-        Location: Sonesta Fort Lauderdale Beach Hotel, 999 N Fort Lauderdale
-        Blvd, Fort Lauderdale, FL
-        <br />
-        Located just 5 miles from the Fort Lauderdale-Hollywood International
-        Airport.
-        <br />
-        Hotel Accomodations: You will receive an email with a link to make your
+          destination for meetings and events in Fort Lauderdale Beach.</p>
+        <p class="pt-3 pb-3"><b >Location:</b> Sonesta Fort Lauderdale Beach Hotel, 999 N Fort Lauderdale
+        Blvd, Fort Lauderdale, FL</p>
+        <p class="pt-3 pb-3"> just 5 miles from the Fort Lauderdale-Hollywood International
+        Airport.</p>
+        <p class="pt-3 pb-3"><b>Hotel Accomodations:</b> You will receive an email with a link to make your
         hotel reservation at a discounted room rate when you register and pay
-        for the conference.
+            for the conference.</p>
       </p>
+    </div>
     </div>
   </div>
 </div>
 
 <!-- 4.1.1.4.6 Speakers Jumbotron -->
-<div class="p-5 mb-4 bg-light rounded-3">
+<div class="p-5 mb-4 bg-primary rounded-3">
   <div class="container-fluid py-5 text-center">
     <!-- 4.1.1.4.6.1 Header -->
-    <h1 class="display-5 fw-bold">2022 Annual Conference Speakers</h1>
+    <h1 class="display-5 fw-bold text-white">2022 Annual Conference Speakers</h1>
     <!-- 4.1.1.4.6.2 Button -->
     <!-- 4.1.1.4.6.2.1 Link -->
     <!-- 4.1.1.4.6.2.2 text -->
-    <a class="btn btn-primary" href="speakers.html"> Speakers »</a>
+      <br>
+    <a class="btn btn-warning btn-lg btn-outline-secondary text-black py-4" href="{% url "speakers" %}"> Speakers »</a>
   </div>
 </div>
 
 <!-- 4.1.1.4.7 Sponsor Package Jumbotron -->
-<div class="p-5 mb-4 bg-light rounded-3">
+<div class="pt-1 mb-3 bg-white rounded-3">
   <div class="container-fluid py-5 text-center">
     <!-- 4.1.1.4.7.1 Header -->
     <h1 class="display-5 fw-bold">Our Partners</h1>
@@ -232,7 +234,7 @@
     <!-- 4.1.1.4.7.3 Button -->
     <!-- 4.1.1.4.7.3.1 Link -->
     <!-- 4.1.1.4.7.3.2 Text -->
-    <a class="btn btn-primary" href="sponsor.html"> Sponsorship Packages »</a>
+    <a class="btn btn-dark btn-lg btn-outline-secondary text-white py-4" href="{% url "sponsor" %}"> Sponsorship Packages »</a>
   </div>
 </div>
 
