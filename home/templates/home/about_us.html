@@ -1,12 +1,12 @@
 {% extends "home/base.html" %}{% load static %}{% block content %}
         <!-- 4.1.1.2 About Us Page -->
-    <div class="px-4 py-5 my-5 text-center">
-    <h1 class="display-5 fw-bold">
+    <div class="px-4 py-5 my-5 text-center bg-secondary">
+    <h1 class="display-5 fw-bold text-white">
     About Us
     </h1>
     </div>
         <!-- 4.1.1.2.1 Video Section -->
-        <div class="container py-5 px-5 rounded-3 border shadow-lg text-center">
+        <div class="container py-5 px-5 rounded-3 border bg-light shadow-lg text-center">
 
           <iframe
             width="560"
@@ -24,14 +24,14 @@
         <!-- 4.1.1.2.2 Purpose Jumbotron -->
     <div class="container py-5">
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center text-center">
-    <div class="h-100 p-5 text-white bg-dark rounded-3">
+    <div class="p-2 text-black bg-white rounded-3">
 
         <!-- 4.1.1.2.2.1 Title -->
       <h2>Our Purpose</h2>
       <!-- 4.1.1.1.2.2 Jumbotron Text -->
       <!-- 4.1.1.2.2.2 Text -->
        <div style="text-align: left">
-        <ul>
+        <ul class="fs-4 pt-2">
           <li>
             To create and refine standards, while staying on the cutting edge and using
             an evidence-based approach.
@@ -54,14 +54,14 @@
 
 
         <!-- 4.1.1.2.3 Vision Jumbotron -->
-        <div class="container py-5">
+        <div class="container pb-5">
     <div class="d-grid gap-2 d-sm-flex justify-content-sm-center text-center">
-    <div class="h-100 p-5 text-white bg-dark rounded-3">
+    <div class="p-2 text-black bg-white rounded-3">
         <!-- 4.1.1.2.3.1 Title -->
       <h2>Our Vision</h2>
         <!-- 4.1.1.2.3.2 Text -->
        <div style="text-align: left">
-        <ul>
+        <ul class="fs-4 pt-2">
           <li>
             To identify the environmental problems, identify knowledge gaps, contribute
             to and perform research, develop solutions and teach both the problems and
@@ -101,49 +101,49 @@
 
 
         <!-- 4.1.1.2.4 Meet the Team Album -->
-        <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="p-5 mb-4 bg-primary rounded-3">
       <div class="container-fluid py-5">
           <!-- 4.1.1.2.4.1 Title -->
-        <h1 class="display-5 fw-bold text-center">Meet The Team</h1>
+        <h1 class="display-5 fw-bold text-center text-warning fs-1">Meet The Team</h1>
         <br>
 
         <div class="row row-cols-1 row-cols-md-3 g-4">
   <div class="col text-center">
           <img src="{% static 'home/scott About.png' %}" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title text-warning">Scott McMahon, MD</h5>
-        <p>  Founder <br>
+        <h5 class="card-title text-warning fs-3">Scott McMahon, MD</h5>
+        <p class="fs-3 text-white">  Founder <br>
             Medical Expert </p>
       </div>
   </div>
   <div class="col text-center">
           <img src="{% static 'home/Greg.png' %}" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Greg Weatherman, CMC</h5>
-        <p>  Founder <br>
+        <h5 class="card-title text-warning fs-3">Greg Weatherman, CMC</h5>
+        <p class="fs-3 text-white">  Founder <br>
              Environmental Expert </p>
       </div>
   </div>
     <div class="col text-center">
           <img src="{% static 'home/marcia.png' %}" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Marcia Cash</h5>
-        <p>  Founder <br>
+        <h5 class="card-title text-warning fs-3">Marcia Cash</h5>
+        <p class="fs-4 text-white">  Founder <br>
              Project Manager </p>
       </div>
   </div>
     <div class="col text-center">
           <img src="{% static 'home/Eric2.png' %}" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Eric Dorninger, ND</h5>
-        <p>  Sponsorship and Attendee Liason </p>
+        <h5 class="card-title text-warning fs-3">Eric Dorninger, ND</h5>
+        <p class="fs-4 text-white"> Sponsorship and Attendee Liason </p>
       </div>
   </div>
     <div class="col text-center">
           <img src="{% static 'home/Chloe  2.png' %}" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Chloe Celusnek, PA-C</h5>
-        <p>  Social Media Specialist</p>
+        <h5 class="card-title text-warning fs-3">Chloe Celusnek, PA-C</h5>
+        <p class="fs-4 text-white">  Social Media Specialist</p>
       </div>
   </div>
   </div>
@@ -162,7 +162,7 @@
   <div class="col text-center">
           <img src="{% static 'home/Karen.jpg' %}" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Karen Johnson, MD</h5>
+        <h5 class="card-title fs-3">Karen Johnson, MD</h5>
 
       </div>
   </div>
@@ -171,7 +171,7 @@
           height="1045px"
           >
       <div class="card-body">
-        <h5 class="card-title">Jacki Meinhardt, DNP</h5>
+        <h5 class="card-title fs-3">Jacki Meinhardt, DNP</h5>
 
       </div>
   </div>
@@ -180,17 +180,18 @@
             height="1045px"
           >
       <div class="card-body">
-        <h5 class="card-title">Louise Carder, BSc, Nutr. Med</h5>
+        <h5 class="card-title fs-3">Louise Carder, BSc, Nutr. Med</h5>
 
       </div>
   </div>
   </div>
+  </div>
+  </div>
 
-    <div class="p-5 mb-4 bg-light rounded-3">
-      <div class="container-fluid py-5">
+    <div class="bg-white rounded-3">
+      <div class="container-fluid">
           <!-- 4.1.1.2.4.1 Title -->
-        <h1 class="display-5 fw-bold text-center">Support Partners</h1>
-        <br>
+        <h1 class="display-2 fw-bold text-center">Support Partners</h1>
 
       <div class="row row-cols-1 row-cols-md-3 g-4 align-items-center">
   <div class="col text-center">
@@ -216,12 +217,11 @@
   </div>
   </div>
   </div>
-  </div>
-  </div>
 
 
 
-    <div class="px-4 py-5 my-5 text-center">
+
+    <div class="px-4 py-5 my-5 text-center bg-warning">
   <h1 class="display-5 fw-bold">
     Want to Know More?
   </h1>
@@ -230,7 +230,7 @@
       <!-- 4.1.1.1.1.3 Primary Button -->
       <!-- 4.1.1.1.1.3.2 Text -->
       <!-- 4.1.1.1.1.3.1 Link -->
-      <a class="btn btn-primary" href="{% url "contact_us" %}"> Contact Us »</a>
+      <a class="btn btn-dark btn-lg btn-outline-secondary text-white p-4" href="{% url "contact_us" %}"> Contact Us »</a>
     </div>
   </div>
     </div>

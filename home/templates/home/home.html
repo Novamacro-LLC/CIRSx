@@ -1,31 +1,27 @@
 {% extends "home/base.html" %}{% load static %}{% block content %}
 <!-- 4.1.1.1.1 Welcome Hero -->
 <!-- 4.1.1.1.1.1 Header Text -->
-<div class="px-4 py-5 text-center bg-doc"
-    style="background-image: url('{% static "home/CIRSX homepage_header.jpg" %}')">
+<div class="px-4 py-5 my-5 text-center bg-secondary">
   <!--4.1.1.1.1.2 Background -->
-    <div class="row">
-        <div class="col-6">
-  <h1 class="col-6 display-5 fw-bold">
+  <h1 class="display-5 fw-bold text-white">
     CIRSx: A Comprehensive Solution for CIRS Education, Training and Remediation
   </h1>
-  <div class="justify-content-sm-center mt-5">
+ <div class="col-lg-6 mx-auto">
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
        <!--4.1.1.1.1.3 Primary Button -->
-        <a class="btn btn-primary" href="{% url "about_us" %}">Learn More</a>
-   </div>
-            </div>
+        <a class="btn btn-warning btn-lg btn-outline-secondary text-black p-4" href="{% url "about_us" %}">Learn More</a>
     </div>
+  </div>
 </div>
 
 <!-- 4.1.1.1.2 Join the Mission Feature w/Jumbotron -->
 
 <!-- 4.1.1.1.2.1 Jumbotron Title Text -->
-<div class="container">
-  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center text-center">
-    <div class="h-100 p-5 text-white bg-dark rounded-3">
-      <h2>Join the Mission</h2>
+<div class="p-5 mb-4 bg-primary rounded-3">
+  <div class="container-fluid py-5 text-center">
+      <h2 class="text-warning">Join the Mission</h2>
       <!-- 4.1.1.1.2.2 Jumbotron Text -->
-      <p>
+      <p class="text-white fs-3">
         Providing science-based training, education, and awareness to
         environmental and medical professionals treating Chronic Inflammatory
         Response Syndrome (CIRS) patients.
@@ -46,12 +42,13 @@
         <!-- 4.1.1.1.2.4.1.2 Title-->
         <!--Question-Mark-Circle-->
 
-        <img class="d-block mb-4" src="{% static "home/questionmark-circle.png" %}" alt="" width="300" height="100" />
+        <img class="mb-4" src="{% static "home/questionmark-circle.png" %}" alt=""
+             width="350" height="125" />
 
         <h2>Get Help</h2>
 
         <!-- 4.1.1.1.2.4.1.3 Text -->
-        <p>
+        <p class="fs-4">
           Connect with environmental and medical professionals providing
           treatment and remediation services to those suffering from CIRS and
           other mold-based illnesses, while building the knowledge and skills
@@ -60,7 +57,7 @@
 
         <!-- 4.1.1.1.2.4.1.4 Button -->
         <!-- 4.1.1.1.2.4.1.4.1 Link -->
-        <a class="btn btn-primary" type="button" href="{% url "subscribe" %}">
+        <a class="btn btn-dark btn-lg btn-outline-secondary text-white p-4" type="button" href="{% url "subscribe" %}">
             Subscribe </a>
       </div>
     </div>
@@ -70,24 +67,23 @@
       <div class="h-100 p-4 rounded-3 bg-light">
         <!-- 4.1.1.1.2.4.2.1 Icon -->
         <!--Lightblub-->
-        <img class="d-block mb-4" src="{% static "home/lightbulb.png" %}" alt=""
-        width="300" height="100" />
+        <img class="mb-4" src="{% static "home/lightbulb.png" %}" alt=""
+        width="350" height="125" />
 
         <!-- 4.1.1.1.2.4.2.2 Title-->
         <h2>Get Educated</h2>
 
         <!-- 4.1.1.1.2.4.2.3 Text -->
-        <p>
+        <p class="fs-4">
           Whether you are a member of the medical community or an environmental
           professional looking for general education, certification, or
           continuing education credits, our comprehensive subscription is your
           one stop shop for all things CIRS.
         </p>
-        <br />
         <!-- 4.1.1.1.2.4.2.4 Button -->
         <!-- 4.1.1.1.2.4.2.4.1 Link -->
         <!-- 4.1.1.1.2.4.2.4.2 Text -->
-        <a class="btn btn-primary" type="button" href="{% url "medical_glossary"%}"> Learn </a>
+        <a class="btn btn-dark btn-lg btn-outline-secondary text-white p-4" type="button" href="{% url "medical_glossary"%}"> Learn </a>
       </div>
     </div>
 
@@ -96,14 +92,15 @@
     <div class="col-4 text-center">
       <div class="h-100 p-4 rounded-3 bg-light">
         <!-- 4.1.1.1.2.4.3.1 Icon -->
-        <img class="d-block mx-auto mb-4" src="{% static "home/people_circle.png" %}" alt="" width="300" height="100"
+        <img class="mx-auto mb-4" src="{% static "home/people_circle.png" %}"
+             alt="" width="350" height="125"
           />
 
         <!-- 4.1.1.1.2.4.3.2 Title-->
         <h2>Get Involved</h2>
 
         <!-- 4.1.1.1.2.4.3.3 Text -->
-        <p>
+        <p class="fs-4">
           Join the movement toward reducing the impact of mold and restoring
           health to individuals suffering with environmentally acquired
           illnesses by collaborating at events and conferences designed to share
@@ -114,7 +111,7 @@
         <!-- 4.1.1.1.2.4.3.4 Button -->
         <!-- 4.1.1.1.2.4.3.4.1 Link -->
         <!-- 4.1.1.1.2.4.3.4.2 Text -->
-        <a class="btn btn-primary" type="button" href="{% url "subscribe" %}">
+        <a class="btn btn-dark btn-lg btn-outline-secondary text-white p-4" type="button" href="{% url "subscribe" %}">
             Register</a>
       </div>
     </div>
@@ -173,15 +170,15 @@
           A Trusted Source for CIRS Information
         </h1>
         <!-- 4.1.1.1.7.2 Text -->
-        <p class="lead">
+        <p class="lead fs-4">
           At CIRSx, we believe in delivering a product that is backed by
           peer-reviewed scientific data. Our vast online content repository
           provides physicians, environmental professionals, and patients
           suffering from mold related illnesses with direct access to
           scientifically proven, authentic content like articles,
           bibliographies, podcasts, and training.
-          <br />
-          <br />
+          <br>
+          <br>
           Get direct access to this proprietary content and more as a CIRSx
           Professional Subscriber. You have full access to the CIRSx database
           and four special educational events annually, a $900 value.
@@ -191,15 +188,15 @@
         <!-- 4.1.1.1.7.4.2 Text -->
         <!-- 4.1.1.1.7.4.1 Link -->
         <div
-          class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3"
+          class="d-grid gap-s d-md-flex justify-content-md-center mb-4 mb-lg-3"
         >
-            <a class="btn btn-primary" href="{% url "subscribe" %}"> Subscribe » </a>
+            <a class="btn btn-dark btn-lg btn-outline-secondary text-white p-4" href="{% url "subscribe" %}"> Subscribe » </a>
         </div>
       </div>
 
-      <div class="col-lg-4 offset-lg-1 p-0">
+      <div class="col-lg-4 offset-lg-0 p-0">
         <iframe
-          width="560"
+          width="500"
           height="315"
           src="https://vimeo.com/684756974/a565deca6b?embedded=true&source=video_title&owner=118339223"
           title=""

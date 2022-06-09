@@ -1,11 +1,11 @@
 {%extends "home/base.html" %}{% load static %}{% block content %}
 
-<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+<div class="container col-xl-10 col-xxl-8 col-md-4 px-4 py-5">
   <div class="row align-items-center g-lg-5 py-5">
     <div class="col-lg-7 text-lg-start">
       <img src="{%static "home/cirsx_contact.jpg" %}" alt="" width="700"
       height="550" />
-      <p class="col-lg-10 fs-4 text-center fw-bold">
+      <p class="col-lg-10 fs-3 text-center pt-3">
         Have a question about CIRSx programs?
       </p>
     </div>
@@ -44,7 +44,7 @@
               {{ form.message }}
             </div>
           </div>
-          <button class="w-30 btn btn-primary" type="submit">
+          <button class="btn btn-dark btn-lg btn-outline-secondary text-white p-4" type="submit">
             Submit
           </button>
         </div>

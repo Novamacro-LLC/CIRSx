@@ -1,10 +1,10 @@
 {% extends "home/base.html" %}{% load static %}{% block content %}
 <!-- 4.1.1.3 Subscription Page -->
 
-    <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="p-5 mb-4 bg-secondary rounded-3">
   <div class="container-fluid py-5">
     <!-- 4.1.1.4.1.1 Title -->
-    <h1 class="display-5 fw-bold text-center"> Subscription Portal</h1>
+    <h1 class="display-5 fw-bold text-center text-white"> Subscription Portal</h1>
   </div>
     </div>
 
@@ -17,14 +17,14 @@
     </h1>
     <br>
     <!-- 4.1.1.3.1.2 Pricing Text -->
-    <p class="text-center">
+    <p class="text-center fs-3">
      Welcome! By subscribing, you will gain access to a comprehensive, up-to-date,
 and relevant search engine of medical and environmental research papers,
 bibliographies, past conference content, and video tutorials relating to all
 aspects of biotoxin/mold illness.
     </p>
   </div>
-    </div>
+</div>
 
 
 
@@ -34,15 +34,16 @@ aspects of biotoxin/mold illness.
 <!-- The Price Card will have a Title with the tier, Price of the tier, Tier Description, Items that come with subscription level -->
 
 <!-- 4.1.1.3.1.4 Compare Plan List -->
-<div class="row row-cols-1 row-cols-md-2 mb-3 text-center" style="height: 600px">
+
+<div class="row row-cols-1 row-cols-md-2 mb-3 text-center" style="height: 800px">
       <div class="col">
         <div class="card mb-4 rounded-3 shadow-sm">
           <div class="card-header py-3">
-            <h4 class="my-0 fw-normal">Professional Tier</h4>
+            <h3 class="my-0 fw-normal">Professional Tier</h3>
           </div>
-          <div class="card-body">
+          <div class="card-body fs-3">
             <h1 class="card-title pricing-card-title">$900<small class="text-muted fw-light">/year</small></h1>
-              <p>Appropriate for all medical disciplines and environmental industry business leaders serving medically sensitive clients.</p>
+              <p><i>Appropriate for all medical disciplines and environmental industry business leaders serving medically sensitive clients.</i></p>
               <h3>All Inclusive Professional tier includes:</h3>
             <ul class="list-unstyled mt-3 mb-4">
               <li>*Attendance at the annual conference, either in-person or live streaming;</li>
@@ -52,18 +53,18 @@ aspects of biotoxin/mold illness.
               <li>-In-person or live stream annual conference - No Charge</li>
               <li>*Unlimited medical and environmental continuing education credits.</li>
             </ul>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary fw-bold">Subscribe to Professional Tier</button>
+            <button type="button" class="w-100 btn btn-dark btn-lg btn-outline-secondary text-white py-4">Subscribe to Professional Tier</button>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="card mb-4 rounded-3 shadow-sm">
           <div class="card-header py-3">
-            <h4 class="my-0 fw-normal">Patient Tier</h4>
+            <h3 class="my-0 fw-normal">Patient Tier</h3>
           </div>
-          <div class="card-body">
+          <div class="card-body fs-3">
             <h1 class="card-title pricing-card-title">$10<small class="text-muted fw-light">/month</small></h1>
-              <p>Appropriate for medically sensitive patients suffering from mold related illness, specifically Chronic Inflammatory Response Syndrome (CIRS).</p>
+              <p><i>Appropriate for medically sensitive patients suffering from mold related illness, specifically Chronic Inflammatory Response Syndrome (CIRS).</i></p>
               <h3> Patient tier includes:</h3>
 
 
@@ -75,7 +76,7 @@ aspects of biotoxin/mold illness.
                 <li>-<q>I Dream of GENIE</q> and <q>House Calls</q> web conferences - $75 each event</li>
               <li>-In-person or live stream annual conference - $900</li>
             </ul>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary fw-bold">Subscribe to Patient Tier</button>
+            <button type="button" class="w-100 btn btn-dark btn-lg btn-outline-secondary text-white py-4">Subscribe to Patient Tier</button>
           </div>
         </div>
       </div>
@@ -84,19 +85,19 @@ aspects of biotoxin/mold illness.
 <!-- 4.1.1.3.2 Free Content -->
 <!-- 4.1.1.3.2.1 Title -->
     <div class="col text-center">
-        <div class="h-100 p-5 bg-light rounded-3">
-          <h1>What You can Expect from CIRSx Content</h1>
+        <div class="pb-5 bg-primary rounded-3">
+          <h1 class="text-warning">What You can Expect from CIRSx Content</h1>
             <!-- 4.1.1.3.2.2 Text -->
-          <p>These free beginner’s video guides will provide you with expert tips for
+          <p class="text-white fs-3">These free beginner’s video guides will provide you with expert tips for
   medical & environmental professionals and patients.</p>
             <!-- 4.1.1.3.2.3 Buttons -->
            <div class="row row-cols-1 row-cols-md-2 text-center">
            <div class="col"><a href="{% url 'medical_glossary' %}">
-          <button class="btn btn-outline-dark fw-bold" type="button">Medical Glossary</button>
+          <button class="btn btn-warning btn-lg btn-outline-secondary text-black p-4" type="button">Medical Glossary</button>
             </a>
             </div>
            <div class="col"><a href="{% url 'environmental_glossary' %}">
-          <button class="btn btn-outline-dark fw-bold" type="button">Environmental Glossary</button>
+          <button class="btn btn-warning btn-lg btn-outline-secondary text-black p-4" type="button">Environmental Glossary</button>
             </a>
            </div>
         </div>
@@ -110,24 +111,24 @@ aspects of biotoxin/mold illness.
 <div class="p-5 mb-4 bg-light rounded-3">
       <div class="container-fluid py-5">
           <!-- 4.1.1.3.3.1 Title -->
-        <h1 class="display-5 fw-bold text-center">Services and Training Courses from our Partners</h1>
+        <h1 class="display-5 fw-bold text-center pb-5">Services and Training Courses from our Partners</h1>
           <!-- 4.1.1.3.3.2 Text w/links -->
           <div class="row row-cols-1 row-cols-md-2">
           <div class="col">
-            <ul>
-              <a href="https://www.survivingmold.com/legal-resources/community/online-proficiency-partners-course?utm_source=CIRSX&utm_medium=refer&utm_id=CIRSX">
+            <ul class="fs-3 text-black">
+              <a class="text-black fs-3" href="https://www.survivingmold.com/legal-resources/community/online-proficiency-partners-course?utm_source=CIRSX&utm_medium=refer&utm_id=CIRSX">
                   <li>SurvivingMold “Proficiency Partner Online” <br>
               </a>
                 Ritchie Shoemaker</li>
-              <a href="https://www.survivingmold.com/store1/online-screening-test?utm_source=CIRSX&utm_medium=refer&utm_id=CIRSX">
+              <a class="text-black fs-3" href="https://www.survivingmold.com/store1/online-screening-test?utm_source=CIRSX&utm_medium=refer&utm_id=CIRSX">
                   <li>SurvivingMold Online VCS Screening Test</li>
               </a>
-              <a href="https://www.survivingmold.com/store1/online-neuroquant-test?utm_source=CIRSX&utm_medium=refer&utm_id=CIRSX">
+              <a class="text-black fs-3" href="https://www.survivingmold.com/store1/online-neuroquant-test?utm_source=CIRSX&utm_medium=refer&utm_id=CIRSX">
                   <li>SurvivingMold Online NeuroQuant Analysis</li>
               </a>
             </ul>
           </div>
-          <div class="col">
+          <div class="col text-black fs-3">
               <q>Medical-Grade Remediation</q> Training and Certification <br>
               Greg Weatherman, Certified Microbial Consultant Coming 1st quarter 2022
           </div>
