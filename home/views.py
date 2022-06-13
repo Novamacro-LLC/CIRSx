@@ -61,3 +61,9 @@ def environmental_glossary(request):
 
 def shoey(request):
     return render(request, 'home/shoey.html', {})
+
+def tier_welcome(request):
+    return render(request, 'home/tier_welcome.html', {})
+
+def tier_videos(request):
+    return render(request, 'home/tier_videos.html', {})
