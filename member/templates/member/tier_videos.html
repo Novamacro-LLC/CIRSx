@@ -1,6 +1,6 @@
 {% extends "home/base.html" %}{% load static %}{% block content %}
 
-        <div class="p-5 w-100 bg-secondary" style="background-image: url('{%  %}')">
+        <div class="p-5 w-100 bg-secondary">
     <div class="container-fluid py-5">
 
     <h1 class="display-5 fw-bold text-white text-center">Professional Tier Video Resources</h1>
@@ -8,27 +8,41 @@
     </div>
 
      <div class="px-4 pt-5 text-center border-bottom">
-  <h1 class="display-3 text-primary">
-      2022 SurvivingMold/CIRSx In-Person and Live Streamed Conference </h1>
-         <p fs-3> <a href=""> <q>Spring Break with Data: It's More Than Mold"</q></a> - April 2022 - Ft Lauderdale, FL
-
-  <h1 class="display-3 text-primary">
+     <div class="container-fluid py-5">
+      <h1 class="display-3 text-primary">
+          2022 SurvivingMold/CIRSx In-Person and Live Streamed Conference </h1>
+             <p class="fs-3"> <a class="text-black" href="..."> <q>Spring Break with Data: It's More Than Mold"</q></a> - April 2022 - Ft Lauderdale, FL
+             </p>
+     </div>
+     </div>
+     <div class="px-4 pt-5 text-center border-bottom">
+     <div class="container-fluid py-5">
+       <h1 class="display-3 text-primary">
          Deeper Dive Series </h1>
-         <p fs-3><i>Our experts select a <q>must know</q> research paper from our library to discuss.  Gain a better understanding
+         <p class="fs-3"><i>Our experts select a <q>must know</q> research paper from our library to discuss.  Gain a better understanding
              of the paper’s content and understand how it  impacts your practice/business.</i></p>
 
-     <a class="btn btn-dark btn-lg btn-outline-secondary text-white" href="{% url "" %}"> Deeper Dive Series » </a>
-
+        <a class="btn btn-dark btn-lg btn-outline-secondary text-white"> Deeper Dive Series » </a>
+     </div>
+     </div>
      <div class="px-4 pt-5 text-center border-bottom">
   <h1 class="display-3 text-primary">
       Medical Glossary / Environmental Glossary </h1>
-         <p class="text-center">
+         <p class="fs-3">
              <i>Introduction to CIRS terms and concepts,</i></p>
 
          <a class="btn btn-dark btn-lg btn-outline-secondary text-white" href="{% url "medical_glossary" %}"> Medical Glossary » </a>
-         <br>
-         <a class="btn btn-dark btn-lg btn-outline-secondary text-white" href="{% url "Environmental_glossary" %}"> Environmental Glossary » </a>
+      <div class="pt-5">
+         <a class="btn btn-dark btn-lg btn-outline-secondary text-white" href="{% url "environmental_glossary" %}"> Environmental Glossary » </a>
+      <div class="pt-5">
      </div>
      </div>
+     </div>
+     </div>
+
+      <div class="px-4 pt-5 text-center">
+            <h1 class="display-3 text-primary">
+            Recordings of Past Events: </h1>
+      </div>
 
 {% endblock content %}
