@@ -12,6 +12,5 @@ urlpatterns = [
     path('speakers/', views.speakers, name='speakers'),
     path('contact_us/', views.contact_us, name='contact_us'),
     path('shoey/', views.shoey, name='shoey'),
-    path('tier_welcome/', views.tier_welcome, name='tier_welcome'),
-    path('tier_videos/', views.tier_videos, name='tier_videos')
+
 ]
