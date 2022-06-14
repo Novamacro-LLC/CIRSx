@@ -14,8 +14,8 @@ class News(models.Model):
 
 
 class Communication(models.Model):
-    first_name = models.CharField(max_length=100)
-    last_name = models.CharField(max_length=100)
-    email = models.EmailField()
-    subject = models.CharField(max_length=250)
-    message = models.TextField()
+    first_name = models.CharField(max_length=100, null=False)
+    last_name = models.CharField(max_length=100, null=False)
+    email = models.EmailField(null=False)
+    subject = models.CharField(max_length=250, null=False)
+    message = models.TextField(null=False)

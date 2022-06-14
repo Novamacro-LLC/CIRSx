@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import news
+from .models import News
 from .form import ContactForm
 import datetime
 
@@ -9,7 +9,7 @@ import datetime
 def home(request):
     end_date = datetime.datetime.now()
     st_date = datetime.datetime.now() - datetime.timedelta(days=90)
-    front = news.objects.filter(date_added__range=[st_date, end_date]).order_by('-date_added')
+    front = News.objects.filter(date_added__range=[st_date, end_date]).order_by('-date_added')
     context = {'front': front}
     return render(request, 'home/home.html', context)
 
@@ -44,9 +44,10 @@ def contact_us(request):
     else:
         form = ContactForm(request.POST)
         if form.is_valid():
-            email = form.cleaned_data['email']
-            subject = form.cleaned_data['subject']
-            message = form.cleaned_data['message']
+            form.save()
+            email = 'support@novamacro.net'
+            subject = 'New website message'
+            message = 'You have recieved a new message from the website.  Please login to the admin site to check'
             try:
                 send_mail(subject, message, email, ['brad.davison@novamacro.net'])
             except BadHeaderError:
