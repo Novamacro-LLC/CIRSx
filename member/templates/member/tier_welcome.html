@@ -1,6 +1,6 @@
 {% extends "home/base.html" %}{% load static %}{% block content %}
 
-    <div class="p-5 w-100 bg-secondary" style="background-image: url('{%  %}')">
+    <div class="p-5 w-100 bg-secondary">
     <div class="container-fluid py-5">
 
     <h1 class="display-5 fw-bold text-white text-center">Your CIRSx Journey Starts Here</h1>
@@ -9,11 +9,11 @@
 
     <div class="px-4 pt-5 text-center border-bottom">
   <h1 class="display-3 text-black">
-      <b>Slide decks for <q>Spring Break With Data:  Its' More Than Mold</q></b>
+      <b>Slide decks for <q>Spring Break With Data:  Its' More Than Mold</q></b> </h1>
       <br>
-      <a href=""> View/Download Slide decks here
+    <h1 class="display-3">  <a class="text-black" href=""> View/Download Slide decks here
       </a>
-  </h1>
+    </h1>
   <div class="col-lg-6 mx-auto">
     <p class="lead mb-4 fs-3 fw-bold text-black">
         Recordings will be available after the conference in the Professional Tier Video Resources section.
@@ -35,23 +35,26 @@
 </div>
 
 
+
      <div class="p-5 mb-4 rounded-3">
   <div class="container-fluid py-5">
-  </div>
 
     <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
       <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm bg-light">
+        <div class="card mb-4 rounded-3 shadow-sm bg-light h-600">
           <div class="pt-5">
             <img class="center" src="{% static "home/tier_page/tier_pic1.jpg" %}"
-            alt="" width="" height="">
+            alt="" width="300" height="200">
           </div>
             <!-- watch -->
           <div class="card-body">
             <ul class="list-unstyled mt-3 mb-4">
               <li class="fs-2"> Video Resources </li>
+                <br>
               <li class="fs-4"> View past and current conferences, webinars, podcasts, interviews and discussions. </li>
+                <br>
               <li class="fs-3"> <b>New Series:</b> </li>
+                <br>
               <li class="fs-4"> <q> DEEPER DIVE </q> Demystifying research articles and explaining their relevance to CIRS </li>
             </ul>
             <a href=""> <button type="button" class="btn btn-dark btn-lg btn-outline-secondary text-white">Watch</button></a>
@@ -59,8 +62,8 @@
         </div>
       </div>
             <!-- Access Resources -->
-      <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm bg-light">
+      <div class="col d-flex">
+        <div class="card mb-4 rounded-3 shadow-sm bg-light h-600">
           <div class="pt-5">
             <img class="center" src="{% static "home/tier_page/tier_pic2.jpg" %}"
             alt="" width="" height="">
@@ -69,16 +72,18 @@
           <div class="card-body">
             <ul class="list-unstyled mt-3 mb-4">
               <li class="fs-2"> Database </li>
+                <br>
               <li class="fs-4"> Medical / Environmental research papers, bibliographies, and full-text search engine </li>
+                <br>
               <li class="fs-4"> <b>Coming Soon!</b> Full text search engine. Stay tuned. </li>
             </ul>
-            <a href=""> <button type="button" class="btn btn-dark btn-lg btn-outline-secondary text-white">Access Resources</button></a>
+            <a href=""> <button type="button" class="align-self-end btn btn-dark btn-lg btn-outline-secondary text-white">Access Resources</button></a>
           </div>
         </div>
       </div>
             <!--Event Details-->
-      <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm bg-light">
+      <div class="col d-flex">
+        <div class="card mb-4 rounded-3 shadow-sm bg-light h-600">
           <div class="pt-5">
             <img class="center" src="{% static "home/tier_page/tier_pic3.jpg" %}"
             alt="" width="" height="">
@@ -86,25 +91,28 @@
           <div class="card-body">
             <ul class="list-unstyled mt-3 mb-4">
               <li class="fs-2"> Events </li>
+                <br>
                 <li class="fs-4"> Find event details for upcoming events like the 2022 CIRSx Annual Conference,
                         <q>I Dream of GENIE</q> and <q>House Calls</q> Web Conferences, podcasts, interviews, discussions. </li>
             </ul>
-            <a href=""> <button type="button" class="btn btn-dark btn-lg btn-outline-secondary text-white">Event Details</button></a>
+              <br>
+
+            <a href=""> <button type="button " class="btn btn-dark btn-lg btn-outline-secondary text-white">Event Details</button></a>
           </div>
         </div>
       </div>
     </div>
     </div>
-
+</div>
     <div class="bg-white rounded-3">
       <div class="container-fluid">
           <!-- 4.1.1.2.4.1 Title -->
         <h1 class="display-2 fw-bold text-center">CIRSx Trusted Partners</h1>
 
-      <div class="row row-cols-1 row-cols-md-4 g-4 align-items-center">
+      <div class="row row-cols-1 row-cols-md-3 g-3 align-items-center">
   <div class="col text-center">
       <a href="https://www.greathealthworks.com/">
-          <img src="{% static 'home/tier_page/OMAPREM (OmegaXL).png' %}" class="card-img-top" alt="...">
+          <img src="{% static 'home/tier_page/OMAPREM (OmegaXL).png' %}" class="card-img-top" alt="..." height="75" width="150">
       </a>
       <div class="card-body">
 
@@ -130,7 +138,7 @@
   </div>
   <div class="col text-center">
       <a href="https://apexenergetics.com/">
-          <img src="{% static 'home/tier_page/thumbnail_apex energetics logo blue.png' %}" class="card-img-top" alt="...">
+          <img src="{% static 'home/tier_page/apex_trans.png' %}" class="card-img-top" alt="...">
       </a>
       <div class="card-body">
 
@@ -138,7 +146,8 @@
   </div>
   <div class="col text-center">
       <a href="https://www.aerosolver.com/">
-          <img src="{% static 'home/tier_page/AeroSolver.png' %}" class="card-img-top" alt="...">
+          <img src="{% static 'home/tier_page/AeroSolver Logo_trans.png' %}" class="card-img-top"
+               alt="...">
       </a>
       <div class="card-body">
 
