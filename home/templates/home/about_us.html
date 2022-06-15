@@ -1,4 +1,5 @@
 {% extends "home/base.html" %}{% load static %}{% block content %}
+
         <!-- 4.1.1.2 About Us Page -->
     <div class="px-4 py-5 my-5 text-center bg-secondary" style="background-image: url('{% static "home/CIRSX homepage_header.jpg" %}')">
     <h1 class="display-5 fw-bold text-black">
@@ -107,40 +108,52 @@
         <h1 class="display-5 fw-bold text-center text-warning fs-1">Meet The Team</h1>
         <br>
 
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col text-center">
-          <img src="{% static 'home/scott About.png' %}" class="card-img-top" alt="...">
+        <div class="row">
+  <div class="col order-first">
+          <img src="{% static 'home/scott About.png' %}" class="card-img-top img-responsive" alt=""
+          height="70%"
+          width="70%">
       <div class="card-body">
-        <h5 class="card-title text-warning fs-3">Scott McMahon, MD</h5>
-        <p class="fs-3 text-white">  Founder <br>
+        <h5 class="card-title text-warning fs-3 text-center">Scott McMahon, MD</h5>
+        <p class="fs-3 text-white text-center">  Founder <br>
             Medical Expert </p>
       </div>
   </div>
   <div class="col text-center">
-          <img src="{% static 'home/Greg.png' %}" class="card-img-top" alt="...">
+          <img src="{% static 'home/Greg.png' %}" class="card-img-top" alt=""
+          height="70%"
+          width="70%">
       <div class="card-body">
         <h5 class="card-title text-warning fs-3">Greg Weatherman, CMC</h5>
         <p class="fs-3 text-white">  Founder <br>
              Environmental Expert </p>
       </div>
   </div>
-    <div class="col text-center">
-          <img src="{% static 'home/marcia.png' %}" class="card-img-top" alt="...">
+    <div class="col order-last text-center">
+          <img src="{% static 'home/marcia.png' %}" class="card-img-top" alt=""
+          height="70%"
+          width="70%">
       <div class="card-body">
         <h5 class="card-title text-warning fs-3">Marcia Cash</h5>
         <p class="fs-4 text-white">  Founder <br>
              Project Manager </p>
       </div>
   </div>
-    <div class="col text-center">
-          <img src="{% static 'home/Eric2.png' %}" class="card-img-top" alt="...">
+    </div>
+     <div class="row">
+    <div class="col-md-4 order-first">
+          <img src="{% static 'home/Eric2.png' %}" class="card-img-top" alt=""
+          height="70%"
+          width="70%">
       <div class="card-body">
-        <h5 class="card-title text-warning fs-3">Eric Dorninger, ND</h5>
-        <p class="fs-4 text-white"> Sponsorship and Attendee Liason </p>
+        <h5 class="card-title text-warning fs-3 text-center">Eric Dorninger, ND</h5>
+        <p class="fs-4 text-white text-center"> Sponsorship and Attendee Liason </p>
       </div>
   </div>
-    <div class="col text-center">
-          <img src="{% static 'home/Chloe  2.png' %}" class="card-img-top" alt="...">
+    <div class="col-md-4 text-center">
+          <img src="{% static 'home/Chloe  2.png' %}" class="card-img-top" alt=""
+          height="70%"
+          width="70%">
       <div class="card-body">
         <h5 class="card-title text-warning fs-3">Chloe Celusnek, PA-C</h5>
         <p class="fs-4 text-white">  Social Media Specialist</p>
@@ -150,43 +163,42 @@
   </div>
   </div>
 
-
-        <!-- 4.1.1.2.4.3 Team Management -->
+    <!-- 4.1.1.2.4.3 Team Management -->
     <div class="p-5 mb-4 bg-light rounded-3">
       <div class="container-fluid py-5">
           <!-- 4.1.1.2.4.1 Title -->
-        <h1 class="display-5 fw-bold text-center">Strategic Partners</h1>
+           <h1 class="display-5 fw-bold text-center">Strategic Partners</h1>
         <br>
 
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-  <div class="col text-center">
-          <img src="{% static 'home/Karen.jpg' %}" class="card-img-top" alt="...">
+        <div class="row">
+  <div class="col order-first">
+          <img src="{% static 'home/Karen.jpg' %}" class="card-img-top img-responsive" alt=""
+          height="70%"
+          width="70%">
       <div class="card-body">
-        <h5 class="card-title fs-3">Karen Johnson, MD</h5>
-
+        <h5 class="card-title text-black fs-3 text-center">Karen Johnson, MD</h5>
       </div>
   </div>
   <div class="col text-center">
-          <img src="{% static 'home/Jacki_Meinhardt.jpg' %}" class="card-img-top" alt="..."
-          height="1045px"
-          >
+          <img src="{% static 'home/Jacki_Meinhardt.jpg' %}" class="card-img-top" alt=""
+          height="70%"
+          width="70%">
       <div class="card-body">
-        <h5 class="card-title fs-3">Jacki Meinhardt, DNP</h5>
-
+        <h5 class="card-title text-black fs-3">Jacki Meinhardt, DNP</h5>
       </div>
   </div>
-    <div class="col text-center">
-          <img src="{% static 'home/Louise_carder.jpeg' %}" class="card-img-top" alt="..."
-            height="1045px"
-          >
+    <div class="col order-last text-center">
+          <img src="{% static 'home/Louise_carder.jpeg' %}" class="card-img-top" alt=""
+          height="70%"
+          width="70%">
       <div class="card-body">
-        <h5 class="card-title fs-3">Louise Carder, BSc, Nutr. Med</h5>
-
+        <h5 class="card-title text-black fs-3">Louise Carder, BSc, Nutr. Med</h5>
       </div>
   </div>
   </div>
   </div>
   </div>
+
 
     <div class="bg-white rounded-3">
       <div class="container-fluid">
