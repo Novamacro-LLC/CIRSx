@@ -82,8 +82,12 @@ WSGI_APPLICATION = 'CIRSx.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'cirsx',
+        'USER': 'doadmin',
+        'PASSWORD': 'ydi1v6xzjfadvs6m',
+        'HOST': 'db-postgresql-nyc1-41364-do-user-6170808-0.db.ondigitalocean.com',
+        'PORT': '25060'
     }
 }
 
