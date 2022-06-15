@@ -19,7 +19,19 @@ class DocumentType(models.Model):
 
 
 class Documents(models.Model):
-    title = models.CharField(max_length=200, null=False)
+    doctyp_num = models.ForeignKey(DocumentType, null=True, on_delete=models.SET_NULL)
+    aud_num = models.ForeignKey(Audience, null=True, on_delete=models.SET_NULL)
+    doc_path = models.CharField(max_length=250)
+    title = models.CharField(max_length=250, null=False)
+    author = models.CharField(max_length=150)
+    keywords = models.CharField(max_length=250)
+    pub_dt = models.DateField()
+    doc_abs = models.TextField()
+    doc_txt = models.TextField()
+
+
+
+
 
 
 
