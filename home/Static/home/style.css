@@ -1,7 +1,5 @@
-.bg-grey {
-    background-color: #EBEADF;
-}
+#subscriptionBackground {
+    background-repeat: no-repeat;
+    background-size: cover;
 
-.wh {
-    text-color: blue;
 }
