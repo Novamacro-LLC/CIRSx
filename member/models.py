@@ -32,11 +32,11 @@ class Document(models.Model):
     aud_num = models.ForeignKey(Audience, null=True, on_delete=models.SET_NULL)
     doc_path = models.CharField(max_length=250)
     title = models.CharField(max_length=500, null=False)
-    author = models.CharField(max_length=150)
-    keywords = models.CharField(max_length=250)
-    pub_dt = models.DateField()
-    doc_abs = models.TextField()
-    doc_txt = models.TextField()
+    author = models.CharField(max_length=150, null=True)
+    keywords = models.CharField(max_length=250, null=True)
+    pub_dt = models.DateField(null=True)
+    doc_abs = models.TextField(null=True)
+    doc_txt = models.TextField(null=True)
 
     def __str__(self):
         return self.title
