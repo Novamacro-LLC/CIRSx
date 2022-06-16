@@ -12,6 +12,12 @@ class News(models.Model):
     date_added = models.DateTimeField(default=timezone.now)
     user = CurrentUserField()
 
+    class Meta:
+        verbose_name_plural = 'News'
+
+    def __str__(self):
+        return self.title
+
 
 class Communication(models.Model):
     first_name = models.CharField(max_length=100, null=False)
@@ -19,3 +25,6 @@ class Communication(models.Model):
     email = models.EmailField(null=False)
     subject = models.CharField(max_length=250, null=False)
     message = models.TextField(null=False)
+
+    def __str__(self):
+        return self.subject

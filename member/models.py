@@ -7,31 +7,36 @@ class Event(models.Model):
     event_end_dt = models.DateField(null=False)
     event_location = models.CharField(max_length=150, null=False)
 
+    def __str__(self):
+        return self.event_name
+
 
 class Audience(models.Model):
     aud_name = models.CharField(max_length=50, unique=True, null=False)
     aud_desc = models.CharField(max_length=150, null=False)
+
+    def __str__(self):
+        return self.aud_name
 
 
 class DocumentType(models.Model):
     doctyp_name = models.CharField(max_length=50, unique=True, null=False)
     doctyp_desc = models.CharField(max_length=150, null=False)
 
+    def __str__(self):
+        return self.doctyp_name
 
-class Documents(models.Model):
+
+class Document(models.Model):
     doctyp_num = models.ForeignKey(DocumentType, null=True, on_delete=models.SET_NULL)
     aud_num = models.ForeignKey(Audience, null=True, on_delete=models.SET_NULL)
     doc_path = models.CharField(max_length=250)
-    title = models.CharField(max_length=250, null=False)
+    title = models.CharField(max_length=500, null=False)
     author = models.CharField(max_length=150)
     keywords = models.CharField(max_length=250)
     pub_dt = models.DateField()
     doc_abs = models.TextField()
     doc_txt = models.TextField()
 
-
-
-
-
-
-
+    def __str__(self):
+        return self.title
