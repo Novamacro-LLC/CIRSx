@@ -6,4 +6,11 @@
             <p class="fs-3"><i>To search titles by keyword, Windows: control+f, Mac: command+f</i></p>
       </div>
 
+        <div class="container text-start">
+      {% for i in rsh  %}
+          <a href="{{ i.doc_path }}" class="h6">{{ i.title }}</a>
+          <br>
+      {% endfor %}
+    </div>
+
 {% endblock content %}

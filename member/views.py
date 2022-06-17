@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Document
 
 
 def tier_welcome(request):
@@ -10,8 +11,12 @@ def tier_videos(request):
 
 
 def bibliographies(request):
-    return render(request, 'member/bibliographies.html', {})
+    bib = Document.objects.filter(doctyp_num=1).order_by('title')
+    context = {'bib': bib}
+    return render(request, 'member/bibliographies.html', context)
 
 
 def research_papers(request):
-    return render(request, 'member/research_papers.html', {})
+    rsh = Document.objects.filter(doctyp_num=2).order_by('title')
+    context = {'rsh': rsh}
+    return render(request, 'member/research_papers.html', context)

@@ -1,9 +1,16 @@
 {% extends "home/base.html" %}{% load static %}{% block content %}
 
-      <div class="px-4 pt-5 text-center">
-            <h1 class="display-3 text-black">
+      <div class="px-4 p-5 text-center">
+            <h1 class="display-3 text-dark">
             Bibliographies </h1>
-          <p class="fs-3"><b>Medical:</b> <i>(see below for Environmental)</i></p>
       </div>
+    <div class="container text-start">
+      {% for i in bib  %}
+          <a href="{{ i.doc_path }}" class="h6">{{ i.title }}</a>
+          <br>
+      {% endfor %}
+    </div>
+
+
 
 {% endblock content %}
