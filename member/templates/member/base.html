@@ -95,20 +95,20 @@
           </li>
         </ul>
 
-        <div class="col-md-3 text-end">
-          <div class="dropdown">
-              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+        <div class="col-lg-3 text-end d-flex">
+          <div class="dropdown" style="padding-right: 25px">
+              <a class="btn btn-secondary dropdown-toggle order-first" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
                 Professional Tier Subscription
               </a>
 
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <li><a class="dropdown-item" href="tier_welcome.html"> Professional Tier Welcome</a></li>
-                <li><a class="dropdown-item" href="tier_videos.html"> Professional Tier Videos</a></li>
-                <li><a class="dropdown-item" href="bibliographies.html"> Bibliographies </a></li>
-                <li><a class="dropdown-item" href="research_papers.html"> Research Papers </a></li>
+              <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="{% url 'tier_welcome' %}"> Professional Tier Welcome </a></li>
+                <li><a class="dropdown-item" href="{% url 'tier_videos' %}"> Professional Tier Videos </a></li>
+                <li><a class="dropdown-item" href="{% url 'bibliographies' %}"> Bibliographies </a></li>
+                <li><a class="dropdown-item" href="{% url 'research_papers' %}"> Research Papers </a></li>
               </ul>
             </div>
-          <button type="button" class="btn btn-dark">Logout</button>
+          <button type="button" class="btn btn-dark order-last">Logout</button>
         </div>
       </header>
     </div>
