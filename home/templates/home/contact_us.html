@@ -3,54 +3,60 @@
 <div class="container col-xl-10 col-xxl-8 col-md-4 px-4 py-5">
   <div class="row align-items-center g-lg-5 py-5">
     <div class="col-lg-7 text-lg-start">
-      <img src="{%static "home/cirsx_contact.jpg" %}" alt="" width="700"
-      height="550" />
-      <p class="col-lg-10 fs-3 text-center pt-3">
+      <img src="{%static "home/cirsx_contact.jpg" %}" alt="" width="100%"
+      height="auto" />
+      <p class="col-lg-10 fs-3 text-center pt-2">
         Have a question about CIRSx programs?
       </p>
     </div>
+
     <div class="col-md-10 mx-auto col-lg-5">
       <form class="p-4 p-md-5 border rounded-3 bg-light" method="post">
           {% csrf_token %}
         <div class="form-floating mb-3">
           <div class="row g-9 align-items-center">
-            <div class="col-auto">
-              <label for="exampleFormControlInput1" class="form-label"
-                >Name*</label
-              >
-              {{ form.first_name }}
-              <label for="firstName" class="form-label form-text"
-                >First Name</label
-              >
+                    <!--First Name-->
+              <div class="form-floating mb-3">
+                <input type="firstName" class="form-control rounded-3" id="floatingInput" placeholder="John">
+                <label for="floatingInput">First Name </label>
+
+              </div>
+                    <!--Last Name-->
+            <div class="form-floating mb-3">
+                <input type="lastName" class="form-control rounded-3" id="floatingInput" placeholder="Doe">
+                <label for="floatingInput">Last Name</label>
+
             </div>
-            <div class="col-auto">
-              {{ form.last_name }}
-              <label for="lastName" class="form-label form-text"
-                >Last Name</label
-              >
+                    <!--Email-->
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+              <label for="floatingInput">Email address</label>
+
             </div>
-            <div class="mb-3 w-100">
-              <label for="email" class="form-label">Email address</label>
-              {{ form.email }}
+                    <!--Subject-->
+            <div class="form-floating pb-3">
+              <textarea class="form-control" placeholder="Leave a comment here." id="floatingTextarea"></textarea>
+              <label for="floatingTextarea">Subject*</label>
+
             </div>
-            <div class="mb-3 w-100">
-              <label for="subject" class="form-label">Subject*</label>
-              {{ form.subject }}
-            </div>
-            <div class="mb-3 w-100">
-              <label for="message" class="form-label"
-                >Message*</label
-              >
-              {{ form.message }}
+                    <!--Message-->
+            <div class="form-floating mb-3 w-100">
+                <textarea class="form-control" placeholder="Message*" id="floatingTextarea" style="height: 100px"></textarea>
+                <label for="floatingTextarea">Message*</label>
+
             </div>
           </div>
+
           <button class="btn btn-dark btn-lg btn-outline-secondary text-white" type="submit">
             Submit
           </button>
+
         </div>
       </form>
     </div>
   </div>
 </div>
+
+
 
 {% endblock content %}
