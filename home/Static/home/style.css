@@ -1,5 +1,3 @@
-#subscriptionBackground {
-    background-repeat: no-repeat;
-    background-size: cover;
-
+.bg-grey {
+    background-color: #EBEADF;
 }
