@@ -1,8 +1,11 @@
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import authenticate, login
 from .models import News
 from .form import ContactForm
+
 import datetime
 
 
@@ -65,6 +68,22 @@ def shoey(request):
 
 
 def test(request):
-    return render(request, 'home/test.html')
+    return render(request, 'home/test.html'),
 
+
+def register(request):
+    if request.method == 'Post':
+        form = UserCreationForm()
+
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password1']
+            user = authenticate(username=username, password=password)
+            login(request, user)
+            return redirect('home')
+    else:
+        form = UserCreationForm()
+    context = {'form': form}
+    return render(request, 'registration/register.html', context),
 
