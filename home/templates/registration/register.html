@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Register</title>
-</head>
-<body>
+{% extends "home/base.html" %}{% load static %}{% block content %}
+    <div class="text-center bg-light"
+         style="display: flex;
+         align-items: center;
+         padding-top: 40px;
+         padding-bottom: 40px;">
+
+<main class="form-register w-30 m-auto">
     <h1>Registration Page!</h1>
     <form method="post" action="{% url 'register' %}">
         {% csrf_token %}
@@ -17,5 +18,6 @@
 
         <input type="submit" value="Register">
     </form>
-</body>
-</html>
+</main>
+    </div>
+{% endblock content %}
