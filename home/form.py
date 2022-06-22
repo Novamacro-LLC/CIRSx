@@ -1,5 +1,6 @@
 from django import forms
 from .models import Communication
+from django.contrib.auth.forms import UserCreationForm
 
 
 class ContactForm(forms.ModelForm):
@@ -27,4 +28,5 @@ class ContactForm(forms.ModelForm):
                                              'id': 'message',
                                              'placeholder': ''})
         }
+
 

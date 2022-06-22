@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
-from django.contrib.auth.forms import UserCreationForm
+#from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from .models import News
-from .form import ContactForm
+from .form import ContactForm, UserCreationForm
 
 import datetime
 
