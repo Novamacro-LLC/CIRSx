@@ -94,7 +94,7 @@
             >
           </li>
         </ul>
-
+        {% if ProfessionalTier in request.user.groups.all %}
         <div class="col-lg-3 text-end d-flex">
           <div class="dropdown" style="padding-right: 25px">
               <a class="btn dropdown-toggle order-first text-black border-none fs-5" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"
@@ -111,7 +111,26 @@
                 <li><a class="dropdown-item" href="{% url 'research_papers' %}"> Research Papers </a></li>
               </ul>
             </div>
-          <a href="{%  url 'login' %}" type="button" class="btn btn-secondary order-last"> Logout </a>
+            {% endif %}
+            {% if PatientTier in request.user.groups.all %}
+        <div class="col-lg-3 text-end d-flex">
+          <div class="dropdown" style="padding-right: 25px">
+              <a class="btn dropdown-toggle order-first text-black border-none fs-5" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"
+                 style="background-color: #EBEADF;
+                 outline: #EBEADF;
+                 border: #EBEADF">
+                  Patient Tier
+              </a>
+
+              <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                <li><a class="dropdown-item" href="{% url 'tier_welcome' %}"> Patient Tier Welcome</a></li>
+                <li><a class="dropdown-item" href="{% url 'tier_videos' %}"> Patient Tier Videos</a></li>
+                <li><a class="dropdown-item" href="{% url 'bibliographies' %}"> Bibliographies </a></li>
+                <li><a class="dropdown-item" href="{% url 'research_papers' %}"> Research Papers </a></li>
+              </ul>
+            </div>
+            {% endif %}
+          <button type="button" class="btn btn-secondary order-last">Logout</button>
         </div>
       </header>
     </div>
