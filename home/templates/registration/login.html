@@ -1,27 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-</head>
-<body>
+{% extends "home/base.html" %}{% load static %}{% block content %}
+    <div class="text-center bg-light"
+         style="display: flex;
+         align-items: center;
+         padding-top: 40px;
+         padding-bottom: 40px;">
+
+
+<main class="form-signin w-30 m-auto">
+
     {% if form.errors %}
-    <p>There's something wrong with what you entered!</p>
+    <p class="text-danger">There's something wrong with what you entered!</p>
     {% endif %}
 
     {% if next %}
-    <p>Hey, you can't access that page.</p>
+    <p class="text-danger">Hey, you can't access that page.</p>
     {% endif %}
 
-    <form method="post" action="{% url 'login' %}">
+  <form method="post" action="{% url 'login' %}">
         {% csrf_token %}
 
-        <p> Username: {{ form.username }}</p>
-        <p> Password:{{ form.password }}</p>
+      <h1 class="h3 mb-3 fw-normal">Welcome to CIRSx: Joining the Mission</h1>
 
-        <p><input type="submit" = value="login"></p>
+    <div class="form-floating">
+        <p class="p-1">Username: {{ form.username }}</p>
+    </div>
+
+    <div class="form-floating">
+        <p class="p-1">Password:  {{ form.password }}</p>
+    </div>
+
+
+
+        <input type="submit" = value="Login">
         <input type="hidden" name="next" value="{{ next }}">
+  </form>
+</main>
 
-    </form>
-</body>
-</html>
+</div>
+
+{% endblock content %}

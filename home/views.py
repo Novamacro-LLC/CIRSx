@@ -70,7 +70,7 @@ def shoey(request):
 def test(request):
     return render(request, 'home/test.html'),
 
-                                #--normal login--#
+
 def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
