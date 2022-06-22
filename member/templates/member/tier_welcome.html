@@ -1,13 +1,14 @@
 {% extends "member/base.html" %}{% load static %}{% block content %}
 
-   {% for group in request.user.groups.all %}
-        {% if 'Professional Tier' == group.name %}
     <div class="p-5 w-100 bg-secondary">
     <div class="container-fluid py-5">
 
     <h1 class="display-5 fw-bold text-white text-center">Your CIRSx Journey Starts Here</h1>
     </div>
     </div>
+
+         {% for group in request.user.groups.all %}
+        {% if 'Professional Tier' == group.name %}
 
     <div class="px-4 pt-5 text-center border-bottom">
   <h1 class="display-3 text-black">
@@ -33,7 +34,7 @@
     </p>
       {% endif %}
        {% if 'Patient Tier' == group.name %}
-       <h1>Enter Text Here</h1>
+       <h1 class="text-center pt-5">Welcome to your Patient Tier Subscription Portal</h1>
        {% endif %}
     {% endfor %}
 
@@ -42,7 +43,7 @@
 
 
 
-     <div class="p-5 mb-4 rounded-3">
+ <div class="p-5 mb-4 rounded-3">
   <div class="container py-5">
 
     <div class="row row-cols-lg-3 mb-2 row-cols-md-1">
@@ -54,15 +55,30 @@
           </div>
             <!-- watch -->
           <div class="card-body">
-            <ul class="list-unstyled mt-4 mb-1">
-              <li class="fs-3 pb-1 text-center"> Video Resources </li>
-              <li class="fs-4 pb-1"> View past and current conferences, webinars, podcasts, interviews and discussions. </li>
-              <li class="fs-4 pb-1 text-center"> <b>New Series:</b> </li>
-              <li class="fs-4 pb-1"> <q> DEEPER DIVE </q> Demystifying research articles and explaining their relevance to CIRS </li>
+
+                {% for group in request.user.groups.all %}
+                {% if 'Professional Tier' == group.name %}
+
+                    <h3 class="text-center pb-2"> Video Resources </h3>
+            <ul class="list-unstyled mt-1 mb-1">
+              <li class="fs-4 pb-2"> View past and current conferences, webinars, podcasts, interviews and discussions. </li>
+              <li class="fs-4 pb-2 text-center"> <b>New Series:</b> </li>
+              <li class="fs-4 pb-2"> <q> DEEPER DIVE </q> Demystifying research articles and explaining their relevance to CIRS </li>
             </ul>
               <div class="card-footer bg-light border-light">
             <a href=""> <button type="button" class="btn btn-dark btn-lg btn-outline-secondary text-white">Watch</button></a>
-          </div>
+              </div>
+
+                {% endif  %}
+                    {% if 'Patient Tier' == group.name %}
+                        <h3 class="text-center pb-4"><u>Video Resources </u></h3>
+                        <ul class="list-unstyled mb-1">
+                            <li class="fs-4"> Legacy SurvivingMold, Mold Congress & CIRSx conferences, interviews and podcasts. </li>
+                        </ul>
+                    {% endif %}
+                {% endfor %}
+
+
           </div>
         </div>
       </div>
@@ -75,14 +91,30 @@
           </div>
 
           <div class="card-body">
+
+                    {% for group in request.user.groups.all %}
+                    {% if 'Professional Tier' == group.name %}
+
+                <h3 class="pb-4 pt-4 text-center"> Database </h3>
             <ul class="list-unstyled mt-3 mb-4">
-              <li class="fs-2 pb-4 text-center"> Database </li>
               <li class="fs-4 pb-4"> Medical / Environmental research papers, bibliographies, and full-text search engine </li>
               <li class="fs-4 pb-5"> <b>Coming Soon!</b> Full text search engine. Stay tuned. </li>
             </ul>
           <div class="card-footer bg-light border-light">
             <a href=""> <button type="button" class="btn btn-dark btn-lg btn-outline-secondary text-white">Access Resources</button></a>
           </div>
+                    {% endif %}
+                {% if 'Patient Tier' == group.name %}
+
+              <h3 class="pt-4 pb-4 text-center"> <u>Access Our Database</u> </h3>
+            <ul class="list-unstyled mt-3 mb-4">
+                <li class="fs-4 pb-4"> Helpful medical and environmental resources and articles. </li>
+            </ul>
+
+                {% endif %}
+                    {% endfor %}
+
+
         </div>
       </div>
      </div>
@@ -94,8 +126,12 @@
             alt="" width="75%" height="auto">
           </div>
           <div class="card-body">
+
+                    {% for group in request.user.groups.all %}
+                    {% if 'Professional Tier' == group.name %}
+
+                <h3 class="pt-4 pb-5 text-center"> Events </h3>
             <ul class="list-unstyled mt-3 mb-4">
-              <li class="fs-2 pb-5 text-center"> Events </li>
                 <li class="fs-4 pb-5"> Find event details for upcoming events like the 2022 CIRSx Annual Conference,
                         <q>I Dream of GENIE</q> and <q>House Calls</q> Web Conferences, podcasts, interviews, discussions.</li>
                 <li></li>
@@ -103,12 +139,28 @@
                 <div class="card-footer bg-light border-light">
             <a href=""> <button type="button" class="btn btn-dark btn-lg btn-outline-secondary text-white">Event Details</button></a>
                 </div>
+
+                    {% endif %}
+                {% if 'Patient Tier' == group.name %}
+
+            <h3 class="pt-4 pb-4 text-center"> <u>Special Events</u> </h3>
+          <ul class="list-unstyled mt-3 mb-4">
+              <li class="fs-4 pb-4"> How to register for CIRSx events not included in your patient tier membership. </li>
+          </ul>
+
+                {% endif %}
+                    {% endfor %}
+
           </div>
         </div>
       </div>
     </div>
     </div>
-</div>
+  </div>
+
+    {% for group in request.user.groups.all %}
+        {% if 'Professional Tier' == group.name %}
+        <!-- Sponsors -->
     <div class="bg-white rounded-3">
       <div class="container-fluid">
                   <h1 class="display-2 fw-bold text-center">CIRSx Trusted Partners</h1>
@@ -168,6 +220,6 @@
   </div>
  </div>
 </div>
-
-
+{% endif %}
+{% endfor %}
 {% endblock content %}
