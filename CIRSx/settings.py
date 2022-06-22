@@ -139,3 +139,4 @@ DEFAULT_FROM_EMAIL = 'brad.davison@novamacro.net'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 LOGIN_REDIRECT_URL = 'tier_welcome'
+LOGOUT_REDIRECT_URL = 'login'
