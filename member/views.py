@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Document
+from django.contrib.auth import logout
 
 
 def tier_welcome(request):
@@ -20,3 +21,8 @@ def research_papers(request):
     rsh = Document.objects.filter(doctyp_num=2).order_by('title')
     context = {'rsh': rsh}
     return render(request, 'member/research_papers.html', context)
+
+
+def logoutUser(request):
+    logout(request)
+    return redirect('login')
