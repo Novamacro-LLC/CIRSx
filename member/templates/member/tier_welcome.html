@@ -1,16 +1,21 @@
 {% extends "member/base.html" %}{% load static %}{% block content %}
 
-    <div class="p-5 w-100 bg-secondary">
-    <div class="container-fluid py-5">
+    <div class="p-5 bg-secondary"
+    style="background-image: url('{% static "home/tier_page/Tie_welcomeBG.jpg" %}');
+                 background-repeat: no-repeat;
+                 background-size: cover;
+                 background-position: 75% 75%;
+                 background-blend-mode: darken">
+    <div class="container-fluid" style="height: 250px;">
 
-    <h1 class="display-5 fw-bold text-white text-center">Your CIRSx Journey Starts Here</h1>
+    <h1 class="display-1 p-5 fw-bold text-white text-center">Your CIRSx Journey <br> Starts Here</h1>
     </div>
     </div>
 
          {% for group in request.user.groups.all %}
          {% if 'Professional Tier' == group.name %}
 
-    <div class="px-4 pt-5 text-center border-bottom">
+    <div class="px-4 pt-5 fw-bold text-center border-bottom">
   <h1 class="display-3 text-black">
       <b>Slide decks for <q>Spring Break With Data:  Its' More Than Mold</q></b> </h1>
       <br>
