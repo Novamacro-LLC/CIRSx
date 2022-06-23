@@ -3,9 +3,22 @@
         <div class="p-5 w-100 bg-secondary">
     <div class="container-fluid py-5">
 
+            {% for group in request.user.groups.all %}
+            {% if 'Professional Tier' == group.name %}
+
     <h1 class="display-5 fw-bold text-white text-center">Professional Tier Video Resources</h1>
+
+            {% endif %}
+            {% if 'Patient Tier' == group.name %}
+                <h1 class="display-5 fw-bold text-white text-center">Patient Tier Video Resources</h1>
+            {% endif %}
+            {% endfor %}
+
     </div>
     </div>
+
+            {% for group in request.user.groups.all %}
+            {% if 'Professional Tier' == group.name %}
 
      <div class="px-4 pt-5 text-center border-bottom">
      <div class="container-fluid py-5">
@@ -25,6 +38,10 @@
         <a class="btn btn-dark btn-lg btn-outline-secondary text-white"> Deeper Dive Series » </a>
      </div>
      </div>
+
+            {% endif %}
+            {% endfor %}
+
      <div class="px-4 pt-5 text-center border-bottom">
   <h1 class="display-3 text-primary">
       Medical Glossary / Environmental Glossary </h1>

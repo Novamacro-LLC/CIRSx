@@ -8,7 +8,7 @@
     </div>
 
          {% for group in request.user.groups.all %}
-        {% if 'Professional Tier' == group.name %}
+         {% if 'Professional Tier' == group.name %}
 
     <div class="px-4 pt-5 text-center border-bottom">
   <h1 class="display-3 text-black">
@@ -32,11 +32,12 @@
         <br>
         Sunday - <a class="text-black" href="https://cirsx.wufoo.com/forms/mm4po5g0rkg4sw/"> https://cirsx.wufoo.com/forms/mm4po5g0rkg4sw/</a>
     </p>
-      {% endif %}
-       {% if 'Patient Tier' == group.name %}
-       <h1 class="text-center pt-5">Welcome to your Patient Tier Subscription Portal</h1>
-       {% endif %}
-    {% endfor %}
+
+             {% endif %}
+               {% if 'Patient Tier' == group.name %}
+               <h1 class="text-center pt-5">Welcome to your Patient Tier Subscription Portal</h1>
+               {% endif %}
+            {% endfor %}
 
     </div>
   </div>
