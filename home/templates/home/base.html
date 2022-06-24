@@ -20,7 +20,7 @@
     <!--Header-->
     <div class="container-fluid sticky-top" style="background-color: #EBEADF">
       <header
-        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom fs-5"
+        class="navbar navbar-expand-md d-flex flex-wrap align-items-center justify-content-center py-3 border-bottom fs-5"
       >
         <a
           href="{% url 'index' %}"
@@ -96,11 +96,14 @@
         </ul>
 
         <div class="col-md-3 text-end">
-          <a href="{% url 'login' %}" type="button" class="btn btn-outline-dark me-2">
-              Login </a>
+            <ul class="nav ml-auto">
+                <li><a href="{% url 'login' %}" type="button" class="btn btn-outline-dark me-2">
+              Login </a></li>
 
-            <a href="{% url 'subscribe' %}" type="button" class="btn btn-dark">Sign-up</a>
+                <li><a href="{% url 'subscribe' %}" type="button" class="btn btn-dark">Sign-up</a></li>
+            </ul>
         </div>
+
       </header>
     </div>
 

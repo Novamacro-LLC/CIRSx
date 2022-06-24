@@ -20,7 +20,7 @@
     <!--Header-->
     <div class="container-fluid sticky-top" style="background-color: #EBEADF">
       <header
-        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom fs-5"
+        class="navbar navbar-expand-md d-flex flex-wrap align-items-center justify-content-center justify-content-md py-3 border-bottom fs-5"
       >
         <a
           href="{% url 'index' %}"
@@ -94,7 +94,7 @@
             >
           </li>
         </ul>
-
+      <div class="nav ml-auto">
       {% for group in request.user.groups.all %}
         {% if 'Professional Tier' == group.name %}
         <div class="col-lg-3 text-end d-flex">
@@ -153,6 +153,7 @@
       {% endfor %}
           <a type="button" class="btn btn-secondary order-last" href="{% url 'logout' %}">Logout</a>
         </div>
+      </div>
       </header>
     </div>
 
