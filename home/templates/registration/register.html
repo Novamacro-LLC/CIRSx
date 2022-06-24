@@ -1,22 +1,25 @@
 {% extends "home/base.html" %}{% load static %}{% block content %}
-<div
-  class="text-center bg-light"
-  style="
-    display: flex;
-    align-items: center;
-    padding-top: 40px;
-    padding-bottom: 40px;
-  "
->
-  <main class="form-register w-30 m-auto">
+    <div class="text-center bg-light"
+         style="display: flex;
+         align-items: center;
+         padding-top: 40px;
+         padding-bottom: 40px;">
+
+<main class="form-register w-30 m-auto">
     <h1>Registration Page!</h1>
     <form method="post" action="{% url 'register' %}">
-      {% csrf_token %} {% if form.errors %}
-      <p>There are errors in the form!</p>
-      {% endif %} {{ form }}
+        {% csrf_token %}
 
-      <input type="submit" value="Register" />
+        {% if form.errors %}
+        <p class=" text-danger">There are errors in the form!</p>
+        {% endif %}
+
+
+        {{ form }}
+
+
+        <input type="submit" value="Register">
     </form>
-  </main>
-</div>
+</main>
+    </div>
 {% endblock content %}

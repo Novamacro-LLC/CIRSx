@@ -12,18 +12,15 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="{% static 'home/style.css' %}"
-      type="text/css"
-    />
-    <script src="{% static 'home/js_scripts.js' %}"></script>
+      <link rel="stylesheet" href="{% static 'home/style.css' %}" type="text/css">
+      <script src="{% static 'home/js_scripts.js' %}"></script>
+
   </head>
   <body onload="pageInit()">
     <!--Header-->
-    <div class="container-fluid sticky-top" style="background-color: #ebeadf">
+    <div class="container-fluid sticky-top" style="background-color: #EBEADF">
       <header
-        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 border-bottom fs-5"
+        class="navbar navbar-expand-md d-flex flex-wrap align-items-center justify-content-center py-3 border-bottom fs-5"
       >
         <a
           href="{% url 'index' %}"
@@ -99,18 +96,14 @@
         </ul>
 
         <div class="col-md-3 text-end">
-          <a
-            href="{% url 'login' %}"
-            type="button"
-            class="btn btn-outline-dark me-2"
-          >
-            Login
-          </a>
+            <ul class="nav ml-auto">
+                <li><a href="{% url 'login' %}" type="button" class="btn btn-outline-dark me-2">
+              Login </a></li>
 
-          <a href="{% url 'subscribe' %}" type="button" class="btn btn-dark"
-            >Sign-up</a
-          >
+                <li><a href="{% url 'subscribe' %}" type="button" class="btn btn-dark">Sign-up</a></li>
+            </ul>
         </div>
+
       </header>
     </div>
 
@@ -132,5 +125,7 @@
       integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
       crossorigin="anonymous"
     ></script>
+
+
   </body>
 </html>

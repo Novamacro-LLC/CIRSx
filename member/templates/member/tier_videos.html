@@ -1,11 +1,30 @@
 {% extends "member/base.html" %}{% load static %}{% block content %}
 
-        <div class="p-5 w-100 bg-secondary">
-    <div class="container-fluid py-5">
+        <div class="p-5 bg-light"
+          style="background-image: url('{% static "home/tier_page/Tier_videoBG.jpg" %}');
+                 background-repeat: no-repeat;
+                 background-size: cover;
+                 background-position: 70% 70%;
+                 background-blend-mode: darken">
 
-    <h1 class="display-5 fw-bold text-white text-center">Professional Tier Video Resources</h1>
+    <div class="container-fluid" style="height: 300px;">
+
+            {% for group in request.user.groups.all %}
+            {% if 'Professional Tier' == group.name %}
+
+                <h1 class="display-1 fw-bold text-white text-center p-5">Professional Tier Video <br> Resources </h1>
+
+            {% endif %}
+            {% if 'Patient Tier' == group.name %}
+                <h1 class="display-1 text-white text-center p-5">Patient Tier Video <br>Resources</h1>
+            {% endif %}
+            {% endfor %}
+
     </div>
     </div>
+
+            {% for group in request.user.groups.all %}
+            {% if 'Professional Tier' == group.name %}
 
      <div class="px-4 pt-5 text-center border-bottom">
      <div class="container-fluid py-5">
@@ -25,6 +44,10 @@
         <a class="btn btn-dark btn-lg btn-outline-secondary text-white"> Deeper Dive Series » </a>
      </div>
      </div>
+
+            {% endif %}
+            {% endfor %}
+
      <div class="px-4 pt-5 text-center border-bottom">
   <h1 class="display-3 text-primary">
       Medical Glossary / Environmental Glossary </h1>
