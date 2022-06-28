@@ -52,12 +52,12 @@
  <div class="p-5 mb-4 rounded-3">
   <div class="container py-5">
 
-    <div class="row row-cols-lg-3 mb-2 row-cols-md-1">
-      <div class="col d-flex">
-        <div class="card mb-4 rounded-3 shadow-sm bg-light">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-8 text-center">
+      <div class="p-4 rounded-3 shadow-sm bg-light">
           <div class="pt-5">
             <img class="center mx-5" src="{% static "home/tier_page/tier_pic1.jpg" %}"
-            alt="" width="75%" height="89%">
+            alt="" width="60%" height="auto">
           </div>
             <!-- watch -->
           <div class="card-body">
@@ -67,9 +67,9 @@
 
                     <h3 class="text-center pb-2"> Video Resources </h3>
             <ul class="list-unstyled mt-1 mb-1">
-              <li class="fs-4 pb-2"> View past and current conferences, webinars, podcasts, interviews and discussions. </li>
-              <li class="fs-4 pb-2 text-center"> <b>New Series:</b> </li>
-              <li class="fs-4 pb-2"> <q> DEEPER DIVE </q> Demystifying research articles and explaining their relevance to CIRS </li>
+              <li class="fs-4 pb-3"> View past and current conferences, webinars, podcasts, interviews and discussions. </li>
+              <li class="fs-4 pb-3 text-center"> <b>New Series:</b> </li>
+              <li class="fs-4 pb-3"> <q> DEEPER DIVE </q> Demystifying research articles and explaining their relevance to CIRS </li>
             </ul>
               <div class="card-footer bg-light border-light">
             <a href=""> <button type="button" class="btn btn-dark btn-lg btn-outline-secondary text-white">Watch</button></a>
@@ -78,7 +78,7 @@
                 {% endif  %}
                     {% if 'Patient Tier' == group.name %}
                         <h3 class="text-center pb-4"><u>Video Resources </u></h3>
-                        <ul class="list-unstyled mb-1">
+                        <ul class="list-unstyled mt-2">
                             <li class="fs-4"> Legacy SurvivingMold, Mold Congress & CIRSx conferences, interviews and podcasts. </li>
                         </ul>
                     {% endif %}
@@ -89,11 +89,11 @@
         </div>
       </div>
             <!-- Access Resources -->
-      <div class="col d-flex">
-        <div class="card mb-4 rounded-3 shadow-sm bg-light">
+    <div class="col-lg-4 col-md-6 col-sm-8  text-center">
+      <div class="p-4 rounded-3 shadow-sm bg-light">
           <div class="pt-5">
             <img class="center mx-5" src="{% static "home/tier_page/tier_pic2.jpg" %}"
-            alt="" width="75%" height="auto">
+            alt="" width="60%" height="auto">
           </div>
 
           <div class="card-body">
@@ -113,8 +113,8 @@
                 {% if 'Patient Tier' == group.name %}
 
               <h3 class="pt-4 pb-4 text-center"> <u>Access Our Database</u> </h3>
-            <ul class="list-unstyled mt-3 mb-4">
-                <li class="fs-4 pb-4"> Helpful medical and environmental resources and articles. </li>
+            <ul class="list-unstyled mt-2">
+                <li class="fs-4"> Helpful medical and environmental resources and articles. </li>
             </ul>
 
                 {% endif %}
@@ -125,11 +125,11 @@
       </div>
      </div>
             <!--Event Details-->
-      <div class="col d-flex">
-        <div class="card mb-4 rounded-3 shadow-sm bg-light">
+    <div class="col-lg-4 col-md-6 col-sm-8  text-center">
+      <div class="p-4 rounded-3 shadow-sm bg-light">
           <div class="pt-5">
             <img class="center mx-5" src="{% static "home/tier_page/tier_pic3.jpg" %}"
-            alt="" width="75%" height="auto">
+            alt="" width="60%" height="auto">
           </div>
           <div class="card-body">
 
@@ -138,7 +138,7 @@
 
                 <h3 class="pt-4 pb-5 text-center"> Events </h3>
             <ul class="list-unstyled mt-3 mb-4">
-                <li class="fs-4 pb-5"> Find event details for upcoming events like the 2022 CIRSx Annual Conference,
+                <li class="fs-4 pb-3"> Find event details for upcoming events like the 2022 CIRSx Annual Conference,
                         <q>I Dream of GENIE</q> and <q>House Calls</q> Web Conferences, podcasts, interviews, discussions.</li>
                 <li></li>
             </ul>
@@ -150,8 +150,8 @@
                 {% if 'Patient Tier' == group.name %}
 
             <h3 class="pt-4 pb-4 text-center"> <u>Special Events</u> </h3>
-          <ul class="list-unstyled mt-3 mb-4">
-              <li class="fs-4 pb-4"> How to register for CIRSx events not included in your patient tier membership. </li>
+          <ul class="list-unstyled mt-2">
+              <li class="fs-4"> How to register for CIRSx events not included in your patient tier membership. </li>
           </ul>
 
                 {% endif %}

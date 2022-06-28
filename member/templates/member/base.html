@@ -94,11 +94,12 @@
             >
           </li>
         </ul>
-      <div class="nav ml-auto">
+
+      <div class="col-md-3 text-end ps-5">
       {% for group in request.user.groups.all %}
         {% if 'Professional Tier' == group.name %}
-        <div class="col-lg-3 text-end d-flex">
-          <div class="dropdown" style="padding-right: 25px">
+        <div class="d-flex">
+          <div class="dropdown" style="padding-right: 10px">
               <a class="btn dropdown-toggle order-first text-black border-none fs-5" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"
                  style="background-color: #EBEADF;
                  outline: #EBEADF;
@@ -107,8 +108,8 @@
               </a>
 
               <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
-                <li><a class="dropdown-item" href="{% url 'tier_welcome' %}"> Professional Tier Welcome</a></li>
-                <li><a class="dropdown-item" href="{% url 'tier_videos' %}"> Professional Tier Videos</a></li>
+                <li ><a class="dropdown-item" href="{% url 'tier_welcome' %}">Welcome Page</a></li>
+                <li><a class="dropdown-item" href="{% url 'tier_videos' %}"> Videos Page</a></li>
                 <li><a class="dropdown-item" href="{% url 'bibliographies' %}"> Bibliographies </a></li>
                 <li><a class="dropdown-item" href="{% url 'research_papers' %}"> Research Papers </a></li>
               </ul>
@@ -116,7 +117,7 @@
             {% endif %}
             {% if 'Patient Tier' == group.name %}
         <div class="col-lg-3 text-end d-flex">
-          <div class="dropdown" style="padding-right: 25px">
+          <div class="dropdown" style="padding-right: 10px">
               <a class="btn dropdown-toggle order-first text-black border-none fs-5" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"
                  style="background-color: #EBEADF;
                  outline: #EBEADF;
@@ -125,8 +126,8 @@
               </a>
 
               <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
-                <li><a class="dropdown-item" href="{% url 'tier_welcome' %}"> Patient Tier Welcome</a></li>
-                <li><a class="dropdown-item" href="{% url 'tier_videos' %}"> Patient Tier Videos</a></li>
+                <li><a class="dropdown-item" href="{% url 'tier_welcome' %}"> Welcome Page</a></li>
+                <li><a class="dropdown-item" href="{% url 'tier_videos' %}"> Videos Page</a></li>
                 <li><a class="dropdown-item" href="{% url 'bibliographies' %}"> Bibliographies </a></li>
                 <li><a class="dropdown-item" href="{% url 'research_papers' %}"> Research Papers </a></li>
               </ul>
@@ -134,7 +135,7 @@
             {% endif %}
           {% if 'CIRSx Staff' == group.name %}
         <div class="col-lg-3 text-end d-flex">
-          <div class="dropdown" style="padding-right: 25px">
+          <div class="dropdown" style="padding-right: 10px">
               <a class="btn dropdown-toggle order-first text-black border-none fs-5" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"
                  style="background-color: #EBEADF;
                  outline: #EBEADF;
