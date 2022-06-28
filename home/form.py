@@ -30,3 +30,7 @@ class ContactForm(forms.ModelForm):
         }
 
 
+#class RegistrationForm(UserCreationForm):
+#    email = forms.EmailField(max_length=100, help_text='Required. Add a valid email address')
+
+#    class Meta:
