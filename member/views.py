@@ -31,3 +31,7 @@ def research_papers(request):
 def logout_user(request):
     logout(request)
     return redirect('index')
+
+
+def archived_events(request):
+    return render(request, 'member/archived_events.html',)

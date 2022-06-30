@@ -1,0 +1,135 @@
+{% extends "member/base.html" %}{% load static %}{% block content %}
+
+ <div class="p-5 bg-secondary"
+    style="background-image: url('{% static "home/tier_page/Tie_welcomeBG.jpg" %}');
+                 background-repeat: no-repeat;
+                 background-size: cover;
+                 background-position: 75% 75%;
+                 background-blend-mode: darken">
+    <div class="container-fluid" style="height: 150px;">
+
+    <h1 class="display-1 p-2 fw-bold text-white text-center">Past Events</h1>
+    </div>
+    </div>
+
+
+    <div class="container-fluid bg-white text-center mt-5 mb-5">
+    <div class="row">
+    <div class="col-md-4 ps-5">
+          <div class="dropdown">
+              <a class="btn dropdown-toggle order-first text-black border-none fs-5" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"
+                 style="background-color: #EBEADF;
+                 outline: #EBEADF;
+                 border: #EBEADF">
+                  Past Conferences
+              </a>
+
+              <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                <li ><a class="dropdown-item" href="{% url 'tier_welcome' %}">I Dream of Genie, Volume 4</a></li>
+                <li><a class="dropdown-item" href="{% url 'tier_videos' %}"> Deeper Dive Medical</a></li>
+                <li><a class="dropdown-item" href="{% url 'bibliographies' %}"> May 2020 Conference </a></li>
+                <li><a class="dropdown-item" href="{% url 'research_papers' %}"> JuMay 2018 Conference </a></li>
+              </ul>
+            </div>
+    </div>
+
+    <div class="col-md-4 ps-5">
+          <div class="dropdown">
+              <a class="btn dropdown-toggle order-first text-black border-none fs-5" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"
+                 style="background-color: #EBEADF;
+                 outline: #EBEADF;
+                 border: #EBEADF">
+                  Past Videos
+              </a>
+
+              <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                <li ><a class="dropdown-item" href="{% url 'tier_welcome' %}">I Dream of Genie, Volume 4</a></li>
+                <li><a class="dropdown-item" href="{% url 'tier_videos' %}"> Deeper Dive Medical</a></li>
+                <li><a class="dropdown-item" href="{% url 'bibliographies' %}"> May 2020 Conference </a></li>
+                <li><a class="dropdown-item" href="{% url 'research_papers' %}"> JuMay 2018 Conference </a></li>
+              </ul>
+            </div>
+    </div>
+
+            <div class="col-md-4 ps-5">
+          <div class="dropdown">
+              <a class="btn dropdown-toggle order-first text-black border-none fs-5" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"
+                 style="background-color: #EBEADF;
+                 outline: #EBEADF;
+                 border: #EBEADF">
+                  Past Podcasts
+              </a>
+
+              <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                <li ><a class="dropdown-item" href="{% url 'tier_welcome' %}">I Dream of Genie, Volume 4</a></li>
+                <li><a class="dropdown-item" href="{% url 'tier_videos' %}"> Deeper Dive Medical</a></li>
+                <li><a class="dropdown-item" href="{% url 'bibliographies' %}"> May 2020 Conference </a></li>
+                <li><a class="dropdown-item" href="{% url 'research_papers' %}"> JuMay 2018 Conference </a></li>
+              </ul>
+            </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="p-5 w-100"
+     style="background-image: url('{% static "home/conference_page/CIRSX CONF_website header.png" %}');
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-position: 50% 50%">
+
+    <div class="container-fluid py-5">
+    <!-- 4.1.1.4.1.1 Title -->
+    <h1 class="display-5 fw-bold text-white text-center">2022 CIRSx Annual Conference</h1>
+    <br />
+    <!-- 4.1.1.4.1.2 Subheadline -->
+    <h2 class="text-center fs-3 text-warning">
+      Hosted by CIRSx in Partnership with SurvivingMold
+    </h2>
+    <br />
+    <!-- 4.1.1.4.1.3 Text -->
+    <p class="text-center fs-4 text-white">
+      April 28, 2022 - May 1, 2022 | Ft. Lauderdale, Florida
+    </p>
+  </div>
+  <!-- 4.1.1.4.1.4 Background -->
+</div>
+
+<!-- 4.1.1.4.2 Conference Special Hero -->
+<div class="px-4 pt-5 text-center bg-primary border-bottom">
+  <!-- Header -->
+  <h1 class="display-3 text-warning">
+    Annual Conference + CIRSx SubscriptionCentered
+  </h1>
+  <div class="col-lg-6 mx-auto">
+    <!-- 4.1.1.4.2.2 Details -->
+    <p class="lead mb-4 fs-3 fw-bold text-white">
+      YOU CAN STILL WATCH THE CONFERENCE ONLINE! <br />
+      RECORDINGS OF THE CONFERENCE WILL BE AVAILABLE SHORTLY.
+    </p>
+    <br>
+
+    <p class="lead mb-4 fs-3 fw-bold text-white">
+      Become a member of the Professional Tier and watch the entire conference
+      in the CIRSx Library
+    </p>
+    <br>
+
+    <p class="lead mb-4 fs-3 fw-bold text-white">
+      <a class="text-warning" href="../../../member/templates/member/cme_accreditation.html"> AMA PRA Category 1 Credits Awarded for Full Conference</a> <br />
+      Available for online attendance also.
+    </p>
+    <br />
+
+    <p class="text-white fs-3">
+      Your subscription includes attendance to four special events throughout
+      the year, and access to a vast library of medical and environmental
+      research papers, data and bibliographies specific to CIRS.
+    <br>
+    <br>
+      Create your Professional Tier Account and watch the Conference.
+    </p>
+
+  </div>
+</div>
+
+{% endblock content %}

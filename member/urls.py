@@ -7,7 +7,8 @@ urlpatterns = [
     path('bibliographies/', views.bibliographies, name='bibliographies'),
     path('research_papers/', views.research_papers, name='research_papers'),
     path('logout/', views.logout_user, name='logout'),
-    path('', include('home.urls'))
+    path('', include('home.urls')),
+    path('archived_events/', views.archived_events, name='archived_events')
 
 
 
