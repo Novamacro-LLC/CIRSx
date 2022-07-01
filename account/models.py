@@ -2,9 +2,13 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
 
+class Country(models.Model):
+    country_name = models.CharField(max_length=150, unique=True, null=False)
+
+
 class MyAccoutManager(BaseUserManager):
     def create_user(self, email, username, first_name, last_name, address, city, state, post_code, country,
-                    password=None):
+                    phone, password=None):
         if not email:
             raise ValueError('Users must have an email address')
         if not username:
@@ -33,15 +37,15 @@ class MyAccoutManager(BaseUserManager):
             city=city,
             state=state,
             post_code=post_code,
-            country=country)
+            country=country,
+            phone=phone)
 
-        user.set_password(using=self._db)
+        user.set_password(password)
         user.save(user=self._db)
         return user
 
-
-    def create_superuser(self, email, username, first_name, last_name, address, city, state, post_code, country,
-                    password=None):
+    def create_superuser(self, email, username, first_name, last_name, address, city, state, post_code, country, phone,
+                         password=None):
         user = self.create_user(
             email=self.normalize_email(email),
             username=username,
@@ -52,6 +56,7 @@ class MyAccoutManager(BaseUserManager):
             state=state,
             post_code=post_code,
             country=country,
+            phone=phone,
             password=password)
 
         user.is_admin = True
@@ -71,8 +76,7 @@ class Account(AbstractBaseUser):
     state = models.CharField(max_length=50)
     post_code = models.CharField(max_length=10)
     phone = models.CharField(max_length=25)
-    country = models.CharField(max_length=50, default='USA')
-    #Do you want country to be in a drop down?  Are there countries that you do not operate in?
+    country = models.ForeignKey(Country, default='United States of America', on_delete=models.CASCADE)
     date_joined = models.DateTimeField(verbose_name='date_joined', auto_now=True)
     last_login = models.DateTimeField(verbose_name='last_login', auto_now=True)
     is_admin = models.BooleanField(default=False)
@@ -100,5 +104,3 @@ class Account(AbstractBaseUser):
 
     def has_module_perms(self, app_label):
         return True
-
-
