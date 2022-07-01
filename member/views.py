@@ -32,6 +32,18 @@ def logout_user(request):
     logout(request)
     return redirect('index')
 
-
+@login_required()
 def archived_events(request):
     return render(request, 'member/archived_events.html',)
+
+@login_required()
+def deeper_dive(request):
+    return render(request, 'member/deeper_dive.html',)
+
+@login_required()
+def hopkinton(request):
+    return render(request, 'member/hopkinton.html',)
+
+@login_required()
+def podcasts(request):
+    return render(request, 'member/podcasts.html',)

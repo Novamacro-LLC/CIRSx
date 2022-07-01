@@ -8,8 +8,10 @@ urlpatterns = [
     path('research_papers/', views.research_papers, name='research_papers'),
     path('logout/', views.logout_user, name='logout'),
     path('', include('home.urls')),
-    path('archived_events/', views.archived_events, name='archived_events')
-
+    path('archived_events/', views.archived_events, name='archived_events'),
+    path('deeper_dive/', views.deeper_dive, name='deeper_dive'),
+    path('hopkinton/', views.hopkinton, name='hopkinton'),
+    path('podcasts/', views.podcasts, name='podcasts'),
 
 
 ]
