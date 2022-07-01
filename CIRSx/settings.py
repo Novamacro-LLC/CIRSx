@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     #Created Apps
     'home',
     'member',
+    'account',
+    'event',
 ]
 
 MIDDLEWARE = [
@@ -73,6 +75,8 @@ TEMPLATES = [
     },
 ]
 
+AUTH_USER_MODEL = 'account.Account'
+
 WSGI_APPLICATION = 'CIRSx.wsgi.application'
 
 
@@ -83,7 +87,7 @@ WSGI_APPLICATION = 'CIRSx.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'cirsx',
+        'NAME': 'cirsx_dev',
         'USER': 'doadmin',
         'PASSWORD': 'ydi1v6xzjfadvs6m',
         'HOST': 'db-postgresql-nyc1-41364-do-user-6170808-0.db.ondigitalocean.com',
