@@ -21,3 +21,8 @@ def register(request, tier):
         form = RegistrationForm()
         context = {'form': form}
     return render(request, 'registration/register.html', context)
+
+
+def logout_user(request):
+    logout(request)
+    return redirect('index')
