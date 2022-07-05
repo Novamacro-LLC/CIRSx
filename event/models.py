@@ -1,15 +1,5 @@
 from django.db import models
-from account.models import Account
-
-
-class Country(models.Model):
-    country = models.CharField(max_length=75, unique=True)
-
-    class Meta:
-        verbose_name_plural = 'Countries'
-
-    def __str__(self):
-        return self.country
+from account.models import Account, Country
 
 
 class Expertise(models.Model):
