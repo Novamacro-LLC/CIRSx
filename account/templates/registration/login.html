@@ -10,11 +10,11 @@
 <main class="form-signin w-30 m-auto">
 
     {% if form.errors %}
-    <p class="text-danger">There's something wrong with what you entered!</p>
+    <p class="text-danger">Email or password is invalid</p>
     {% endif %}
 
     {% if next %}
-    <p class="text-danger">Hey, you can't access that page.</p>
+    <p class="text-danger">Access Denied, please contact a member of support</p>
     {% endif %}
 
   <form method="post" action="{% url 'login' %}">
@@ -23,7 +23,7 @@
       <h1 class="h3 mb-3 fw-normal">Welcome to CIRSx: Joining the Mission</h1>
 
     <div class="form-floating">
-        <p class="p-1">Username: {{ form.username }}</p>
+        <p class="p-1">Username: {{ form.email }}</p>
     </div>
 
     <div class="form-floating">

@@ -45,4 +45,4 @@ def login_user(request):
         form = AccoutAuthenticationForm()
 
     context = {'form': form}
-    return render()
+    return render(request, 'registration/login.html', context)
