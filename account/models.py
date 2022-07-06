@@ -1,12 +1,18 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, Group
 
 
 class Country(models.Model):
     country_name = models.CharField(max_length=150, unique=True, null=False)
 
+    class Meta:
+        verbose_name_plural = 'Countries'
 
-class MyAccoutManager(BaseUserManager):
+    def __str__(self):
+        return self.country_name
+
+
+class MyAccountManager(BaseUserManager):
     def create_user(self, email, username, first_name, last_name, address, city, state, post_code, country,
                     phone, password=None):
         if not email:
@@ -37,11 +43,11 @@ class MyAccoutManager(BaseUserManager):
             city=city,
             state=state,
             post_code=post_code,
-            country=Account.country,
+            country=Country(pk=country),
             phone=phone)
 
         user.set_password(password)
-        user.save(user=self._db)
+        user.save(using=self._db)
         return user
 
     def create_superuser(self, email, username, first_name, last_name, address, city, state, post_code, country, phone,
@@ -95,7 +101,7 @@ class Account(AbstractBaseUser):
                        'country',
                        'phone']
 
-    objects = MyAccoutManager()
+    objects = MyAccountManager()
 
     def __str__(self):
         return self.email

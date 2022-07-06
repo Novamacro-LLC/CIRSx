@@ -9,7 +9,10 @@ class AccountAdmin(UserAdmin):
     readonly_fields = ('date_joined', 'last_login')
     filter_horizontal = ()
     list_filter = ()
-    fieldsets = ()
+    fieldsets = (('Group Permissions', {
+            'classes': ('collapse',),
+            'fields': ('groups', 'user_permissions', )
+        }),)
 
 
 admin.site.register(Account, AccountAdmin)
