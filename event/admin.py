@@ -3,10 +3,10 @@ from .models import Event, EventOffer, EventRegistration, Sponsor, Speaker, Expe
 
 
 admin.site.register(EventOffer)
+admin.site.register(EventRegistration)
 admin.site.register(Sponsor)
 admin.site.register(Speaker)
 admin.site.register(Expertise)
-admin.site.register(EventRegistration)
 
 
 class SpeakerInline(admin.TabularInline):
