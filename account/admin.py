@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Account, Country
-from django.contrib.auth.admin import UserAdmin,
+from django.contrib.auth.admin import UserAdmin
 
 
 class AccountAdmin(UserAdmin):
