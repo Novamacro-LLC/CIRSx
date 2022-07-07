@@ -65,6 +65,10 @@ def shoey(request):
     return render(request, 'home/shoey.html', {})
 
 
+def stripe(request):
+    return render(request, 'home/stripe.html', {})
+
+
 def test(request):
     return render(request, 'home/test.html'),
 
