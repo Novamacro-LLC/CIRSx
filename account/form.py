@@ -23,7 +23,7 @@ class RegistrationForm(UserCreationForm):
                   'password2')
 
 
-class AccoutAuthenticationForm(forms.ModelForm):
+class AccountAuthenticationForm(forms.ModelForm):
 
     password = forms.CharField(label='password', widget=forms.PasswordInput)
 
