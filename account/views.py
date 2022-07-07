@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import Group
-from account.form import RegistrationForm, AccoutAuthenticationForm
+from account.form import RegistrationForm, AccountAuthenticationForm
 
 
 def register(request, tier):
@@ -33,7 +33,7 @@ def login_user(request):
     if user.is_authenticated:
         return redirect('tier_welcome')
     if request == 'POST':
-        form = AccoutAuthenticationForm(request.POST)
+        form = AccountAuthenticationForm(request.POST)
         if form.is_valid():
             email = form.email
             password = form.password
@@ -42,7 +42,7 @@ def login_user(request):
                 login(request, user)
                 return redirect('tier_welcome')
     else:
-        form = AccoutAuthenticationForm()
+        form = AccountAuthenticationForm()
 
     context = {'form': form}
     return render(request, 'registration/login.html', context)

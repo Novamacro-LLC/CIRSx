@@ -1,5 +1,7 @@
 from django.contrib import admin
 from .models import Account, Country
+from django.contrib.auth.models import Group
+from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.admin import UserAdmin
 
 
@@ -10,7 +12,7 @@ class AccountAdmin(UserAdmin):
     filter_horizontal = ()
     list_filter = ()
     fieldsets = ()
-    add_fieldsets = ('Permissions', {'fields': ('groups', 'user_permissions')})
+    add_fieldsets = (('Permissions', {'fields': ('groups',)}),)
 
 
 admin.site.register(Account, AccountAdmin)
