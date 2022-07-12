@@ -47,8 +47,8 @@ def contact_us(request):
         if form.is_valid():
             form.save()
             email = 'support@novamacro.net'
-            subject = 'New website message: ' + form.subject
-            message = 'You have recieved a new message from 1the website.  Please login to the admin site to check'
+            subject = 'New website message'
+            message = 'You have received a new message from 1the website.  Please login to the admin site to check'
             try:
                 send_mail(subject, message, email, ['brad.davison@novamacro.net'])
             except BadHeaderError:
@@ -77,4 +77,3 @@ def test(request):
     return render(request, 'home/test.html'),
 
 
-                                #--normal login--#

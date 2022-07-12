@@ -1,43 +1,41 @@
 {% extends "home/base.html" %}{% load static %}{% block content %}
 
-    <div class="text-center bg-light"
-         style="display: flex;
-         align-items: center;
-         padding-top: 40px;
-         padding-bottom: 40px;">
-
-
-<main class="form-signin w-30 m-auto">
-
+<div
+  class="text-center bg-light"
+  style="
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  "
+>
+  <main class="form-signin w-30 m-auto">
     {% if form.errors %}
     <p class="text-danger">Email or password is invalid</p>
-    {% endif %}
-
-    {% if next %}
+    {% endif %} {% if next %}
     <p class="text-danger">Access Denied, please contact a member of support</p>
     {% endif %}
 
-  <form method="post" action="{% url 'login' %}">
-        {% csrf_token %}
+    <form method="post" action="{% url 'login' %}">
+      {% csrf_token %}
 
       <h1 class="h3 mb-3 fw-normal">Welcome to CIRSx: Joining the Mission</h1>
 
-    <div class="form-floating">
+      <div class="form-floating">
         <p class="p-1">Username: {{ form.email }}</p>
-    </div>
+      </div>
 
-    <div class="form-floating">
-        <p class="p-1">Password:  {{ form.password }}</p>
-    </div>
+      <div class="form-floating">
+        <p class="p-1">Password: {{ form.password }}</p>
+      </div>
 
-
-
-        <input type="submit" = value="Login">
-        <input type="hidden" name="next" value="{{ next }}">
-  </form>
-        <p class="p-2"> Don't have account Sign up <a href="{% url 'subscribe' %}">Here</a> </p>
-</main>
-
+      <input type="submit" value="Login" />
+      <input type="hidden" name="next" value="{{ next }}" />
+    </form>
+    <p class="p-2">
+      Don't have account Sign up <a href="{% url 'subscribe' %}">Here</a>
+    </p>
+  </main>
 </div>
 
 {% endblock content %}

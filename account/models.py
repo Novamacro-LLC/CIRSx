@@ -82,7 +82,7 @@ class Account(AbstractBaseUser, PermissionsMixin):
     state = models.CharField(max_length=50)
     post_code = models.CharField(max_length=10)
     phone = models.CharField(max_length=25)
-    country = models.ForeignKey(Country, default='USA', on_delete=models.CASCADE)
+    country = models.ForeignKey(Country, on_delete=models.CASCADE)
     date_joined = models.DateTimeField(verbose_name='date_joined', auto_now=True)
     last_login = models.DateTimeField(verbose_name='last_login', auto_now=True)
     is_admin = models.BooleanField(default=False)

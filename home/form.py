@@ -1,6 +1,5 @@
 from django import forms
 from .models import Communication
-from django.contrib.auth.forms import UserCreationForm
 
 
 class ContactForm(forms.ModelForm):
@@ -12,25 +11,21 @@ class ContactForm(forms.ModelForm):
                   'subject',
                   'message']
         widgets = {
-            'first_name': forms.TextInput(attrs={'class': 'form-control',
-                                                 'id': 'firstName',
-                                                 'placeholder': ''}),
-            'last_name': forms.TextInput(attrs={'class': 'form-control',
-                                                'id': 'lastName',
-                                                'placeholder': ''}),
-            'email': forms.EmailInput(attrs={'class': 'form-control',
-                                             'id': 'email',
-                                             'placeholder': 'name@example.com'}),
-            'subject': forms.TextInput(attrs={'class': 'form-control',
-                                              'id': 'subject',
-                                              'placeholder': ''}),
-            'message': forms.Textarea(attrs={'class': 'form-control',
-                                             'id': 'message',
-                                             'placeholder': ''})
+           'first_name': forms.TextInput(attrs={'class': 'form-control',
+                                                'id': 'firstName',
+                                                'placeholder': '...'}),
+           'last_name': forms.TextInput(attrs={'class': 'form-control',
+                                               'id': 'lastName',
+                                               'placeholder': '...'}),
+           'email': forms.EmailInput(attrs={'class': 'form-control',
+                                            'id': 'email',
+                                            'placeholder': 'name@example.com'}),
+           'subject': forms.TextInput(attrs={'class': 'form-control',
+                                             'id': 'subject',
+                                             'placeholder': '...'}),
+           'message': forms.Textarea(attrs={'class': 'form-control',
+                                            'id': 'message',
+                                            'placeholder': '...',
+                                            'style': 'height: 300px'})
         }
 
-
-#class RegistrationForm(UserCreationForm):
-#    email = forms.EmailField(max_length=100, help_text='Required. Add a valid email address')
-
-#    class Meta:

@@ -1,26 +1,31 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import Group
+from django.http import HttpResponse
 from account.form import RegistrationForm, AccountAuthenticationForm
 
 
 def register(request, tier):
+
+    form = RegistrationForm()
+    context = {'form': form, 'tier': tier}
+
     if request.method == 'POST':
         form = RegistrationForm(request.POST)
 
         if form.is_valid():
             form.save()
-            username = form.cleaned_data['username']
+            email = form.cleaned_data['email']
             password = form.cleaned_data['password1']
-            user = authenticate(username=username, password=password)
+            user = authenticate(email=email, password=password)
             login(request, user)
             pro = Group.objects.get(name=tier)
             user.groups.add(pro)
-            return redirect('tier_welcome')
+            return render(request, 'member/tier_welcome.html', {})
+        else:
+            return HttpResponse('Data is not clean', form.errors)
     else:
-        form = RegistrationForm()
-        context = {'form': form}
-    return render(request, 'registration/register.html', context)
+        return render(request, 'registration/register.html', context)
 
 
 def logout_user(request):

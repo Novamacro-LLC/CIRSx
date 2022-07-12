@@ -5,24 +5,90 @@
     display: flex;
     align-items: center;
     padding-top: 40px;
-    padding-bottom: 40px;">
-
-
+    padding-bottom: 40px;
+  "
+>
   <main class="form-register w-30 m-auto">
-    <h1>Registration Page!</h1>
-    <form method="post" action="{% url 'register' %}">
+    <h1 class="p-5">Registration Page for the {{ tier }}</h1>
+    <div class="container">
+      <form
+        class="p-4 p-md-5 border rounded-3 bg-light"
+        method="post"
+        action="{% url 'register' tier %}"
+      >
         {% csrf_token %}
-
-        {% if form.errors %}
-        <p class=" text-danger">There are errors in the form!</p>
-        {% endif %}
-
-
-        {{ form }}
-
-
-        <input type="submit" value="Register">
-    </form>
-</main>
+        <div class="form-floating mb-3 row g-9 align-items-center">
+          {% if form.errors %}
+          <p class="text-danger">
+            There are errors in the form. Please fill out all required fields.
+          </p>
+          {% endif %}
+          <div class="form-floating mb-3">
+            {{ form.email }}
+            <label for="email">Email</label>
+            <!--<p class="text-start p-2">Required, add a valid email address</p>-->
+          </div>
+          <div class="form-floating mb-3">
+            {{ form.username }}
+            <label for="username">Username</label>
+          </div>
+          <div class="form-floating mb-3">
+            {{ form.first_name }}
+            <label for="first_name">First Name</label>
+          </div>
+          <div class="form-floating mb-3">
+            {{ form.last_name }}
+            <label for="last_name">Last Name</label>
+          </div>
+          <div class="form-floating mb-3">
+            {{ form.address }}
+            <label for="address">Address</label>
+          </div>
+          <div class="form-floating mb-3">
+            {{ form.city }}
+            <label for="city">City</label>
+          </div>
+          <div class="form-floating mb-3">
+            {{ form.state }}
+            <label for="state">State/Province/Region</label>
+          </div>
+          <div class="form-floating mb-3">
+            {{ form.post_code }}
+            <label for="post_code">Postal Code</label>
+          </div>
+          <div class="form-floating mb-3">
+            {{ form.phone }}
+            <label for="phone">Phone Number</label>
+          </div>
+          <div class="form-floating mb-3">
+            {{ form.country }}
+            <label for="country">Country</label>
+          </div>
+          <div class="form-floating mb-3">
+            {{ form.password1 }}
+            <label for="password1">Password</label>
+            <ul class="text-start p-2">
+              <li>
+                Your password can’t be too similar to your other personal
+                information.
+              </li>
+              <li>Your password must contain at least 8 characters.</li>
+              <li>Your password can’t be a commonly used password.</li>
+              <li>Your password can’t be entirely numeric.</li>
+            </ul>
+          </div>
+          <div class="form-floating mb-3">
+            {{ form.password2 }}
+            <label for="password2">Password Confirmation</label>
+          </div>
+        </div>
+        <input
+          class="btn btn-dark btn-lg btn-outline-secondary text-white"
+          type="submit"
+          value="Register"
+        />
+      </form>
     </div>
+  </main>
+</div>
 {% endblock content %}
