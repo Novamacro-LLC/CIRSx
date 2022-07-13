@@ -37,15 +37,15 @@ def login_user(request):
     user = request.user
     if user.is_authenticated:
         return redirect('tier_welcome')
-    if request == 'POST':
+    if request.method == 'POST':
         form = AccountAuthenticationForm(request.POST)
         if form.is_valid():
-            email = form.email
-            password = form.password
-            authenticate(email=email, password=password)
+            email = request.POST['email']
+            password = request.POST['password']
+            user = authenticate(email=email, password=password)
             if user:
                 login(request, user)
-                return redirect('tier_welcome')
+            return redirect('tier_welcome')
     else:
         form = AccountAuthenticationForm()
 

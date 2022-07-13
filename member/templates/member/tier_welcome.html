@@ -13,7 +13,7 @@
     </div>
 
          {% for group in request.user.groups.all %}
-         {% if 'Professional Tier' == group.name %}
+         {% if 'Professional Tier' == group.name or 'CIRSx Staff' == group.name %}
 
     <div class="px-4 pt-5 fw-bold text-center border-bottom">
   <h1 class="display-3 text-black">
@@ -63,7 +63,7 @@
           <div class="card-body">
 
                 {% for group in request.user.groups.all %}
-                {% if 'Professional Tier' == group.name %}
+                {% if 'Professional Tier' == group.name or 'CIRSx Staff' == group.name %}
 
                     <h3 class="text-center pb-2"> Video Resources </h3>
             <ul class="list-unstyled mt-1 mb-1">
@@ -99,7 +99,7 @@
           <div class="card-body">
 
                     {% for group in request.user.groups.all %}
-                    {% if 'Professional Tier' == group.name %}
+                    {% if 'Professional Tier' == group.name or 'CIRSx Staff'%}
 
                 <h3 class="pb-4 pt-4 text-center"> Database </h3>
             <ul class="list-unstyled mt-3 mb-4">
@@ -134,7 +134,7 @@
           <div class="card-body">
 
                     {% for group in request.user.groups.all %}
-                    {% if 'Professional Tier' == group.name %}
+                    {% if 'Professional Tier' == group.name or 'CIRSx Staff' == group.name %}
 
                 <h3 class="pt-4 pb-5 text-center"> Events </h3>
             <ul class="list-unstyled mt-3 mb-4">
@@ -165,7 +165,7 @@
   </div>
 
     {% for group in request.user.groups.all %}
-        {% if 'Professional Tier' == group.name %}
+        {% if 'Professional Tier' == group.name or 'CIRSx Staff' == group.name %}
         <!-- Sponsors -->
     <div class="bg-white rounded-3">
       <div class="container-fluid">
