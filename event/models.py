@@ -66,7 +66,7 @@ class Event(models.Model):
     venue_directions = models.TextField(null=False)
     accomodations = models.TextField(null=False)
     active = models.BooleanField()
-    event_type = models.ForeignKey(EventType, on_delete=models.CASCADE, default='Webinar')
+    event_type = models.ForeignKey(EventType, on_delete=models.CASCADE, null=True)
     speakers = models.ManyToManyField(Speaker)
     sponsors = models.ManyToManyField(Sponsor)
 

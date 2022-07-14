@@ -202,6 +202,8 @@
 ('Zambia'),
 ('Zimbabwe');
 
+
+
 --Adding Events
 
 insert into cirsx_dev.public.event_event(event_name,
