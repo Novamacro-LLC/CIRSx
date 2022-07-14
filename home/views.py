@@ -24,7 +24,7 @@ def about_us(request):
 
 
 def conference(request):
-    return render(request, 'home/conference1.html', {})
+    return render(request, 'home/conference.html', {})
 
 
 def sponsor(request):
