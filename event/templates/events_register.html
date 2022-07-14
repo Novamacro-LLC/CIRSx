@@ -1,0 +1,60 @@
+{% extends "home/base.html" %}{% load static %}{% block content %}
+
+ <div class="p-5 bg-secondary"
+    style="background-image: url('{% static "home/tier_page/events_BG.jpg" %}');
+                 background-repeat: no-repeat;
+                 background-size: cover;
+                 background-position: 75% 75%;
+                 background-blend-mode: darken">
+    <div class="container-fluid" style="height: 150px;">
+
+    <h1 class="display-1 p-2 fw-bold text-white text-center">Sign a guest up for an Event.</h1>
+    </div>
+    </div>
+
+    <div class="col-md-10 mx-auto col-lg-5">
+      <form class="p-4 p-md-5 border rounded-3 bg-light" action="{% url 'contact_us' %}" method="post">
+        {% csrf_token %}
+        <div class="form-floating mb-3">
+          <div class="row g-9 align-items-center">
+            <!--Event-->
+            <div class="form-floating mb-3">
+              {{ form.first_name }}
+              <label for="firstName">Which Event? </label>
+            </div>
+            <!--Member-->
+            <div class="form-floating mb-3">
+              {{ form.last_name }}
+              <label for="lastName">Member Name</label>
+            </div>
+            <!--Guest first Name-->
+            <div class="form-floating mb-3">
+              {{ form.email }}
+              <label for="email">Guest First Name</label>
+            </div>
+            <!--Guest Last name-->
+            <div class="form-floating mb-3">
+              {{ form.email }}
+              <label for="email">Guest Last Name</label>
+            </div>
+            <!--How many -->
+            <div class="form-floating pb-3">
+              {{ form.subject }}
+              <label for="subject">How many Guest are you brining?</label>
+            </div>
+
+
+          </div>
+
+          <button
+            class="btn btn-dark btn-lg btn-outline-secondary text-white"
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+</div>
+
+
+{% endblock content %}

@@ -1,3 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
-# Create your views here.
+
+def events_register(request):
+    return render(request, 'event/events_register', {})
+
