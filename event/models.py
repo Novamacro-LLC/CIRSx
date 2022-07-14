@@ -48,11 +48,17 @@ class Sponsor(models.Model):
     active = models.BooleanField()
 
 
+class EventType(models.Model):
+    event_type = models.CharField(max_length=100, null=False)
+
+
 class Event(models.Model):
     event_name = models.CharField(max_length=150, null=False)
     event_tag = models.CharField(max_length=250, null=False)
     event_start_date = models.DateField(null=False)
-    event_end_date = models.DateField(null=False)
+    event_end_date = models.DateField(null=True)
+    event_start_time = models.TimeField(null=True)
+    event_end_time = models.TimeField(null=True)
     event_location = models.CharField(max_length=150, null=False)
     event_venue = models.CharField(max_length=150, null=False)
     venue_details = models.TextField(null=False)
@@ -60,6 +66,7 @@ class Event(models.Model):
     venue_directions = models.TextField(null=False)
     accomodations = models.TextField(null=False)
     active = models.BooleanField()
+    event_type = models.ForeignKey(EventType, on_delete=models.CASCADE, default='Webinar')
     speakers = models.ManyToManyField(Speaker)
     sponsors = models.ManyToManyField(Sponsor)
 
