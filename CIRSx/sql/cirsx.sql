@@ -7,6 +7,7 @@
 
  insert into cirsx_dev.public.account_country(country_name)
  values
+('United States of America'),
 ('Afghanistan'),
 ('Albania'),
 ('Algeria'),

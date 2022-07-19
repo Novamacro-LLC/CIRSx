@@ -1,11 +1,21 @@
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from .form import EventRegisterForm
 
 
 def events_register(request):
     if request.method == 'GET':
         form = EventRegisterForm()
-    return render(request, 'event/events_register.html',)
+        context = {'form': form}
+        return render(request, 'event/events_register.html', context)
+    else:
+        form = EventRegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            redirect('index')
+        else:
+            return HTTPResponse('Form is invalid')
+
 
 
 
