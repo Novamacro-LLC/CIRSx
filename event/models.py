@@ -51,6 +51,10 @@ class Sponsor(models.Model):
 class EventType(models.Model):
     event_type = models.CharField(max_length=100, null=False)
 
+    def __str__(self):
+        return self.event_type
+
+
 
 class Event(models.Model):
     event_name = models.CharField(max_length=150, null=False)
@@ -66,9 +70,12 @@ class Event(models.Model):
     venue_directions = models.TextField(null=False)
     accomodations = models.TextField(null=False)
     active = models.BooleanField()
-    event_type = models.ForeignKey(EventType, on_delete=models.CASCADE, default=1)
+    event_type = models.ForeignKey(EventType, on_delete=models.CASCADE)
     speakers = models.ManyToManyField(Speaker)
     sponsors = models.ManyToManyField(Sponsor)
+
+    def __str__(self):
+        return self.event_type
 
 
 class EventOffer(models.Model):

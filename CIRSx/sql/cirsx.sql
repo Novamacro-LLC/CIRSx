@@ -204,6 +204,13 @@
 ('Zimbabwe');
 
 
+--Adding Event Types
+
+insert into cirsx_dev.public.event_eventtype(event_type)
+values
+('Conference'),
+('Web Conference');
+
 
 --Adding Events
 
@@ -217,7 +224,8 @@ insert into cirsx_dev.public.event_event(event_name,
                                          venue_location,
                                          venue_directions,
                                          accomodations,
-                                         active)
+                                         active,
+                                         event_type_id)
 values
 ('2022 CIRSx Annual Conference',
  'Hosted by CIRSx in Partnership with SurvivingMold',
@@ -231,9 +239,12 @@ values
  'Sonesta Fort Lauderdale Beach Hotel, 999 N Fort Lauderdale Blvd, Fort Lauderdale, FL ',
  'Located just 5 miles from the Fort Lauderdale-Hollywood International Airport.',
  'You will receive an email with a link to make your hotel reservation at a discounted room rate when you register and pay for the conference.',
- 'True'),
+ 'True',
+ 1),
 ('I Dream of GENIE Volume 4',
  'Joint Surviving Mold | CIRSx Web Conference',
  '07/15/2022',
  '',
+ 'Webinar',
+ 'www.cirsx.com',
  '')
