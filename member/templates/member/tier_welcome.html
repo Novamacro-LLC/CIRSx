@@ -72,7 +72,7 @@
               <li class="fs-4 pb-3"> <q> DEEPER DIVE </q> Demystifying research articles and explaining their relevance to CIRS </li>
             </ul>
               <div class="card-footer bg-light border-light">
-            <a href=""> <button type="button" class="btn btn-dark btn-lg btn-outline-secondary text-white">Watch</button></a>
+            <a href="{% url "tier_videos" %}"> <button type="button" class="btn btn-dark btn-lg btn-outline-secondary text-white">Watch</button></a>
               </div>
 
                 {% endif  %}
@@ -107,8 +107,10 @@
               <li class="fs-4 pb-5"> <b>Coming Soon!</b> Full text search engine. Stay tuned. </li>
             </ul>
           <div class="card-footer bg-light border-light">
-            <a href=""> <button type="button" class="btn btn-dark btn-lg btn-outline-secondary text-white">Access Resources</button></a>
+            <a href="{% url "research_papers" %}"> <button type="button" class="btn btn-dark btn-lg btn-outline-secondary text-white">Research Papers</button></a>
+            <a href="{% url "bibliographies" %}"> <button type="button" class="btn btn-dark btn-lg btn-outline-secondary text-white">Bibliographies</button></a>
           </div>
+
                     {% endif %}
                 {% if 'Patient Tier' == group.name %}
 
@@ -143,7 +145,7 @@
                 <li></li>
             </ul>
                 <div class="card-footer bg-light border-light">
-            <a href=""> <button type="button" class="btn btn-dark btn-lg btn-outline-secondary text-white">Event Details</button></a>
+            <a href="{% url "conference" %}"> <button type="button" class="btn btn-dark btn-lg btn-outline-secondary text-white">Event Details</button></a>
                 </div>
 
                     {% endif %}

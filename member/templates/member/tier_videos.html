@@ -10,7 +10,7 @@
     <div class="container-fluid" style="height: 300px;">
 
             {% for group in request.user.groups.all %}
-            {% if 'Professional Tier' == group.name %}
+            {% if 'Professional Tier' == group.name or 'CIRSx Staff' == group.name %}
 
                 <h1 class="display-1 fw-bold text-white text-center p-5">Professional Tier Video <br> Resources </h1>
 
@@ -24,7 +24,7 @@
     </div>
 
             {% for group in request.user.groups.all %}
-            {% if 'Professional Tier' == group.name %}
+            {% if 'Professional Tier' == group.name or 'CIRSx Staff' == group.name %}
 
      <div class="px-4 pt-5 text-center border-bottom">
      <div class="container-fluid py-5">
@@ -41,7 +41,7 @@
          <p class="fs-3"><i>Our experts select a <q>must know</q> research paper from our library to discuss.  Gain a better understanding
              of the paper’s content and understand how it  impacts your practice/business.</i></p>
 
-        <a class="btn btn-dark btn-lg btn-outline-secondary text-white"> Deeper Dive Series » </a>
+        <a class="btn btn-dark btn-lg btn-outline-secondary text-white" href="{% url "deeper_dive" %}"> Deeper Dive Series » </a>
      </div>
      </div>
 
