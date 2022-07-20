@@ -14,7 +14,7 @@ def events_register(request):
             form.save()
             redirect('index')
         else:
-            return HTTPResponse('Form is invalid')
+            return HttpResponse('Form is invalid')
 
 
 

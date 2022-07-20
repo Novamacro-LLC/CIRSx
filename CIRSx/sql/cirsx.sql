@@ -247,4 +247,21 @@ values
  '',
  'Webinar',
  'www.cirsx.com',
- '')
+ 'Learn about new diagnostics and treatment paradigms for complicated patients with chronic unexplained symptoms and ' ||
+ 'illnesses. Better understand chronic inflammatory response syndrome CIRS.  Review the latest information about ' ||
+ 'biofilms and cognitive decline. Explore energy production and the new world of transcriptomics. Examine the newest ' ||
+ 'understanding of the role of Actinomycetes in environmental landscape. Connect to the premiere community of CIRS ' ||
+ 'practitioners and environmental experts.',
+ 'Webinar url will be given once you register.',
+ '',
+ '“I Dream of GENIE” Volume 4 CME Accreditation Statement
+This activity has been planned and implemented in accordance with the accreditation requirements and policies of the ' ||
+'New Mexico Medical Society (NMMS) through the joint sponsorship of Rehoboth McKinley Christian Health Care Services ' ||
+'(RMCHCS) and Gallup Indian Medical Center. RMCHCS is accredited by the NMMS to provide continuing medical education ' ||
+'for physicians.
+Credit Statement: RMCHCS designates this live activity for a maximum of 3.5 AMA PRA Category 1 Credit(s)™.
+Physicians should claim only the credit commensurate with the extent of their participation in the activity.
+All of the relevant financial relationships listed for these individual(s), both planners and speakers, have been ' ||
+'mitigated.',
+True,
+ 2)

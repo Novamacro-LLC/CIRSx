@@ -55,13 +55,12 @@ class EventType(models.Model):
         return self.event_type
 
 
-
 class Event(models.Model):
     event_name = models.CharField(max_length=150, null=False)
     event_tag = models.CharField(max_length=250, null=False)
     event_start_date = models.DateField(null=False)
     event_end_date = models.DateField(null=True)
-    event_start_time = models.TimeField(null=True)
+    event_start_time = models.TimeField(null=False)
     event_end_time = models.TimeField(null=True)
     event_location = models.CharField(max_length=150, null=False)
     event_venue = models.CharField(max_length=150, null=False)
