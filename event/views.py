@@ -11,6 +11,7 @@ def events_register(request):
     else:
         form = EventRegisterForm(request.POST)
         if form.is_valid():
+            form.event = True
             form.save()
             redirect('index')
         else:

@@ -32,10 +32,10 @@
 
             <!--How many -->
             <div class="form-floating pb-5">
-              {{ form.subject }}
-              <label for="subject">How many Guest are you brining?</label>
+              <input type="number" id="count" name="count">
+              <label for="count">How many Guest are you brining?</label>
             </div>
-
+            {% for i in count %}
             <!--Guest first Name-->
             <div class="form-floating mb-5">
               {{ form.guest_first_name }}
@@ -48,7 +48,7 @@
               <label for="guest_last_name">Guest Last Name</label>
             </div>
           </div>
-
+            {% endfor %}
           <button
             class="btn btn-dark btn-lg btn-outline-secondary text-white"
             type="submit"
