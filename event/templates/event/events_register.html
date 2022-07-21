@@ -12,7 +12,7 @@
     </div>
     </div>
 
-    <div class="text-center col-md-8 mx-auto col-lg-5 fs-4">
+    <div class="col-md-8 mx-auto col-lg-5 fs-4">
       <form class="p-4 p-md-5 rounded-3 bg-light" action="{% url 'events_register' %}" method="post">
         {% csrf_token %}
         <div class="form-floating mb-5">
@@ -32,10 +32,12 @@
 
             <!--How many -->
             <div class="form-floating pb-5">
+                <p>How Many Guest are you Bringing?</p>
               <input type="number" id="count" name="count">
-              <label for="count">How many Guest are you brining?</label>
+              <label hidden for="count">How many Guest are you brining?</label>
             </div>
             {% for i in count %}
+
             <!--Guest first Name-->
             <div class="form-floating mb-5">
               {{ form.guest_first_name }}
@@ -49,6 +51,7 @@
             </div>
           </div>
             {% endfor %}
+
           <button
             class="btn btn-dark btn-lg btn-outline-secondary text-white"
             type="submit"
