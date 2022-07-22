@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-3u3h!y9d^i=g+-+j-3qc4(0iav)20cd5)qce*yx0vmvf--n2h$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cirsxtest.com', '10.136.66.156', 'localhost']
 
 
 # Application definition
@@ -136,6 +136,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+import os
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 #Setting up emails for the forms
 
