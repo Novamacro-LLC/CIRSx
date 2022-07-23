@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-3u3h!y9d^i=g+-+j-3qc4(0iav)20cd5)qce*yx0vmvf--n2h$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['cirsxtest.com', '167.172.159.216', '10.136.66.156', 'localhost']
+ALLOWED_HOSTS = ['cirsxtest.com', '167.172.159.216pip', '10.136.66.156', 'localhost']
 
 
 # Application definition
@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #Created Apps
-    'home',
+    'index',
     'member',
     'account',
     'event',
@@ -61,7 +61,7 @@ ROOT_URLCONF = 'CIRSx.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'home/templates']
+        'DIRS': [BASE_DIR / 'index/templates']
         ,
         'APP_DIRS': True,
         'OPTIONS': {
