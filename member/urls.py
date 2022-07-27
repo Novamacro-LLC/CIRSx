@@ -6,7 +6,7 @@ urlpatterns = [
     path('tier_videos/', views.tier_videos, name='tier_videos'),
     path('bibliographies/', views.bibliographies, name='bibliographies'),
     path('research_papers/', views.research_papers, name='research_papers'),
-    path('', include('home.urls')),
+    path('', include('index.urls')),
     path('archived_events/', views.archived_events, name='archived_events'),
     path('deeper_dive/', views.deeper_dive, name='deeper_dive'),
     path('hopkinton/', views.hopkinton, name='hopkinton'),

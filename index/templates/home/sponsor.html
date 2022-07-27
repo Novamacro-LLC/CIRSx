@@ -1,0 +1,150 @@
+{% extends "home/base.html" %}{% load static %}{% block content %}
+
+    <div class="p-5 bg-secondary"
+         style="background-image: url('{% static "index/conference_page/CIRSX CONF_website header.png" %}');
+               background-repeat: no-repeat;
+               background-size: cover;
+               background-position: 50% 50%;">
+
+  <div class="container-fluid py-5">
+     <h1 class="display-5 fw-bold text-white text-center">Sponsors and Exhibitors</h1>
+  </div>
+</div>
+
+<div class="row featurette bg-primary pt-5 pb-5">
+  <div class="col-md-7 order-md-2">
+    <ul>
+      <li class="p-1 fs-3 text-white">
+        Promote your brand and sell your product or services in a variety of ways – at in-person conference with pop up banners/signage,
+          exhibit table, and throughout the next 12 months through logo and banner ads, video content on CIRSx website, conference communications,
+          and our growing online Membership Library.
+      </li>
+      <li class="p-1 fs-3 text-white">
+        Speak/present in front of in-person meeting attendees, promoting product and services while showing scientific evidence to support.
+      </li>
+      <li class="p-1 fs-3 text-white">
+          <b>Join the mission</b> by meeting and networking with top physicians of their field and patients affected by CIRS.
+      </li>
+      <li class="p-1 fs-3 text-white">
+          Support and be a part of a <b>“Good Cause”</b> in the medical space serving patients impacted by mold related illnesses,
+          specifically Chronic Inflammatory Response Syndrome (CIRS).
+      </li>
+      <li class="p-1 fs-3 text-white">
+        Access to the exclusive CIRSx Medical Glossary.
+      </li>
+    </ul>
+   <div class="text-center">
+    <a class="btn btn-warning btn-lg btn-outline-secondary text-black" href= "{% url "subscribe" %}"> Learn More »</a>
+  </div>
+  </div>
+
+  <div class="col-md-5 order-md-1">
+      <h1 class="text-warning">Why Sponsor?</h1>
+  </div>
+</div>
+
+    <div class="p-5 mb-4 rounded-3">
+  <div class="container-fluid py-5">
+     <h1 class="display-5 fw-bold text-black text-center">Sponsorship and Exhibitor Levels</h1>
+  </div>
+
+    <div class="row row-cols-1 row-cols-md-4 mb-3 text-center">
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm bg-light">
+          <div class="pt-5">
+
+            <img class="center" src="{% static "index/sponsor_page/Platinum.png" %}"
+            alt="" width="100%" height="auto">
+
+          </div>
+            <!-- Platinum -->
+          <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+              <li class="fs-2"> Platinum </li>
+              <li class="fs-4"> $15,000 </li>
+            </ul>
+            <button type="button" class="btn btn-dark btn-lg btn-outline-secondary text-white">Details</button>
+          </div>
+        </div>
+      </div>
+            <!-- Gold -->
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm bg-light">
+          <div class="pt-5">
+
+            <img class="center" src="{% static "index/sponsor_page/gold.png" %}"
+            alt="" width="100%" height="auto">
+
+          </div>
+
+          <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+              <li class="fs-2"> Gold </li>
+              <li class="fs-4"> $10,000 </li>
+            </ul>
+            <button type="button" class="btn btn-dark btn-lg btn-outline-secondary text-white">Details</button>
+          </div>
+        </div>
+      </div>
+            <!--Silver-->
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm bg-light">
+          <div class="pt-5">
+
+            <img class="center" src="{% static "index/sponsor_page/silver.png" %}"
+            alt="" width="100%" height="auto">
+
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+              <li class="fs-2"> Silver </li>
+              <li class="fs-4"> $5,000 </li>
+            </ul>
+            <button type="button" class="btn btn-dark btn-lg btn-outline-secondary text-white">Details</button>
+          </div>
+        </div>
+      </div>
+            <!--Bronze -->
+        <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm bg-light">
+          <div class="pt-5">
+
+            <img class="center" src="{% static "index/sponsor_page/bronze.png" %}"
+            alt="" width="100%" height="auto">
+
+          </div>
+          <div class="card-body">
+            <ul class="list-unstyled mt-3 mb-4">
+              <li class="fs-2"> Bronze </li>
+              <li class="fs-4"> $3,000 </li>
+            </ul>
+            <button type="button" class="btn btn-dark btn-lg btn-outline-secondary text-white">Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+          <div class="text-center">
+            <a class="btn btn-dark btn-lg btn-outline-secondary text-white" href="{% static "index/sponsor_page/Sponsor+++Exhibitor+Guide+CIRSx+2022a.pdf" %}"> Partner Details »</a>
+              <p class="fs-3 text-black text-center p-5">Bringing additional guests? Secure our discounted rate for sponsor and exhibitor guests.</p>
+            <a class="btn btn-dark btn-lg btn-outline-secondary text-white" href="{% url "events_register" %}"> Guest Registration »</a>
+          </div>
+      </div>
+
+    <div class="px-4 py-5 my-5 text-center bg-primary">
+  <h1 class="display-5 fw-bold text-warning">
+    Ready to Get Started?
+  </h1>
+  <div class="col-lg-6 mx-auto">
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+    <p class="text-center text-white fs-3"> If you don’t see a package that interests you, we can customize something for you! Contact Marcia@CIRSx.com </p>
+    </div>
+      <a class="btn btn-warning btn-lg btn-outline-secondary text-black" href="{% url "contact_us" %}"> Contact Us »</a>
+      </div>
+    </div>
+
+
+
+
+</div>
+{% endblock content %}

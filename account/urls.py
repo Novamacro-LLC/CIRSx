@@ -6,7 +6,7 @@ urlpatterns = [
     path('register/<str:tier>/', views.register, name='register'),
     path('register_test/<str:tier>/', views.register, name='test'),
     path('login/', views.login_user, name='login'),
-    path('', include('home.urls')),
+    path('', include('index.urls')),
     path('', include('member.urls')),
     path('', include('event.urls'))
     ]

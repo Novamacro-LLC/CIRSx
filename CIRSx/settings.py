@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-3u3h!y9d^i=g+-+j-3qc4(0iav)20cd5)qce*yx0vmvf--n2h$
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cirsxtest.com', '137.184.28.42', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #Created Apps
-    'home',
+    'index',
     'member',
     'account',
     'event',
@@ -61,7 +61,7 @@ ROOT_URLCONF = 'CIRSx.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'home/templates']
+        'DIRS': [BASE_DIR / 'index/templates']
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -127,7 +127,7 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
+# static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
@@ -136,6 +136,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+import os
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 #Setting up emails for the forms
 
