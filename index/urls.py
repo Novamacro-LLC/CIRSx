@@ -16,4 +16,5 @@ urlpatterns = [
     path('test/', views.test, name='test'),
     path('stripe_pro/', views.stripe_pro, name='stripe_pro'),
     path('stripe_patient/', views.stripe_patient, name='stripe_patient'),
+    path('placeholder/', views.placeholder, name='placeholder'),
 ]
