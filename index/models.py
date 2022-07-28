@@ -7,7 +7,7 @@ from django_currentuser.db.models import CurrentUserField
 class News(models.Model):
     title = models.CharField(max_length=150)
     body = models.TextField()
-    image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100)
+ #   image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100, null=True)
     date_added = models.DateTimeField(default=timezone.now)
     user = CurrentUserField()
 
