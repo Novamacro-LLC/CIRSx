@@ -77,3 +77,7 @@ def test(request):
     return render(request, 'home/test.html'),
 
 
+def placeholder(request):
+    return render(request, 'home/placeholder.html', {})
+
+
