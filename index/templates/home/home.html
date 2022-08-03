@@ -142,99 +142,64 @@
 <!--4.1.1.1.3.2 Carousel Background -->
 <!--4.1.1.1.4 Blog/Announcements/News -->
 
+    <div class="container-fluid my-5">
+    <div class="row align-items-center rounded-3 border bg-light" style="height: 600px">
 
-    <div class="container-fluid">
-    <div id="carouselNews" class="carousel carousel-dark slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselNews" data-bs-slide-to="0" class="active" aria-current="true" aria-label="News 1"></button>
-    <button type="button" data-bs-target="#carouselNews" data-bs-slide-to="1" aria-label="News 2"></button>
-  </div>
-
-
-
-      <div class="carousel-inner text-center">
-    <div class="carousel-item active" data-bs-interval="10000">
-    <div class="row text-center">
-        {% for i in front %}
-      <div class="col-lg-4 card-body">
-        <img src="{% static 'index/Transparent-gold.png' %}" style="height: 50%; width: 50%"  alt="...">
-
-        <h2 class="fw-normal">{{ i.title }}</h2>
-        <p>{{ i.body}}</p>
-        <div class="card-footer bg-white border-white">
-          <a class="btn btn-dark btn-lg btn-outline-secondary text-white" href=" {% url 'placeholder' %}">View details »</a>
-        </div>
-      </div><!-- /.col-lg-4 -->
-
-        {% endfor %}
+            <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+              <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+              <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
             </div>
-            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active text-center">
+                <svg class="bd-placeholder-img" width="90%" height="90%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
 
-
-        <div class="carousel-item text-center" data-bs-interval="2000">
-        <div class="row text-center">
-        <div class="col-lg-4 card-body">
-        <img src="{% static 'index/scott About.png' %}" style="height: 50%; width: 50%"  alt="...">
-
-        <h2 class="fw-normal">News 4</h2>
-        <p>And lastly this, the third column of representative placeholder content.</p>
-        <div class="card-footer bg-white border-white">
-          <a class="btn btn-dark btn-lg btn-outline-secondary text-white" href="#">View details »</a>
-        </div>
-      </div><!-- /.col-lg-4 -->
-
-        <div class="col-lg-4 card-body">
-        <img src="{% static 'index/scott About.png' %}" style="height: 50%; width: 50%"  alt="...">
-
-        <h2 class="fw-normal">News 5</h2>
-        <p>And lastly this, the third column of representative placeholder content.</p>
-        <div class="card-footer bg-white border-white">
-          <a class="btn btn-dark btn-lg btn-outline-secondary text-white" href="#">View details »</a>
-        </div>
-      </div><!-- /.col-lg-4 -->
-
-        <div class="col-lg-4 card-body">
-        <img src="{% static 'index/scott About.png' %}" style="height: 50%; width: 50%"  alt="...">
-        <h2 class="fw-normal">News 6</h2>
-        <p>And lastly this, the third column of representative placeholder content.</p>
-        <div class="card-footer bg-white border-white">
-          <a class="btn btn-dark btn-lg btn-outline-secondary text-white" href="#">View details »</a>
-        </div>
-      </div><!-- /.col-lg-4 -->
-
-    </div>
-    </div>
-    </div>
-
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselNews" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"  aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselNews" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-
-    </div>
-    </div>
-
-<!--<div class="container">
-    <div class="row flex-row flex-nowrap overflow-scroll">
-        {% for i in front %}
-        <div class="col-3" style="height: 400px">
-            <div class="card card-block">
-                <div class="card" style="width: 18rem;">
-                  <img src="{% static "index/Transparent-gold.jpg" %}" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">{{ i.title }}</h5>
-                    <p class="card-text">{{ i.body}}</p>
+                <div class="container text-center">
+                  <div class="carousel-caption">
+                    <h1>Example headline.</h1>
+                    <p>Some representative placeholder content for the first slide of the carousel.</p>
+                    <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
                   </div>
                 </div>
+              </div>
+              <div class="carousel-item text-center">
+                <svg class="bd-placeholder-img" width="90%" height="9%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+
+                <div class="container">
+                  <div class="carousel-caption">
+                    <h1>Another example headline.</h1>
+                    <p>Some representative placeholder content for the second slide of the carousel.</p>
+                    <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item text-center">
+                <svg class="bd-placeholder-img" width="90%" height=90%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+
+                <div class="container">
+                  <div class="carousel-caption">
+                    <h1>One more for good measure.</h1>
+                    <p>Some representative placeholder content for the third slide of this carousel.</p>
+                    <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+                  </div>
+                </div>
+              </div>
             </div>
-        </div>
-        {% endfor %}
+            <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
     </div>
-</div> -->
+    </div>
+
+
+
 
   <!-- 4.1.1.1.5 Section Title -->
   <!-- 4.1.1.1.6 Section Content -->
@@ -242,9 +207,8 @@
   <!-- 4.1.1.1.7 Trusted Source Hero -->
 
   <div class="container-fluid my-5">
-    <div
-      class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg"
-    >
+    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+
       <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
         <!-- 4.1.1.1.7.1 Title -->
         <h1 class="display-4 fw-bold lh-1">
