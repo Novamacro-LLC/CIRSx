@@ -8,8 +8,8 @@ class EventRegisterForm(forms.ModelForm):
         fields = ['event',
                   'member',
                   'guest',
-                  'guest_last_name',
-                  'guest_first_name']
+                  'guest_name',
+                  'guest_email']
         widgets = {
            'event': forms.TextInput(attrs={'class': 'form-control',
                                            'id': 'event',
@@ -18,10 +18,10 @@ class EventRegisterForm(forms.ModelForm):
                                             'id': 'member',
                                             'placeholder': '...'}),
            'guest': forms.BooleanField(),
-           'guest_first_name': forms.TextInput(attrs={'class': 'form-control',
-                                                      'id': 'guest_first_name',
-                                                      'placeholder': '...'}),
-           'guest_last_name': forms.TextInput(attrs={'class': 'form-control',
-                                                     'id': 'guest_last_name',
-                                                     'placeholder': '...'})
+           'guest_name': forms.TextInput(attrs={'class': 'form-control',
+                                                'id': 'guest_name',
+                                                'placeholder': '...'}),
+           'guest_email': forms.EmailInput(attrs={'class': 'form-control',
+                                                  'id': 'guest_email',
+                                                  'placeholder': '...'})
         }
