@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .form import EventRegisterForm
+from django.contrib.auth.decorators import login_required
 
 
+@login_required()
 def events_register(request):
     if request.method == 'GET':
         form = EventRegisterForm()
