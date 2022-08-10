@@ -8,38 +8,70 @@ import datetime
 
 
 def home(request):
+    if request.user.is_authenticated:
+        base_template_name = 'member/base.html'
+    else:
+        base_template_name = 'home/base.html'
     end_date = datetime.datetime.now()
     st_date = datetime.datetime.now() - datetime.timedelta(days=90)
     front = News.objects.filter(date_added__range=[st_date, end_date]).order_by('-date_added')
-    context = {'front': front}
+    context = {'front': front, 'base_template_name': base_template_name}
     return render(request, 'home/home.html', context)
 
 
 def subscribe(request):
-    return render(request, 'home/subscribe.html', {})
+    if request.user.is_authenticated:
+        base_template_name = 'member/base.html'
+    else:
+        base_template_name = 'home/base.html'
+    return render(request, 'home/subscribe.html', {'base_template_name': base_template_name})
 
 
 def about_us(request):
-    return render(request, 'home/about_us.html', {})
+    if request.user.is_authenticated:
+        base_template_name = 'member/base.html'
+    else:
+        base_template_name = 'home/base.html'
+    return render(request, 'home/about_us.html', {'base_template_name': base_template_name})
 
 
 def conference(request):
-    return render(request, 'home/conference.html', {})
+    if request.user.is_authenticated:
+        base_template_name = 'member/base.html'
+    else:
+        base_template_name = 'home/base.html'
+    return render(request, 'home/conference.html', {'base_template_name': base_template_name})
 
 
 def sponsor(request):
-    return render(request, 'home/sponsor.html', {})
+    if request.user.is_authenticated:
+        base_template_name = 'member/base.html'
+    else:
+        base_template_name = 'home/base.html'
+    return render(request, 'home/sponsor.html', {'base_template_name': base_template_name})
 
 
 def medical_glossary(request):
-    return render(request, 'home/medical_glossary.html', {})
+    if request.user.is_authenticated:
+        base_template_name = 'member/base.html'
+    else:
+        base_template_name = 'home/base.html'
+    return render(request, 'home/medical_glossary.html', {'base_template_name': base_template_name})
 
 
 def speakers(request):
-    return render(request, 'home/speakers.html', {})
+    if request.user.is_authenticated:
+        base_template_name = 'member/base.html'
+    else:
+        base_template_name = 'home/base.html'
+    return render(request, 'home/speakers.html', {'base_template_name': base_template_name})
 
 
 def contact_us(request):
+    if request.user.is_authenticated:
+        base_template_name = 'member/base.html'
+    else:
+        base_template_name = 'home/base.html'
     if request.method == 'GET':
         form = ContactForm()
     else:
@@ -54,23 +86,31 @@ def contact_us(request):
             except BadHeaderError:
                 return HttpResponse('Invalid header found')
             return HttpResponse('Message has been sent')
-    return render(request, 'home/contact_us.html', {'form': form})
+    return render(request, 'home/contact_us.html', {'form': form, 'base_template_name': base_template_name})
 
 
 def environmental_glossary(request):
-    return render(request, 'home/environmental_glossary.html', {})
+    if request.user.is_authenticated:
+        base_template_name = 'member/base.html'
+    else:
+        base_template_name = 'home/base.html'
+    return render(request, 'home/environmental_glossary.html', {'base_template_name': base_template_name})
 
 
 def shoey(request):
-    return render(request, 'home/shoey.html', {})
+    if request.user.is_authenticated:
+        base_template_name = 'member/base.html'
+    else:
+        base_template_name = 'home/base.html'
+    return render(request, 'home/shoey.html', {'base_template_name': base_template_name})
 
 
 def stripe_pro(request):
-    return render(request, 'home/stripe_pro.html', {})
+    return render(request, 'home/stripe_pro.html',)
 
 
 def stripe_patient(request):
-    return render(request, 'home/stripe_patient.html', {})
+    return render(request, 'home/stripe_patient.html',)
 
 
 def test(request):
@@ -78,6 +118,10 @@ def test(request):
 
 
 def placeholder(request):
-    return render(request, 'home/placeholder.html', {})
+    if request.user.is_authenticated:
+        base_template_name = 'member/base.html'
+    else:
+        base_template_name = 'home/base.html'
+    return render(request, 'home/placeholder.html', {'base_template_name': base_template_name})
 
 
