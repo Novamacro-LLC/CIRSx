@@ -89,5 +89,5 @@ class EventRegistration(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     member = models.ForeignKey(Account, on_delete=models.CASCADE)
     guest = models.BooleanField()
-    guest_first_name = models.CharField(max_length=100, null=True)
-    guest_last_name = models.CharField(max_length=100, null=True)
+    guest_name = models.CharField(max_length=100, null=True)
+    guest_email = models.EmailField(max_length=100, null=True)

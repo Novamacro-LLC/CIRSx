@@ -1,4 +1,4 @@
-{% extends "home/base.html" %}{% load static %}{% block content %}
+{% extends "member/base.html" %}{% load static %}{% block content %}
 
  <div class="p-5 bg-secondary"
     style="background-image: url('{% static "index/tier_page/events_BG.jpg" %}');
@@ -40,14 +40,14 @@
 
             <!--Guest first Name-->
             <div class="form-floating mb-5">
-              {{ form.guest_first_name }}
-              <label for="guest_first_name">Guest First Name</label>
+              {{ form.guest_name }}
+              <label for="guest_name">Guest Name</label>
             </div>
 
             <!--Guest Last name-->
             <div class="form-floating mb-5">
-              {{ form.guest_last_name }}
-              <label for="guest_last_name">Guest Last Name</label>
+              {{ form.guest_email }}
+              <label for="guest_email">Guest Email Name</label>
             </div>
           </div>
             {% endfor %}
