@@ -1,27 +1,32 @@
 from django import forms
-from .models import EventRegistration
+from .models import EventRegistration, Marks
 
 
 class EventRegisterForm(forms.ModelForm):
     class Meta:
         model = EventRegistration
         fields = ['event',
-                  'member',
-                  'guest',
-                  'guest_name',
-                  'guest_email']
+                  'member']
         widgets = {
            'event': forms.TextInput(attrs={'class': 'form-control',
                                            'id': 'event',
                                            'placeholder': '...'}),
            'member': forms.TextInput(attrs={'class': 'form-control',
                                             'id': 'member',
-                                            'placeholder': '...'}),
-           'guest': forms.BooleanField(),
-           'guest_name': forms.TextInput(attrs={'class': 'form-control',
-                                                'id': 'guest_name',
-                                                'placeholder': '...'}),
-           'guest_email': forms.EmailInput(attrs={'class': 'form-control',
-                                                  'id': 'guest_email',
-                                                  'placeholder': '...'})
+                                            'placeholder': '...'})
+        }
+
+class MarksForm(forms.ModelForm):
+    class Meta:
+        model = Marks
+
+        fields = ['guest_name',
+                  'guest_email',
+                  'attendance'
+        ]
+
+        widgets = {
+            'guest_name': forms.TextInput(attrs={'class': 'formset-field'}),
+            'guest_email': forms.TextInput(attrs={'class': 'formset-field'}),
+            'attendance': forms.TextInput(attrs={'class': 'formset-field'})
         }

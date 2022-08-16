@@ -88,6 +88,26 @@ class EventOffer(models.Model):
 class EventRegistration(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     member = models.ForeignKey(Account, on_delete=models.CASCADE)
-    guest = models.BooleanField()
+
+    def _str_(self):
+        return self.event
+
+    class Meta:
+        db_table = "eventregistration"
+
+
+class EventAttendance (models.Model):
+    attendance = models.CharField(max_length=50, null=False)
+
+
+
+class Marks(models.Model):
     guest_name = models.CharField(max_length=100, null=True)
     guest_email = models.EmailField(max_length=100, null=True)
+    attendance = models.ForeignKey(EventAttendance, on_delete=models.CASCADE)
+
+    def _str_(self):
+        return self.guest_name
+
+    class Meta:
+        db_table = "marks"

@@ -31,14 +31,47 @@
             </div>
 
             <!--How many -->
-            <div class="form-floating pb-5">
-                <p>How Many Guest are you Bringing?</p>
-              <input type="number" id="count" name="count">
-              <label hidden for="count">How many Guest are you brining?</label>
-            </div>
-            {% for i in count %}
+              {% for form_data in formst %}
+                  <tr class="item">
+                        <td>
+                            {{ form_data.guest_name }}
+                        </td>
+                        <td>
+                            {{ form_data.guest_email }}
+                        </td>
+                        <td>
+                            {{ form_data.attendance }}
+                          <!--  <div class="dropdown" style="padding-right: 10px">
+                              <a class="btn dropdown-toggle order-first text-black border-none fs-5" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"
+                                 style="background-color: #EBEADF;
+                                 outline: #EBEADF;
+                                 border: #EBEADF">
+                                  Professional Tier
+                              </a>
 
-            <!--Guest first Name-->
+                              <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                                <li ><a class="dropdown-item">In Person</a></li>
+                                <li><a class="dropdown-item"> Via Web</a></li> -->
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-danger btn-sm remove-form-row"
+                                    id="{{ formset.prefix }}">
+                                Delete
+                            </button>
+                        </td>
+                  </tr>
+            {% endfor %}
+          <tr>
+              <td colspan="9"
+                  style="border-left: none!important; border-right:none!important; border-bottom: none!important;">
+                  <button type="button" class="btn btn-sm btn-success add-form-row"
+                          id="{{ formset.prefix }}">
+                      Add Guest
+                  </button>
+              </td>
+          </tr>
+
+
             <div class="form-floating mb-5">
               {{ form.guest_name }}
               <label for="guest_name">Guest Name</label>
@@ -54,8 +87,7 @@
 
           <button
             class="btn btn-dark btn-lg btn-outline-secondary text-white"
-            type="submit"
-          >
+            type="submit">
             Submit
           </button>
         </div>
