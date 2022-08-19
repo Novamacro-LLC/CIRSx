@@ -4,26 +4,37 @@ from .form import EventRegisterForm, MarksForm
 from .models import EventRegistration, Marks
 from django.forms import modelformset_factory
 from django.contrib.auth.decorators import login_required
+from django.db import transaction, IntegrityError
 
 
 @login_required()
 def events_register(request):
     context = {}
-    MarksForm = modelformset_factory(Marks, form=MarksForm)
-    if request.method == 'GET':
-        form = EventRegisterForm()
-        context = {'form': form}
-        return render(request, 'event/events_register.html', context)
-    else:
-        form = EventRegisterForm(request.POST)
-        if form.is_valid():
-            form.event = True
-            form.save()
-            redirect('index')
-        else:
-            return HttpResponse('Form is invalid')
+    MarksFormset = modelformset_factory(Marks, form=MarksForm)
+    form = EventRegisterForm(request.POST or None)
+    formset = MarksFormset(request.POST or None, queryset=Marks.objects.none(), prefix='marks')
+    if request.method == "POST":
+        if form.is_valid() and formset.is_valid():
+            try:
+                with transaction.atomic():
+                    events_register = form.save(commit=False)
+                    events_register.save()
 
-        context['formset'] = formset
-        context['form'] = form
-        return render(request, 'index', context)
+                    for mark in formset:
+                        data = mark.save(commit=False)
+                        data.events = events_register
+                        data.save()
+            except IntegrityError:
+                print("Error Encountered")
+
+            return redirect('multi_forms:list')
+
+    context['formset'] = formset
+    context['form'] = form
+    if request.user.is_authenticated:
+        base_template_name = 'member/base.html'
+    else:
+        base_template_name = 'index/base.html'
+    context = {base_template_name: 'base_template_name'}
+    return render(request, 'event/events_register.html', context)
 

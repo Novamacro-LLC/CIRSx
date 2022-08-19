@@ -9,7 +9,7 @@ function updateElementIndex(el, prefix, ndx) {
     if (el.name) el.name = el.name.replace(id_regex, replacement);
 }
 
-function addForm(btn, prefix) {
+function addForm(prefix) {
     var formCount = parseInt($('#id_' + prefix + '-TOTAL_FORMS').val());
     if (formCount < 1000) {
         // Clone a form (without event handlers) from the first form

@@ -31,7 +31,8 @@
             </div>
 
             <!--How many -->
-              {% for form_data in formst %}
+
+              {% for form_data in formset %}
                   <tr class="item">
                         <td>
                             {{ form_data.guest_name }}
@@ -65,34 +66,26 @@
               <td colspan="9"
                   style="border-left: none!important; border-right:none!important; border-bottom: none!important;">
                   <button type="button" class="btn btn-sm btn-success add-form-row"
-                          id="{{ formset.prefix }}">
+                          id="{{ formset.prefix }}" onclick="addForm(1)">
                       Add Guest
                   </button>
               </td>
           </tr>
 
 
-            <div class="form-floating mb-5">
-              {{ form.guest_name }}
-              <label for="guest_name">Guest Name</label>
-            </div>
-
-            <!--Guest Last name-->
-            <div class="form-floating mb-5">
-              {{ form.guest_email }}
-              <label for="guest_email">Guest Email Name</label>
-            </div>
-          </div>
-            {% endfor %}
 
           <button
-            class="btn btn-dark btn-lg btn-outline-secondary text-white"
+            class="btn btn-dark btn-sm btn-outline-secondary text-white"
             type="submit">
             Submit
           </button>
         </div>
+        </div>
       </form>
-</div>
+    </div>
 
+{% block extra_script %}
+	<script type="text/javascript" src="{% static "events/event_register.js" %}"></script>
+{% endblock%}
 
 {% endblock content %}
