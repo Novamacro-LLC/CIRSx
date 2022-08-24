@@ -31,17 +31,18 @@
             </div>
 
             <!--How many -->
+<form id="form-container" method="POST">
+        {% csrf_token %}
+        {{bird_formset.management_form}}
+        {% for form in bird_formset %}
+        <div class="bird-form">
+        {{form.as_p}}
+        </div>
+        {% endfor %}
+        <button id="add-form" type="button">Add Another Bird</button>
+        <button type="submit">Create Birds</button>
+    </form>
 
-              {% for form_data in formset %}
-                  <tr class="item">
-                        <td>
-                            {{ form_data.guest_name }}
-                        </td>
-                        <td>
-                            {{ form_data.guest_email }}
-                        </td>
-                        <td>
-                            {{ form_data.attendance }}
                           <!--  <div class="dropdown" style="padding-right: 10px">
                               <a class="btn dropdown-toggle order-first text-black border-none fs-5" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"
                                  style="background-color: #EBEADF;
@@ -53,39 +54,27 @@
                               <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
                                 <li ><a class="dropdown-item">In Person</a></li>
                                 <li><a class="dropdown-item"> Via Web</a></li> -->
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-danger btn-sm remove-form-row"
-                                    id="{{ formset.prefix }}">
-                                Delete
-                            </button>
-                        </td>
-                  </tr>
-            {% endfor %}
-          <tr>
-              <td colspan="9"
-                  style="border-left: none!important; border-right:none!important; border-bottom: none!important;">
-                  <button type="button" class="btn btn-sm btn-success add-form-row"
-                          id="{{ formset.prefix }}" onclick="addForm(1)">
-                      Add Guest
-                  </button>
-              </td>
-          </tr>
 
+ <script>
+        let birdForm = document.querySelectorAll(".bird-form")
+        let container = document.querySelector("#form-container")
+        let addButton = document.querySelector("#add-form")
+        let totalForms = document.querySelector("#id_form-TOTAL_FORMS")
 
+        let formNum = birdForm.length-1
+        addButton.addEventListener('click', addForm)
 
-          <button
-            class="btn btn-dark btn-sm btn-outline-secondary text-white"
-            type="submit">
-            Submit
-          </button>
-        </div>
-        </div>
-      </form>
-    </div>
+        function addForm(e){
+            e.preventDefault()
 
-{% block extra_script %}
-	<script type="text/javascript" src="{% static "events/event_register.js" %}"></script>
-{% endblock%}
+            let newForm = birdForm[0].cloneNode(true)
+            let formRegex = RegExp(`form-(\\d){1}-`,'g')
 
+            formNum++
+            newForm.innerHTML = newForm.innerHTML.replace(formRegex, `form-${formNum}-`)
+            container.insertBefore(newForm, addButton)
+
+            totalForms.setAttribute('value', `${formNum+1}`)
+        }
+    </script>
 {% endblock content %}

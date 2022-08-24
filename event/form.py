@@ -1,5 +1,6 @@
 from django import forms
-from .models import EventRegistration, Marks
+from .models import EventRegistration
+from django.forms import modelformset_factory
 
 
 class EventRegisterForm(forms.ModelForm):
@@ -16,17 +17,8 @@ class EventRegisterForm(forms.ModelForm):
                                             'placeholder': '...'})
         }
 
-class MarksForm(forms.ModelForm):
-    class Meta:
-        model = Marks
 
-        fields = ['guest_name',
-                  'guest_email',
-                  'attendance'
-        ]
+GuestFormSet = modelformset_factory(
+    EventRegistration, fields=("guest_name", "guest_Email"), extra=1
+)
 
-        widgets = {
-            'guest_name': forms.TextInput(attrs={'class': 'formset-field'}),
-            'guest_email': forms.TextInput(attrs={'class': 'formset-field'}),
-            'attendance': forms.TextInput(attrs={'class': 'formset-field'})
-        }
