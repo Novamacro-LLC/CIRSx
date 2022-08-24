@@ -265,7 +265,13 @@ Physicians should claim only the credit commensurate with the extent of their pa
 All of the relevant financial relationships listed for these individual(s), both planners and speakers, have been ' ||
 'mitigated.',
 True,
- 2);
+ 2),
+('I Dream of GENIE Volume 3',
+ 'CIRSx Web Conference',
+ '01/01/2022',
+ '',
+ 'Webinar',
+ 'We will need a summary for all of this information.'),
 
 insert into cirsx_dev.public.member_documenttype(doctyp_name,doctyp_desc)
 values
