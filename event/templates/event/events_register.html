@@ -29,31 +29,24 @@
               {{ form.member }}
               <label for="member">Member Name</label>
             </div>
+          </div>
+        </div>
+      </form>
+
 
             <!--How many -->
 <form id="form-container" method="POST">
         {% csrf_token %}
-        {{bird_formset.management_form}}
-        {% for form in bird_formset %}
+        {{formset.management_form}}
+        {% for form in formset %}
         <div class="bird-form">
-        {{form.as_p}}
+        {{formset.as_p}}
         </div>
         {% endfor %}
         <button id="add-form" type="button">Add Another Bird</button>
         <button type="submit">Create Birds</button>
     </form>
-
-                          <!--  <div class="dropdown" style="padding-right: 10px">
-                              <a class="btn dropdown-toggle order-first text-black border-none fs-5" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"
-                                 style="background-color: #EBEADF;
-                                 outline: #EBEADF;
-                                 border: #EBEADF">
-                                  Professional Tier
-                              </a>
-
-                              <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
-                                <li ><a class="dropdown-item">In Person</a></li>
-                                <li><a class="dropdown-item"> Via Web</a></li> -->
+</div>
 
  <script>
         let birdForm = document.querySelectorAll(".bird-form")
