@@ -113,6 +113,10 @@ def stripe_patient(request):
     return render(request, 'index/stripe_patient.html', )
 
 
+def stripe_events(request):
+    return render(request, 'index/stripe_events.html', )
+
+
 def test(request):
     return render(request, 'index/test.html'),
 
