@@ -12,42 +12,42 @@
     </div>
     </div>
 
-    <div class="col-md-8 mx-auto col-lg-5 fs-4">
-      <form class="p-4 p-md-5 rounded-3 bg-light" action="{% url 'events_register' %}" method="post">
-        {% csrf_token %}
-        <div class="form-floating mb-5">
-          <div class="row g-9 align-items-center">
-
-            <!--Event-->
+        <div class="col-md-8 mx-auto col-lg-5 fs-4 text-center">
+          <form class="pt-4 pb-1 bg-light container-fluid" action="{% url 'events_register' %}" method="post">
+            {% csrf_token %}
             <div class="form-floating mb-5">
-              {{ form.event }}
-              <label for="event">Which Event? </label>
+              <div class="row g-9 align-items-center">
+
+                <!--Event-->
+                <div class="form-floating mb-5">
+                    <p>Which Event? </p>
+                        {{ form.event }}
+                </div>
+
+                <!--Member-->
+                <div class="form-floating mb-5">
+                    <p>Member Name</p>
+                      {{ form.member }}
+                </div>
+              </div>
             </div>
+          </form>
 
-            <!--Member-->
-            <div class="form-floating mb-5">
-              {{ form.member }}
-              <label for="member">Member Name</label>
-            </div>
-          </div>
+
+                <!--How many -->
+            <form id="form-container" method="POST" class="pb-4 bg-light container-fluid">
+                    {% csrf_token %}
+                    {{formset.management_form}}
+                    {% for form in formset %}
+                    <div class="bird-form">
+                    {{formset.as_p}}
+                    </div>
+                    {% endfor %}
+                    <button id="add-form" type="button">Add Another Guest</button>
+                    <br>
+                    <button type="submit">Submit</button>
+            </form>
         </div>
-      </form>
-
-
-            <!--How many -->
-<form id="form-container" method="POST">
-        {% csrf_token %}
-        {{formset.management_form}}
-        {% for form in formset %}
-        <div class="bird-form">
-        {{formset.as_p}}
-        </div>
-        {% endfor %}
-        <button id="add-form" type="button">Add Another Bird</button>
-        <button type="submit">Create Birds</button>
-    </form>
-</div>
-
  <script>
         let birdForm = document.querySelectorAll(".bird-form")
         let container = document.querySelector("#form-container")
