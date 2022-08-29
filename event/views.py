@@ -16,7 +16,7 @@ def events_register(request):
         if formset.is_valid() and form.is_valid():
             form.save()
             formset.save()
-            redirect('member/index.html', {'base_template_name': base_template_name})
+            redirect('stripe_events', {'base_template_name': base_template_name})
         else:
             HttpResponse('Form did not go through, there was an error.')
     else:
