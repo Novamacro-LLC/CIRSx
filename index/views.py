@@ -2,9 +2,15 @@ from django.shortcuts import render
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from .models import News
+from event.models import Event
 from .form import ContactForm
 
 import datetime
+
+
+def active_events():
+    event_name = Event.objects.filter(active=True)
+    return event_name
 
 
 def home(request):
@@ -12,10 +18,11 @@ def home(request):
         base_template_name = 'member/base.html'
     else:
         base_template_name = 'index/base.html'
+    event = active_events()
     end_date = datetime.datetime.now()
     st_date = datetime.datetime.now() - datetime.timedelta(days=90)
     front = News.objects.filter(date_added__range=[st_date, end_date]).order_by('-date_added')
-    context = {'front': front, 'base_template_name': base_template_name}
+    context = {'front': front, 'base_template_name': base_template_name, 'event': event}
     return render(request, 'index/home.html', context)
 
 
@@ -24,7 +31,9 @@ def subscribe(request):
         base_template_name = 'member/base.html'
     else:
         base_template_name = 'index/base.html'
-    return render(request, 'index/subscribe.html', {'base_template_name': base_template_name})
+    event = active_events()
+    context = {'base_template_name': base_template_name, 'event': event}
+    return render(request, 'index/subscribe.html', context)
 
 
 def about_us(request):
