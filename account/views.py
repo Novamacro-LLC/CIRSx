@@ -3,6 +3,7 @@ from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.models import Group
 from django.http import HttpResponse
 from account.form import RegistrationForm, AccountAuthenticationForm
+from index.views import active_events
 
 
 def register(request, tier):
@@ -25,6 +26,8 @@ def register(request, tier):
         else:
             return HttpResponse('Data is not clean', form.errors)
     else:
+        event = active_events()
+        context = {'event': event}
         return render(request, 'registration/register.html', context)
 
 
@@ -48,6 +51,6 @@ def login_user(request):
             return redirect('tier_welcome')
     else:
         form = AccountAuthenticationForm()
-
-    context = {'form': form}
+    event = active_events()
+    context = {'form': form, 'event': event}
     return render(request, 'registration/login.html', context)

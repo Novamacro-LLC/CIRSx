@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from .models import News
 from event.models import Event
 from .form import ContactForm
+from index.views import active_events
 
 import datetime
 
@@ -41,7 +42,9 @@ def about_us(request):
         base_template_name = 'member/base.html'
     else:
         base_template_name = 'index/base.html'
-    return render(request, 'index/about_us.html', {'base_template_name': base_template_name})
+    event = active_events()
+    context = {'base_template_name': base_template_name, 'event': event}
+    return render(request, 'index/about_us.html', context)
 
 
 def conference(request, event_id):
@@ -59,7 +62,9 @@ def sponsor(request):
         base_template_name = 'member/base.html'
     else:
         base_template_name = 'index/base.html'
-    return render(request, 'index/sponsor.html', {'base_template_name': base_template_name})
+    event = active_events()
+    context = {'base_template_name': base_template_name, 'event': event}
+    return render(request, 'index/sponsor.html', context)
 
 
 def medical_glossary(request):
@@ -67,7 +72,9 @@ def medical_glossary(request):
         base_template_name = 'member/base.html'
     else:
         base_template_name = 'index/base.html'
-    return render(request, 'index/medical_glossary.html', {'base_template_name': base_template_name})
+    event = active_events()
+    context = {'base_template_name': base_template_name, 'event': event}
+    return render(request, 'index/medical_glossary.html', context)
 
 
 def speakers(request):
@@ -75,7 +82,9 @@ def speakers(request):
         base_template_name = 'member/base.html'
     else:
         base_template_name = 'index/base.html'
-    return render(request, 'index/speakers.html', {'base_template_name': base_template_name})
+    event = active_events()
+    context = {'base_template_name': base_template_name, 'event': event}
+    return render(request, 'index/speakers.html', context)
 
 
 def contact_us(request):
@@ -97,7 +106,10 @@ def contact_us(request):
             except BadHeaderError:
                 return HttpResponse('Invalid header found')
             return HttpResponse('Message has been sent')
-    return render(request, 'index/contact_us.html', {'form': form, 'base_template_name': base_template_name})
+
+    event = active_events()
+    context = {'base_template_name': base_template_name, 'event': event, 'form': form}
+    return render(request, 'index/contact_us.html', context)
 
 
 def environmental_glossary(request):
@@ -105,7 +117,9 @@ def environmental_glossary(request):
         base_template_name = 'member/base.html'
     else:
         base_template_name = 'index/base.html'
-    return render(request, 'index/environmental_glossary.html', {'base_template_name': base_template_name})
+    event = active_events()
+    context = {'base_template_name': base_template_name, 'event': event}
+    return render(request, 'index/environmental_glossary.html', context)
 
 
 def shoey(request):
@@ -113,7 +127,9 @@ def shoey(request):
         base_template_name = 'member/base.html'
     else:
         base_template_name = 'index/base.html'
-    return render(request, 'index/shoey.html', {'base_template_name': base_template_name})
+    event = active_events()
+    context = {'base_template_name': base_template_name, 'event': event}
+    return render(request, 'index/shoey.html', context)
 
 
 def stripe_pro(request):
@@ -137,6 +153,8 @@ def placeholder(request):
         base_template_name = 'member/base.html'
     else:
         base_template_name = 'index/base.html'
-    return render(request, 'index/placeholder.html', {'base_template_name': base_template_name})
+    event = active_events()
+    context = {'base_template_name': base_template_name, 'event': event}
+    return render(request, 'index/placeholder.html', context)
 
 
