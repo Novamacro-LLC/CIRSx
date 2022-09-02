@@ -4,7 +4,6 @@ from django.http import HttpResponse
 from .models import News
 from event.models import Event
 from .form import ContactForm
-from index.views import active_events
 
 import datetime
 
@@ -133,19 +132,21 @@ def shoey(request):
 
 
 def stripe_pro(request):
-    return render(request, 'index/stripe_pro.html', )
+    event = active_events()
+    context = {'event': event}
+    return render(request, 'index/stripe_pro.html', context)
 
 
 def stripe_patient(request):
-    return render(request, 'index/stripe_patient.html', )
+    event = active_events()
+    context = {'event': event}
+    return render(request, 'index/stripe_patient.html', context)
 
 
 def stripe_events(request):
-    return render(request, 'index/stripe_events.html', )
-
-
-def test(request):
-    return render(request, 'index/test.html'),
+    event = active_events()
+    context = {'event': event}
+    return render(request, 'index/stripe_events.html', context)
 
 
 def placeholder(request):
