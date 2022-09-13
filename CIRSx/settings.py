@@ -136,7 +136,7 @@ STATIC_URL = '/static/'
 #                    os.path.join(BASE_DIR, 'event/static/'),
 #                   os.path.join(BASE_DIR, 'member/static/'),
 #                    os.path.join(BASE_DIR, 'account/static/')]
-STATIC_ROOT = '/home/bdavison/cirsxdev-dir/static'
+STATIC_ROOT = '/home/bdavison/cirsxdev-dir/static' #os.path.join(BASE_DIR, 'static')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
