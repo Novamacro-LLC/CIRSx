@@ -1,5 +1,6 @@
 from django.db import models
 from event.models import Event
+from django.contrib.auth.models import Group
 
 
 class Audience(models.Model):
@@ -29,6 +30,7 @@ class Document(models.Model):
     doc_abs = models.TextField(null=True)
     doc_txt = models.TextField(null=True)
     event = models.ForeignKey(Event, null=True, on_delete=models.SET_NULL)
+    tier = models.ForeignKey(Group, null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.title

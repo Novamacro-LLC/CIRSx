@@ -1645,3 +1645,8 @@ values
     ('2','2','https://joseph-foundation.nyc3.digitaloceanspaces.com/RS%20Research%20Paper%20Files/MED100236.pdf','Xenotropic Murine Leukemia Virus-Related Virus-Associated Chronic Fatigue Syndrome Reveals a Distinct Inflammatory Signature'                                                                                                                                         ),
     ('2','2','https://joseph-foundation.nyc3.digitaloceanspaces.com/RS%20Research%20Paper%20Files/MED100019.pdf','α-Melanocyte-Stimulating Hormone and Related Tripeptides:  Biochemistry, Antiinflammatory and Protective Effects in Vitro and in Vivo, and Future Perspectives for the Treatment of Immune-Mediated Inflammatory Disease'                                             ),
     ('2','2','https://joseph-foundation.nyc3.digitaloceanspaces.com/RS%20Research%20Paper%20Files/MED100104.pdf','β-(1,3)-Glucan Exposure Assessment by Passive Airborne Dust Sampling and New Sensitive Immunoassays'                                                                                                                                                                  );
+
+
+insert into cirsx_dev.public.event_eventattendance (attendance)
+values
+('In Person'), ('Virtual');

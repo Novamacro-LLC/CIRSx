@@ -92,7 +92,7 @@ class EventAttendance (models.Model):
 class EventRegistration(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
     member = models.ForeignKey(Account, on_delete=models.CASCADE)
-    attendance = models.ForeignKey(EventAttendance, on_delete=models.CASCADE)
+    attendance = models.ForeignKey(EventAttendance, on_delete=models.CASCADE, default=1)
 
     def _str_(self):
         return self.event

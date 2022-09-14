@@ -22,7 +22,7 @@ def register(request, tier):
             login(request, user)
             pro = Group.objects.get(name=tier)
             user.groups.add(pro)
-            return render(request, 'member/tier_welcome.html', {})
+            return render(request, 'member/tier_welcome.html', context)
         else:
             return HttpResponse('Data is not clean', form.errors)
     else:
