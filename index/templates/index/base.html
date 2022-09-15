@@ -12,13 +12,16 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
-      <link rel="stylesheet" href="{% static 'index/style.css' %}" type="text/css">
-      <script src="{% static 'index/js_scripts.js' %}"></script>
-
+    <link
+      rel="stylesheet"
+      href="{% static 'index/style.css' %}"
+      type="text/css"
+    />
+    <script src="{% static 'index/js_scripts.js' %}"></script>
   </head>
   <body onload="pageInit()">
     <!--Header-->
-    <div class="container-fluid sticky-top" style="background-color: #EBEADF">
+    <div class="container-fluid sticky-top" style="background-color: #ebeadf">
       <header
         class="navbar navbar-expand-md d-flex flex-wrap align-items-center justify-content-center py-3 border-bottom fs-5"
       >
@@ -46,20 +49,36 @@
           </li>
           <li>
             <div class="d-flex">
-                <div class="dropdown" style="padding-right: 10px">
-                  <a class="btn dropdown-toggle nav-link px-2 link-dark" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false"
-                     style="background-color: #EBEADF;
-                     outline: #EBEADF;
-                     border: #EBEADF">
-                      Events
-                  </a>
+              <div class="dropdown" style="padding-right: 10px">
+                <a
+                  class="btn dropdown-toggle nav-link px-2 link-dark"
+                  href="#"
+                  role="button"
+                  id="dropdownMenuLink"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  style="
+                    background-color: #ebeadf;
+                    outline: #ebeadf;
+                    border: #ebeadf;
+                  "
+                >
+                  Events
+                </a>
 
-                  <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
-                      {% for e in event %}
-                        <li ><a class="dropdown-item" href="{% url 'conference' %}"> {{ e.event_name }} </a></li>
-                      {%  endfor %}
-                  </ul>
-                </div>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  {% for e in event %}
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="{% url 'conference' e.event_id %}"
+                    >
+                      {{ e.event_name }}
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
             </div>
           </li>
           <li>
@@ -106,14 +125,18 @@
         </ul>
 
         <div class="col-md-3 text-end">
+          <a
+            href="{% url 'login' %}"
+            type="button"
+            class="btn btn-outline-dark me-2"
+          >
+            Login
+          </a>
 
-                <a href="{% url 'login' %}" type="button" class="btn btn-outline-dark me-2">
-              Login </a>
-
-                <a href="{% url 'subscribe' %}" type="button" class="btn btn-dark">Sign-up</a>
-
+          <a href="{% url 'subscribe' %}" type="button" class="btn btn-dark"
+            >Sign-up</a
+          >
         </div>
-
       </header>
     </div>
 
@@ -135,7 +158,5 @@
       integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
       crossorigin="anonymous"
     ></script>
-
-
   </body>
 </html>
