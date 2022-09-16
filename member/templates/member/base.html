@@ -56,7 +56,9 @@
 
                   <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
                       {% for e in event %}
-                        <li ><a class="dropdown-item" href="{% url 'conference' %}"> {{ e.event_name }} </a></li>
+                        <li ><a class="dropdown-item" href="{% url 'conference' e.event_name %}">
+                            {{ e.event_name }}
+                        </a></li>
                       {%  endfor %}
                   </ul>
                 </div>
