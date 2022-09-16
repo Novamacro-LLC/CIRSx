@@ -52,7 +52,7 @@ def conference(request, name):
     else:
         base_template_name = 'index/base.html'
     event = active_events()
-    event_info = Event.objects.filter(event_name=name)
+    event_info = Event.objects.get(event_name=name)
     context = {'base_template_name': base_template_name, 'event': event, 'event_info': event_info}
     return render(request, 'index/conference.html', context)
 
