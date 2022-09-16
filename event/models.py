@@ -56,7 +56,7 @@ class EventType(models.Model):
 
 
 class Event(models.Model):
-    event_name = models.CharField(max_length=150, null=False)
+    event_name = models.CharField(max_length=150, null=False, unique=True)
     event_tag = models.CharField(max_length=250, null=False)
     event_start_date = models.DateField(null=False)
     event_end_date = models.DateField(null=True)
@@ -74,7 +74,7 @@ class Event(models.Model):
     sponsors = models.ManyToManyField(Sponsor)
 
     def __str__(self):
-        return self.event_type
+        return self.event_name
 
 
 class EventOffer(models.Model):

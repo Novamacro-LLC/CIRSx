@@ -46,13 +46,14 @@ def about_us(request):
     return render(request, 'index/about_us.html', context)
 
 
-def conference(request, event_id):
+def conference(request, name):
     if request.user.is_authenticated:
         base_template_name = 'member/base.html'
     else:
         base_template_name = 'index/base.html'
     event = active_events()
-    context = {'base_template_name': base_template_name, 'event': event}
+    event_info = Event.objects.filter(event_name=name)
+    context = {'base_template_name': base_template_name, 'event': event, 'event_info': event_info}
     return render(request, 'index/conference.html', context)
 
 
