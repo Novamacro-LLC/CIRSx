@@ -100,7 +100,7 @@ def contact_us(request):
             form.save()
             email = 'support@novamacro.net'
             subject = 'New website message'
-            message = 'You have received a new message from 1the website.  Please login to the admin site to check'
+            message = 'You have received a new message from the website.  Please login to the admin site to check'
             try:
                 send_mail(subject, message, email, ['brad.davison@novamacro.net'])
             except BadHeaderError:
