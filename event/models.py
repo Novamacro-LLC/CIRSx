@@ -88,6 +88,9 @@ class EventOffer(models.Model):
 class EventAttendance (models.Model):
     attendance = models.CharField(max_length=50, null=False)
 
+    def _str_(self):
+        return self.attendance
+
 
 class EventRegistration(models.Model):
     event = models.ForeignKey(Event, on_delete=models.CASCADE)

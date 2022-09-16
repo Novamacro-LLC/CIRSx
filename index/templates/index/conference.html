@@ -2,7 +2,6 @@
 <!-- 4.1.1.4 Conference Page -->
 
 <!-- 4.1.1.4.1 Conference Jumbotron -->
-{% for e in event_info %}
 
 <div class="p-5 w-100"
      style="background-image: url('{% static "index/conference_page/CIRSX CONF_website header.png" %}');
@@ -12,7 +11,7 @@
 
     <div class="container-fluid py-5">
     <!-- 4.1.1.4.1.1 Title -->
-    <h1 class="display-5 fw-bold text-white text-center">{{ e.event_info }}</h1>
+    <h1 class="display-5 fw-bold text-white text-center">{{ event_info.event_name }}</h1>
     <br />
     <!-- 4.1.1.4.1.2 Subheadline -->
     <h2 class="text-center fs-3 text-warning">
@@ -264,5 +263,5 @@
 </div>
 
 <!-- 4.1.1.4.7.4 Sponsor Album -->
-{% endfor %}
+
 {% endblock content %}
