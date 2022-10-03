@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import Document
-from django.contrib.auth import logout
+from django.contrib.postgres.search import SearchQuery, SearchVector, SearchRank, SearchHeadline
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator
 from index.views import active_events
 
 
@@ -61,3 +62,29 @@ def podcasts(request):
     event = active_events()
     context = {'event': event}
     return render(request, 'member/podcasts.html', context)
+
+@login_required()
+def doc_search(request):
+    q = request.GET.get('q')
+    page_num = request.GET.get('page')
+
+    if q:
+        vector = SearchVector('title', 'description')
+        query = SearchQuery(q)
+        search_headline = SearchHeadline('description', query)
+
+        # videos = Video.objects.filter(title__search=q)
+        # videos = Video.objects.annotate(search=vector).filter(search=query)
+        # videos = Video.objects.annotate(rank=SearchRank(vector, query)).filter(rank__gte=0.001).order_by('-rank')
+        doc = Document.objects.annotate(rank=SearchRank(vector, query)).annotate(headline=search_headline).filter(
+            rank__gte=0.001).order_by('-rank')
+
+        p = Paginator(doc, 25)
+
+        page = p.page(page_num, '1')
+
+    else:
+        page = None
+
+    context = {'document': page}
+    return render(request, 'member/search.html', context)
