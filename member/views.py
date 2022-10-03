@@ -63,15 +63,15 @@ def podcasts(request):
     context = {'event': event}
     return render(request, 'member/podcasts.html', context)
 
+
 @login_required()
 def doc_search(request):
     q = request.GET.get('q')
-    page_num = request.GET.get('page')
 
     if q:
-        vector = SearchVector('title', 'description')
+        vector = SearchVector('title', 'author', 'keywords', 'doc_txt')
         query = SearchQuery(q)
-        search_headline = SearchHeadline('description', query)
+        search_headline = SearchHeadline('doc_txt', query)
 
         # videos = Video.objects.filter(title__search=q)
         # videos = Video.objects.annotate(search=vector).filter(search=query)
@@ -79,12 +79,16 @@ def doc_search(request):
         doc = Document.objects.annotate(rank=SearchRank(vector, query)).annotate(headline=search_headline).filter(
             rank__gte=0.001).order_by('-rank')
 
-        p = Paginator(doc, 25)
+        p = Paginator(doc, 10)
+        page = request.GET.get('page', 1)
+        docs = p.get_page(page)
 
-        page = p.page(page_num, '1')
+        print(doc)
 
     else:
-        page = None
+        docs = None
+        q = None
+        #page = None
 
-    context = {'document': page}
+    context = {'q': q, 'docs': docs}
     return render(request, 'member/search.html', context)

@@ -1,0 +1,36 @@
+{% extends 'member/base.html' %} {% load static %}
+{% block content %}
+ <div class="container text-center">
+    <h1>CIRSX Search</h1>
+    <form method="GET">
+        {% if q == "None" %}
+        <input type="text" name="q">
+        {% else %}
+        <input type="text" name="q" value="{{ q }}">
+        {% endif %}
+        <button type="submit">Search</button>
+    </form>
+ </div>
+    <div class="container p-5">
+        {% for p in docs %}
+            <h4><a href="{{ p.doc_path }}">{{ p.title }}</a></h4>
+            <p>{{ p.author }}</p>
+            <p>{{ p.headline }}</p>
+        {% endfor %}
+    </div>
+    <br>
+
+    {% if docs.has_previous %}
+
+        <a href="?q={{ q }} &page=1">&laquo First</a>
+        <a href="?q={{ q }} &page={{ docs.previous_page_number }}">Previous</a>
+    {% endif %}
+
+    {{ docs }}
+
+    {% if docs.has_next %}
+        <a href="?q={{ q }} &page={{ docs.next_page_number }}">Next</a>
+        <a href="?q={{ q }} &page={{ docs.paginator.num_pages }}">Last &raquo</a>
+    {% endif %}
+
+{% endblock content %}
