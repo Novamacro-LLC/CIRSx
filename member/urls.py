@@ -11,6 +11,7 @@ urlpatterns = [
     path('deeper_dive/', views.deeper_dive, name='deeper_dive'),
     path('hopkinton/', views.hopkinton, name='hopkinton'),
     path('podcasts/', views.podcasts, name='podcasts'),
+    path('search/', views.doc_search, name='search'),
 
 
 ]

@@ -48,7 +48,7 @@ def login_user(request):
             user = authenticate(email=email, password=password)
             if user:
                 login(request, user)
-            return redirect('tier_welcome')
+            return redirect('index')
     else:
         form = AccountAuthenticationForm()
     event = active_events()
