@@ -63,10 +63,10 @@ def podcasts(request):
     context = {'event': event}
     return render(request, 'member/podcasts.html', context)
 
-
 @login_required()
 def doc_search(request):
     q = request.GET.get('q')
+
 
     if q:
         vector = SearchVector('title', 'author', 'keywords', 'doc_txt')
@@ -80,15 +80,13 @@ def doc_search(request):
             rank__gte=0.001).order_by('-rank')
 
         p = Paginator(doc, 10)
-        page = request.GET.get('page', 1)
+        page = request.GET.get('page')
         docs = p.get_page(page)
 
-        print(doc)
 
     else:
         docs = None
         q = None
-        #page = None
 
     context = {'q': q, 'docs': docs}
     return render(request, 'member/search.html', context)
