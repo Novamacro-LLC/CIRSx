@@ -2,7 +2,6 @@ from django import forms
 from .models import EventRegistration, Guest
 from django.forms import modelformset_factory
 
-
 class EventRegisterForm(forms.ModelForm):
     class Meta:
         model = EventRegistration

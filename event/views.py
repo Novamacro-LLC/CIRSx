@@ -7,7 +7,6 @@ from django.contrib.auth.decorators import login_required
 from django.db import transaction, IntegrityError
 from index.views import active_events
 
-
 @login_required()
 def events_register(request):
     base_template_name = 'member/base.html'
