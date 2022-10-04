@@ -116,9 +116,3 @@ class Guest(models.Model):
 
     class Meta:
         db_table = "event_guest"
-
-class Member(models.Model):
-    name = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.name

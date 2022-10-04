@@ -1,5 +1,5 @@
 from django import forms
-from .models import EventRegistration, Guest, Member
+from .models import EventRegistration, Guest
 from django.forms import modelformset_factory
 
 
