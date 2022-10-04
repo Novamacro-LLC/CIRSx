@@ -89,7 +89,7 @@ class EventOffer(models.Model):
 class EventAttendance (models.Model):
     attendance = models.CharField(max_length=50, null=False)
 
-    def _str_(self):
+    def __str__(self):
         return self.attendance
 
 
@@ -98,7 +98,7 @@ class EventRegistration(models.Model):
     member = models.ForeignKey(Account, on_delete=models.CASCADE)
     attendance = models.ForeignKey(EventAttendance, on_delete=models.CASCADE, default=1)
 
-    def _str_(self):
+    def __str__(self):
         return self.event
 
     class Meta:
@@ -111,7 +111,7 @@ class Guest(models.Model):
     attendance = models.ForeignKey(EventAttendance, on_delete=models.CASCADE)
     member = models.ForeignKey(EventRegistration, on_delete=models.CASCADE)
 
-    def _str_(self):
+    def __str__(self):
         return self.guest_name
 
     class Meta:

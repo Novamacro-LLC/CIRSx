@@ -13,30 +13,13 @@
     </div>
 
         <div class="col-md-8 mx-auto col-lg-5 fs-4 text-center">
-          <form class="pt-4 pb-1 bg-light container-fluid" action="{% url 'events_register' %}" method="post">
+            <form id="form-container" method="POST" class="pb-4 bg-light container-fluid">
             {% csrf_token %}
-            <div class="form-floating mb-5">
-              <div class="row g-9 align-items-center">
-
-                <!--Event-->
-                <div class="form-floating mb-5">
-                    <p>Which Event? </p>
-                        {{ form.event }}
-                </div>
-
-                <!--Member-->
-                <div class="form-floating mb-5">
-                    <p>Member Name</p>
-                      {{ form.member }}
-                </div>
-              </div>
-            </div>
-          </form>
-
+            {{  form.as_p }}
 
                 <!--How many -->
-            <form id="form-container" method="POST" class="pb-4 bg-light container-fluid">
-                    {% csrf_token %}
+
+                <form action="">
                     {{formset.management_form}}
                     {% for form in formset %}
                     <div class="bird-form">
