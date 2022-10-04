@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
-from .models import Document, Member, Event
+from .models import Document
 from django.contrib.postgres.search import SearchQuery, SearchVector, SearchRank, SearchHeadline
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from index.views import active_events
-from .forms import MemberFormSet
+
 
 
 @login_required()
@@ -91,19 +91,3 @@ def doc_search(request):
 
     context = {'q': q, 'docs': docs}
     return render(request, 'member/search.html', context)
-
-def register_event(request, pk):
-    member = member.object.get(pk=pk)
-    formset = MemberFormSet(request.POST or None)
-
-    if request.method == "POST":
-        if formset.is_valid():
-            formset.instance = member
-            formset.save()
-            return  redirect("events_register", pk=member.id)
-
-    context = {
-        "formset": formset
-    }
-
-    return render(request, "events_register", context)

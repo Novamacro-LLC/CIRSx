@@ -18,21 +18,5 @@ GuestFormSet = modelformset_factory(
     Guest, fields=(
         "guest_name",
         "guest_email",
-        "attendance"), extra=0
+        "attendance"), extra=1
 )
-
-
-#class MemberForm(forms.ModelForm):
-#    class Meta:
-#        model = Registration
-#        fields = (
-#            "member",
-#            "event"
-#        )
-
-#MemberFormSet = inlineformset_factory(
-#   Member,
-#   Event,
-#   MemberForm,
-#   can_delete=False
-#)

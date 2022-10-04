@@ -11,6 +11,7 @@ from index.views import active_events
 def events_register(request):
     base_template_name = 'member/base.html'
     event = active_events()
+    user = request.user.id
     context = {'base_template_name': base_template_name, 'event': event}
     if request.method == 'POST':
         form = EventRegisterForm(data=request.POST)
@@ -22,7 +23,31 @@ def events_register(request):
         else:
             HttpResponse('Form did not go through, there was an error.')
     else:
-        form = EventRegisterForm()
+        inital_data = {'member': user}
+        form = EventRegisterForm(initial=inital_data)
         formset = GuestFormSet(queryset=Guest.objects.none())
         context = {'formset': formset, 'form': form, 'base_template_name': base_template_name, 'event': event}
         return render(request, 'event/events_register.html', context)
+
+
+@login_required()
+def guest_register(request):
+    base_template_name = 'member/base.html'
+    event = active_events()
+    user = request.user.id
+    context = {'base_template_name': base_template_name, 'event': event}
+    if request.method == 'POST':
+        form = EventRegisterForm(data=request.POST)
+        formset = GuestFormSet(data=request.POST)
+        if formset.is_valid() and form.is_valid():
+            form.save()
+            formset.save()
+            redirect('stripe_events', context)
+        else:
+            HttpResponse('Form did not go through, there was an error.')
+    else:
+        inital_data = {'member': user}
+        form = EventRegisterForm(initial=inital_data)
+        formset = GuestFormSet(queryset=Guest.objects.none())
+        context = {'formset': formset, 'form': form, 'base_template_name': base_template_name, 'event': event}
+        return render(request, 'event/guest_register.html', context)
