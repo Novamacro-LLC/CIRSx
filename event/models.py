@@ -2,7 +2,6 @@ from django.db import models
 from django.forms.models import inlineformset_factory
 from account.models import Account, Country
 
-
 class Expertise(models.Model):
     expertise_code = models.CharField(max_length=20, unique=True)
     expertise_desc = models.CharField(max_length=150)
