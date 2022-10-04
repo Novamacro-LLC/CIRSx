@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms.models import inlineformset_factory
 from account.models import Account, Country
 
 
@@ -115,3 +116,9 @@ class Guest(models.Model):
 
     class Meta:
         db_table = "event_guest"
+
+class Member(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
