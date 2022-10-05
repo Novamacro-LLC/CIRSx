@@ -17,6 +17,8 @@
                 {% csrf_token %}
                 {{  form.as_p }}
 
+                <label for="guestCount">How many Guest?</label>
+                <input type="number" id="guestCount" name="guest">
 
 
                     <button type="submit" class="btn btn-success btn-sm btn-outline-secondary text-white">Submit</button>

@@ -108,7 +108,7 @@ class Guest(models.Model):
     guest_name = models.CharField(max_length=100, null=True)
     guest_email = models.EmailField(max_length=100, null=True)
     attendance = models.ForeignKey(EventAttendance, on_delete=models.CASCADE)
-    member = models.ForeignKey(EventRegistration, on_delete=models.CASCADE)
+    event_reg = models.ForeignKey(EventRegistration, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.guest_name
