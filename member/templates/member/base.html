@@ -125,13 +125,13 @@
                 <li><a class="dropdown-item" href="{% url 'search' %}"> Search </a></li>
                 <li><a class="dropdown-item" href="{% url 'research_papers' %}"> Research Papers </a></li>
                 <li><a class="dropdown-item" href="{% url 'archived_events' %}"> Past Events </a></li>
-                <li><a class="dropdown-item" href="{% url 'deeper_dive' %}"> Deeper Dive Medical </a></li>
-                <li><a class="dropdown-item" href="{% url 'podcasts' %}"> SurvivingMold Podcasts </a></li>
-                <li><a class="dropdown-item" href="{% url 'hopkinton' %}"> Hopkinton Series </a></li>
+                {% for dr in dr %}
+                <li><a class="dropdown-item" href="{% url 'doc_route' dr.document_route %}"> {{ dr.document_route }} </a></li>
+                {%  endfor %}
                 <li><a class="dropdown-item" href="{% url 'events_register' %}"> Events Regisition  </a></li>
-                <!--<li><a class="dropdown-item" href="{% url 'guest_register' %}"> Guest Regisition  </a></li>
-             --> </ul>
+              </ul>
             </div>
+
             {% endif %}
             {% if 'Patient Tier' == group.name %}
         <div class="col-lg-3 text-end d-flex">
@@ -149,13 +149,14 @@
                 <li><a class="dropdown-item" href="{% url 'search' %}"> Search </a></li>
                 <li><a class="dropdown-item" href="{% url 'bibliographies' %}"> Bibliographies </a></li>
                 <li><a class="dropdown-item" href="{% url 'research_papers' %}"> Research Papers </a></li>
-                <li><a class="dropdown-item" href="{% url 'podcasts' %}"> SurvivingMold Podcasts </a></li>
-                <li><a class="dropdown-item" href="{% url 'hopkinton' %}"> Hopkinton Series </a></li>
+                {% for dr in dr %}
+                <li><a class="dropdown-item" href="{% url 'doc_route' dr.document_route %}"> {{ dr.document_route }} </a></li>
+                {%  endfor %}
                 <li><a class="dropdown-item" href="{% url 'events_register' %}"> Events Regisition  </a></li>
-              <!--  <li><a class="dropdown-item" href="{% url 'guest_register' %}"> Guest Regisition  </a></li>
-            -->  </ul>
+              </ul>
             </div>
             {% endif %}
+
           {% if 'CIRSx Staff' == group.name %}
         <div class="col-lg-3 text-end d-flex">
           <div class="dropdown" style="padding-right: 10px">
@@ -173,11 +174,11 @@
                 <li><a class="dropdown-item" href="{% url 'bibliographies' %}"> Bibliographies </a></li>
                 <li><a class="dropdown-item" href="{% url 'research_papers' %}"> Research Papers </a></li>
                 <li><a class="dropdown-item" href="{% url 'archived_events' %}"> Past Events </a></li>
-                <li><a class="dropdown-item" href="{% url 'deeper_dive' %}"> Deeper Dive Medical </a></li>
-                <li><a class="dropdown-item" href="{% url 'podcasts' %}"> SurvivingMold Podcasts </a></li>
-                <li><a class="dropdown-item" href="{% url 'hopkinton' %}"> Hopkinton Series </a></li>
+                {% for dr in dr %}
+                <li><a class="dropdown-item" href="{% url 'doc_route' dr.document_route %}"> {{ dr.document_route }} </a></li>
+                {%  endfor %}
                 <li><a class="dropdown-item" href="{% url 'events_register' %}"> Events Regisition </a></li>
-                 </ul>
+              </ul>
             </div>
             {% endif %}
       {% endfor %}
