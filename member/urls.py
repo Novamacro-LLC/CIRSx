@@ -8,10 +8,6 @@ urlpatterns = [
     path('research_papers/', views.research_papers, name='research_papers'),
     path('', include('index.urls')),
     path('archived_events/', views.archived_events, name='archived_events'),
-    path('deeper_dive/', views.deeper_dive, name='deeper_dive'),
-    path('hopkinton/', views.hopkinton, name='hopkinton'),
-    path('podcasts/', views.podcasts, name='podcasts'),
     path('search/', views.doc_search, name='search'),
-
-
+    path('doc_route/', views.doc_route, name='doc_route')
 ]
