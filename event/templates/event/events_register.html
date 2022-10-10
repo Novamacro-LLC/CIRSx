@@ -1,3 +1,4 @@
+                <label for="guestCount">How many Guest?</label>
 {% extends "member/base.html" %}{% load static %}{% block content %}
 
  <div class="p-5 bg-secondary"
@@ -8,24 +9,29 @@
                  background-blend-mode: darken">
     <div class="container-fluid" style="height: 150px;">
 
-    <h1 class="display-1 p-2 fw-bold text-white text-center">Sign up for an Event.</h1>
+    <h1 class="display-1 p-2 fw-bold text-white text-center">Sign a guest up for an Event.</h1>
     </div>
     </div>
 
-        <div class="col-md-8 mx-auto col-lg-5 fs-4 text-center p-3">
-            <form id="form-container" method="POST" class="p-5 bg-light container-fluid">
-                {% csrf_token %}
-                {{  form.as_p }}
-
-                <label form="guestCount">How many Guest?</label>
-                <input type="number" id="guestCount" name="guest">
-                    <label
-
+        <div class="col-md-8 mx-auto col-lg-5 fs-4 text-center">
+          <form class="pt-4 pb-1 bg-light container-fluid" action="{% url 'events_register' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+              {{formset.management_form}}
+                    {% for f in formset %}
+                    <div class="bird-form">
+                    {{formset.as_p}}
+                    </div>
+                    {% endfor %}
+                    <button id="add-form" type="button" class="btn btn-dark btn-sm btn-outline-secondary text-white">Add Another Guest</button>
+                    <br>
                     <button type="submit" class="btn btn-success btn-sm btn-outline-secondary text-white">Submit</button>
 
-                    <button type="submit" class="btn btn-secondary btn-sm btn-outline-secondary text-white">Add a Guest</button>
-            </form>
-        </div>
+          </form>
+
+
+                <!--How many -->
+            </div>
  <script>
         let birdForm = document.querySelectorAll(".bird-form")
         let container = document.querySelector("#form-container")

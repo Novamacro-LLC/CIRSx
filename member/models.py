@@ -19,6 +19,14 @@ class DocumentType(models.Model):
         return self.doctyp_name
 
 
+class DocumentRoute(models.Model):
+    document_route = models.CharField(max_length=150, null=False)
+    dr_description = models.TextField(null=True)
+
+    def __str__(self):
+        return self.document_route
+
+
 class Document(models.Model):
     doctyp_num = models.ForeignKey(DocumentType, null=True, on_delete=models.SET_NULL)
     aud_num = models.ForeignKey(Audience, null=True, on_delete=models.SET_NULL)
@@ -31,6 +39,7 @@ class Document(models.Model):
     doc_txt = models.TextField(null=True)
     event = models.ForeignKey(Event, null=True, on_delete=models.SET_NULL)
     tier = models.ForeignKey(Group, null=True, on_delete=models.SET_NULL)
+    doc_route = models.ForeignKey(DocumentRoute, null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.title
