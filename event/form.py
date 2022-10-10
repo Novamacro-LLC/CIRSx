@@ -18,5 +18,7 @@ GuestFormSet = modelformset_factory(
     Guest, fields=(
         "guest_name",
         "guest_email",
-        "attendance"), extra=1
+        "attendance",
+        "event_reg"), extra=1
+        #exclude event reg from form and pass from view
 )
