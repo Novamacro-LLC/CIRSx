@@ -1,21 +1,23 @@
 {% extends "member/base.html" %}{% load static %}{% block content %}
 
 <div class="bg-light">
-    <h1 class="pt-5 text-center">Hopkinton Series with Dr. <br>
-                                Ritchie Shoemaker</h1>
-    <p class="fs-4 text-center"><i>Short (and some long) video clips about specific topics</i></p>
+    <h1 class="pt-5 text-center">{{ dr_info.document_route }}
+                                </h1>
+    <p class="fs-4 text-center"><i>{{ dr_info.dr_description }}</i></p>
 
-    <div class="p-5 m-5 text-center">
-         <iframe
-          width="500"
-          height="315"
-          src="https://vimeo.com/684756974/a565deca6b?embedded=true&source=video_title&owner=118339223"
-          title="C3a and CIRS"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-         </iframe>
-        <h3>C3a and CIRS</h3>
-    </div>
+        <div class="p-5 m-5 text-center">
+            {% for  in front %}
+                <iframe
+                      width="500"
+                      height="315"
+                      src="https://vimeo.com/684756974/a565deca6b?embedded=true&source=video_title&owner=118339223"
+                      title="C3a and CIRS"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen>
+                </iframe>
+              <h3>C3a and CIRS</h3>
+            {% endfor %}
+        </div>
 
 </div>
 

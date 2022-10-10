@@ -5,15 +5,16 @@ from .models import EventRegistration, Guest
 from django.forms import modelformset_factory
 from django.contrib.auth.decorators import login_required
 from django.db import transaction, IntegrityError
-from index.views import active_events
+from index.views import active_events, droute
 
 
 @login_required()
 def events_register(request):
     base_template_name = 'member/base.html'
     event = active_events()
+    dr = droute()
     user = request.user.id
-    context = {'base_template_name': base_template_name, 'event': event, 'user':user}
+    context = {'base_template_name': base_template_name, 'event': event, 'user':user, 'dr':dr}
     if request.method == 'POST':
         form = EventRegisterForm(data=request.POST)
         print(form.data.get('event'))
@@ -30,5 +31,5 @@ def events_register(request):
     else:
         form = EventRegisterForm()
         formset = GuestFormSet(queryset=Guest.objects.none())
-        context = {'formset': formset, 'form': form, 'base_template_name': base_template_name, 'event': event}
+        context = {'formset': formset, 'form': form, 'base_template_name': base_template_name, 'event': event, 'dr': dr}
         return render(request, 'event/events_register.html', context)

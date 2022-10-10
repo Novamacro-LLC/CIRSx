@@ -14,10 +14,9 @@ def active_events():
     return event_name
 
 
-@login_required()
 def droute():
-    droute = DocumentRoute.objects.all()
-    return droute
+    doc_route = DocumentRoute.objects.all()
+    return doc_route
 
 
 def home(request):
