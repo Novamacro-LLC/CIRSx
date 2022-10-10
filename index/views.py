@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.core.mail import send_mail, BadHeaderError
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from .models import News
 from event.models import Event
 from .form import ContactForm
-
+from member.models import DocumentRoute
 import datetime
 
 
@@ -13,16 +14,23 @@ def active_events():
     return event_name
 
 
+@login_required()
+def droute():
+    droute = DocumentRoute.objects.all()
+    return droute
+
+
 def home(request):
     if request.user.is_authenticated:
         base_template_name = 'member/base.html'
     else:
         base_template_name = 'index/base.html'
     event = active_events()
+    dr = droute()
     end_date = datetime.datetime.now()
     st_date = datetime.datetime.now() - datetime.timedelta(days=90)
     front = News.objects.filter(date_added__range=[st_date, end_date]).order_by('-date_added')
-    context = {'front': front, 'base_template_name': base_template_name, 'event': event}
+    context = {'front': front, 'base_template_name': base_template_name, 'event': event, 'dr': dr}
     return render(request, 'index/home.html', context)
 
 

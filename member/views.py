@@ -3,13 +3,8 @@ from .models import Document, DocumentRoute
 from django.contrib.postgres.search import SearchQuery, SearchVector, SearchRank, SearchHeadline
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
-from index.views import active_events
+from index.views import active_events, droute
 
-
-@login_required()
-def droute():
-    droute = DocumentRoute.objects.all()
-    return droute
 
 
 @login_required()
@@ -32,7 +27,7 @@ def tier_videos(request):
 def bibliographies(request):
     bib = Document.objects.filter(doctyp_num=1).order_by('title')
     event = active_events()
-    dr = droute()
+    dr = droute
     context = {'event': event, 'bib': bib, 'dr': dr}
     return render(request, 'member/bibliographies.html', context)
 
@@ -41,7 +36,7 @@ def bibliographies(request):
 def research_papers(request):
     rsh = Document.objects.filter(doctyp_num=2).order_by('title')
     event = active_events()
-    dr = droute()
+    dr = droute
     context = {'event': event, 'rsh': rsh, 'dr': dr}
     return render(request, 'member/research_papers.html', context)
 
@@ -49,14 +44,16 @@ def research_papers(request):
 @login_required()
 def archived_events(request):
     event = active_events()
-    dr = droute()
+    dr =droute
     context = {'event': event, 'dr': dr}
     return render(request, 'member/archived_events.html', context)
+
 
 
 @login_required()
 def doc_search(request):
     q = request.GET.get('q')
+
 
     if q:
         vector = SearchVector('title', 'author', 'keywords', 'doc_txt')
@@ -86,8 +83,7 @@ def doc_search(request):
 def doc_route(request, name):
     base_template_name = 'member/base.html'
     event = active_events()
-    dr = droute()
+    dr = droute
     dr_info = DocumentRoute.objects.get(document_route=name)
     context = {'base_template_name': base_template_name, 'event': event, 'dr_info': dr_info, 'dr': dr}
-    return render(request, 'index/conference.html', context)
-
+    return render(request, 'member/doc_route.html', context)
