@@ -18,18 +18,12 @@ def events_register(request):
     if request.method == 'POST':
         form = EventRegisterForm(data=request.POST)
         print(form.data.get('event'))
-        formset = GuestFormSet(data=request.POST)
-        if formset.is_valid() and form.is_valid():
+        if form.is_valid():
             form.save()
-            event_reg = EventRegistration.objects.filter(event=form.data.get('event'), member=form.data.get('member'), attendance=form.data.get('attendance')).last()
-            print(event_reg.id)
-            #add event_reg to guest and input into database
-            formset.save()
             return render(request, 'index/stripe_events.html', context)
         else:
             HttpResponse('Form did not go through, there was an error.')
     else:
         form = EventRegisterForm()
-        formset = GuestFormSet(queryset=Guest.objects.none())
-        context = {'formset': formset, 'form': form, 'base_template_name': base_template_name, 'event': event, 'dr': dr}
+        context = {'form': form, 'base_template_name': base_template_name, 'event': event, 'dr': dr, 'user': user}
         return render(request, 'event/events_register.html', context)
