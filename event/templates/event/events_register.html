@@ -1,4 +1,3 @@
-                <label for="guestCount">How many Guest?</label>
 {% extends "member/base.html" %}{% load static %}{% block content %}
 
  <div class="p-5 bg-secondary"
@@ -23,7 +22,6 @@
                     {{formset.as_p}}
                     </div>
                     {% endfor %}
-                    <button id="add-form" type="button" class="btn btn-dark btn-sm btn-outline-secondary text-white">Add Another Guest</button>
                     <br>
                     <button type="submit" class="btn btn-success btn-sm btn-outline-secondary text-white">Submit</button>
 
