@@ -83,7 +83,7 @@ def doc_search(request):
 def doc_route(request, name):
     base_template_name = 'member/base.html'
     event = active_events()
-    dr = droute
+    dr = droute()
     dr_info = DocumentRoute.objects.get(document_route=name)
     context = {'base_template_name': base_template_name, 'event': event, 'dr_info': dr_info, 'dr': dr}
     return render(request, 'member/doc_route.html', context)
