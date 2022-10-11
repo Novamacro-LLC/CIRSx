@@ -14,7 +14,7 @@ def events_register(request):
     event = active_events()
     dr = droute()
     user = request.user.id
-    context = {'base_template_name': base_template_name, 'event': event, 'user':user, 'dr':dr}
+    context = {'base_template_name': base_template_name, 'event': event, 'user': user, 'dr': dr}
     if request.method == 'POST':
         form = EventRegisterForm(data=request.POST)
         print(form.data.get('event'))

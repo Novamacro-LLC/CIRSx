@@ -15,8 +15,6 @@
         <div class="col-md-8 mx-auto col-lg-5 fs-4 text-center p-3">
             <form id="form-container" method="POST" class="p-5 bg-light container-fluid">
                     {% csrf_token %}
-                    {{  form.as_p }}
-
 
                 <form action="">
                     {{formset.management_form}}
@@ -25,7 +23,6 @@
                     {{formset.as_p}}
                     </div>
                     {% endfor %}
-                    <button id="add-form" type="button" class="btn btn-dark btn-sm btn-outline-secondary text-white">Add Another Guest</button>
                     <br>
                     <button type="submit" class="btn btn-success btn-sm btn-outline-secondary text-white">Submit</button>
             </form>
