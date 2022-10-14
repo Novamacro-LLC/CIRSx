@@ -7,7 +7,7 @@ from django_currentuser.db.models import CurrentUserField
 class News(models.Model):
     title = models.CharField(max_length=150)
     body = models.TextField()
- #   image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100, null=True)
+    image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100, null=True)
     date_added = models.DateTimeField(default=timezone.now)
     user = CurrentUserField()
 
@@ -35,6 +35,7 @@ class Team(models.Model):
     credentials = models.CharField(max_length=10, null=True)
     founder = models.BooleanField()
     title = models.CharField(max_length=50, null=False)
+    picture = models.ImageField(upload_to=None, height_field=None, width_field=None, null=True)
     active = models.BooleanField()
 
     def __str__(self):
@@ -45,6 +46,7 @@ class StrategicPartner(models.Model):
     first_name = models.CharField(max_length=100, null=False)
     last_name = models.CharField(max_length=100, null=False)
     credentials = models.CharField(max_length=10, null=True)
+    logo = models.ImageField(upload_to=None, height_field=None, width_field=None, null=True)
     active = models.BooleanField()
 
     def __str__(self):
