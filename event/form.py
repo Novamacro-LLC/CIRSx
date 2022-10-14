@@ -2,6 +2,7 @@ from django import forms
 from .models import EventRegistration, Guest
 from django.forms import modelformset_factory
 
+
 class EventRegisterForm(forms.ModelForm):
     class Meta:
         model = EventRegistration
@@ -19,6 +20,5 @@ GuestFormSet = modelformset_factory(
         "guest_name",
         "guest_email",
         "attendance",
-        "event"), extra=1
-        #exclude event reg from form and pass from view
+        "event"), extra=0
 )

@@ -265,6 +265,10 @@
 <!-- 4.1.1.4.7.4 Sponsor Album -->
 <div class="text-center">
     <h3 class="fs-3 text-center">Sign up for this event</h3>
-        <a class="btn btn-dark btn-lg btn-outline-secondary text-white" href="{% url "guest_register" %}"> Sign Up »</a>
+        {% if user.is_authenticated %}
+            <a class="btn btn-dark btn-lg btn-outline-secondary text-white" href="{% url "events_register" %}"> Sign Up »</a>
+        {% else %}
+            <a class="btn btn-dark btn-lg btn-outline-secondary text-white" href="{% url "guest_register" %}"> Sign Up »</a>
+        {% endif %}
 </div>
 {% endblock content %}

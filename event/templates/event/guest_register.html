@@ -18,12 +18,13 @@
 
                 <form action="">
                     {{formset.management_form}}
-                    {% for form in formset %}
+                    {% for f in formset %}
                     <div class="bird-form">
-                    {{formset.as_p}}
+                        {{f.as_p}}
                     </div>
                     {% endfor %}
                     <br>
+                    <button type="submit" id="add-form" class="btn btn-success btn-sm btn-outline-secondary text-white">Add New Guest</button>
                     <button type="submit" class="btn btn-success btn-sm btn-outline-secondary text-white">Submit</button>
             </form>
         </div>
@@ -48,5 +49,5 @@
 
             totalForms.setAttribute('value', `${formNum+1}`)
         }
-    </script>
+</script>
 {% endblock content %}

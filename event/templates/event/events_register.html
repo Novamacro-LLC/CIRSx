@@ -1,55 +1,22 @@
 {% extends "member/base.html" %}{% load static %}{% block content %}
 
- <div class="p-5 bg-secondary"
-    style="background-image: url('{% static "index/tier_page/events_BG.jpg" %}');
+<div class="p-5 bg-secondary" style="background-image: url('{% static "index/tier_page/events_BG.jpg" %}');
                  background-repeat: no-repeat;
                  background-size: cover;
                  background-position: 75% 75%;
                  background-blend-mode: darken">
     <div class="container-fluid" style="height: 150px;">
-
-    <h1 class="display-1 p-2 fw-bold text-white text-center">Sign a guest up for an Event.</h1>
+        <h1 class="display-1 p-2 fw-bold text-white text-center">Sign up for an Event.</h1>
     </div>
-    </div>
+</div>
 
-        <div class="col-md-8 mx-auto col-lg-5 fs-4 text-center">
-          <form class="pt-4 pb-1 bg-light container-fluid" action="{% url 'events_register' %}" method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-              {{formset.management_form}}
-                    {% for f in formset %}
-                    <div class="bird-form">
-                    {{formset.as_p}}
-                    </div>
-                    {% endfor %}
-                    <br>
-                    <button type="submit" class="btn btn-success btn-sm btn-outline-secondary text-white">Submit</button>
+<div class="col-md-8 mx-auto col-lg-5 fs-4 text-center">
+  <form class="pt-4 pb-1 bg-light container-fluid" action="{% url 'events_register' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <br>
+    <button type="submit" class="btn btn-success btn-sm btn-outline-secondary text-white">Submit</button>
+  </form>
+</div>
 
-          </form>
-
-
-                <!--How many -->
-            </div>
- <script>
-        let birdForm = document.querySelectorAll(".bird-form")
-        let container = document.querySelector("#form-container")
-        let addButton = document.querySelector("#add-form")
-        let totalForms = document.querySelector("#id_form-TOTAL_FORMS")
-
-        let formNum = birdForm.length-1
-        addButton.addEventListener('click', addForm)
-
-        function addForm(e){
-            e.preventDefault()
-
-            let newForm = birdForm[0].cloneNode(true)
-            let formRegex = RegExp(`form-(\\d){1}-`,'g')
-
-            formNum++
-            newForm.innerHTML = newForm.innerHTML.replace(formRegex, `form-${formNum}-`)
-            container.insertBefore(newForm, addButton)
-
-            totalForms.setAttribute('value', `${formNum+1}`)
-        }
-    </script>
 {% endblock content %}

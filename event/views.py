@@ -1,10 +1,7 @@
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from .form import EventRegisterForm, GuestFormSet
-from .models import EventRegistration, Guest
-from django.forms import modelformset_factory
 from django.contrib.auth.decorators import login_required
-from django.db import transaction, IntegrityError
 from index.views import active_events, droute
 
 
@@ -17,14 +14,14 @@ def events_register(request):
     context = {'base_template_name': base_template_name, 'event': event, 'user': user, 'dr': dr}
     if request.method == 'POST':
         form = EventRegisterForm(data=request.POST)
-        print(form.data.get('event'))
         if form.is_valid():
             form.save()
             return render(request, 'index/stripe_events.html', context)
         else:
             HttpResponse('Form did not go through, there was an error.')
     else:
-        form = EventRegisterForm()
+        initial_data = {'member': user}
+        form = EventRegisterForm(initial=initial_data)
         context = {'form': form, 'base_template_name': base_template_name, 'event': event, 'dr': dr, 'user': user}
         return render(request, 'event/events_register.html', context)
 

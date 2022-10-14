@@ -271,7 +271,7 @@ True,
  '01/01/2022',
  '',
  'Webinar',
- 'We will need a summary for all of this information.'),
+ 'We will need a summary for all of this information.');
 
 insert into cirsx_dev.public.member_documenttype(doctyp_name,doctyp_desc)
 values
@@ -1649,4 +1649,11 @@ values
 
 insert into cirsx_dev.public.event_eventattendance (attendance)
 values
-('In Person'), ('Virtual');
+    ('In Person'),
+    ('Virtual');
+
+insert into cirsx_dev.public.member_documentroute(document_route, dr_description)
+values
+    ('Hopkinton Series', 'This is a placeholder for Hopkinton Series.'),
+    ('SurvivingMold Podcast', 'This is a placeholder for the SurvivingMold Podcast.'),
+    ('Deeper Dive', 'This is a placeholder for the deeper dive.');
