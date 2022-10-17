@@ -161,7 +161,8 @@
                         <div class="container text-center">
                            <div class="carousel text-dark row">
                                 <div>
-                                    <p><img src="{% static 'index/Transparent-gold.png' %}" alt="" width="25%" height="auto"></p>
+                                    <p><img src="{{ i.image.url }}" alt="" width="25%" height="auto"></p>
+                                    <p>{{ i.image.url }}</p>
                                 </div>
                                 <h1>{{ i.title }}</h1>
                                 <p class="fs-5">{{ i.body}}</p>
@@ -174,7 +175,8 @@
                         <div class="container text-center">
                           <div class="carousel text-dark">
                             <div>
-                                <p><img src="{% static 'index/Transparent-gold.png' %}" alt="" width="25%" height="auto"></p>
+                                <p><img src="{{ i.image.url }}" alt="{{ i.title }}" width="25%" height="auto"></p>
+                                <p>{{ i.image.url }}</p>
                             </div>
                             <h1>{{ i.title }}</h1>
                             <p class="fs-5">{{ i.body }}</p>

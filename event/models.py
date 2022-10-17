@@ -44,7 +44,7 @@ class Sponsor(models.Model):
     zip = models.CharField(max_length=10, null=False)
     country = models.ForeignKey(Country, on_delete=models.CASCADE, null=False)
     bio = models.TextField(null=False)
-    logo = models.ImageField()
+    logo = models.ImageField(upload_to=None, height_field=None, width_field=None, null=True)
     active = models.BooleanField()
 
 
@@ -69,6 +69,7 @@ class Event(models.Model):
     venue_directions = models.TextField(null=False)
     accomodations = models.TextField(null=False)
     active = models.BooleanField()
+    #header_image = models.ImageField(upload_to=None, height_field=None, width_field=None, null=True)
     event_type = models.ForeignKey(EventType, on_delete=models.CASCADE)
     speakers = models.ManyToManyField(Speaker)
     sponsors = models.ManyToManyField(Sponsor)

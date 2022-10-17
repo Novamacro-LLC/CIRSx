@@ -1657,3 +1657,7 @@ values
     ('Hopkinton Series', 'This is a placeholder for Hopkinton Series.'),
     ('SurvivingMold Podcast', 'This is a placeholder for the SurvivingMold Podcast.'),
     ('Deeper Dive', 'This is a placeholder for the deeper dive.');
+
+insert into cirsx_dev.public.member_document(doc_path, title, author, keywords, pub_dt, doc_abs, doc_txt, aud_num_id, doctyp_num_id, event_id, tier_id, doc_route_id)
+values
+    ('1', ''),
