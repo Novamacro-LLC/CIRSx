@@ -1,4 +1,6 @@
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
 from . import views
 
 
@@ -18,3 +20,7 @@ urlpatterns = [
     path('stripe_events/', views.stripe_events, name='stripe_events'),
     path('placeholder/', views.placeholder, name='placeholder'),
 ]
+
+if settings.DEBUG:
+     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

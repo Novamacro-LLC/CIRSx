@@ -2,6 +2,7 @@ from django.db import models
 from django.forms.models import inlineformset_factory
 from account.models import Account, Country
 
+
 class Expertise(models.Model):
     expertise_code = models.CharField(max_length=20, unique=True)
     expertise_desc = models.CharField(max_length=150)
@@ -44,7 +45,7 @@ class Sponsor(models.Model):
     zip = models.CharField(max_length=10, null=False)
     country = models.ForeignKey(Country, on_delete=models.CASCADE, null=False)
     bio = models.TextField(null=False)
-    logo = models.ImageField(upload_to=None, height_field=None, width_field=None, null=True)
+    logo = models.ImageField(upload_to='/sponsor', height_field=None, width_field=None, null=True)
     active = models.BooleanField()
 
 
