@@ -27,7 +27,7 @@ class Speaker(models.Model):
     expertise = models.ForeignKey(Expertise, null=False, on_delete=models.CASCADE)
     credentials = models.TextField(null=False)
     bio = models.TextField(null=False)
-    image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100)
+    image = models.ImageField(upload_to='speaker/', height_field=None, width_field=None, default='media/Transparent-gold.jpg')
     active = models.BooleanField()
 
     def __str__(self):
@@ -45,7 +45,8 @@ class Sponsor(models.Model):
     zip = models.CharField(max_length=10, null=False)
     country = models.ForeignKey(Country, on_delete=models.CASCADE, null=False)
     bio = models.TextField(null=False)
-    logo = models.ImageField(upload_to='/sponsor', height_field=None, width_field=None, null=True)
+    logo = models.ImageField(upload_to='sponsor/', height_field=None, width_field=None,
+                             default='media/Transparent-gold.jpg')
     active = models.BooleanField()
 
 
@@ -70,7 +71,10 @@ class Event(models.Model):
     venue_directions = models.TextField(null=False)
     accomodations = models.TextField(null=False)
     active = models.BooleanField()
-    #header_image = models.ImageField(upload_to=None, height_field=None, width_field=None, null=True)
+    header_image = models.ImageField(upload_to='event/', height_field=None, width_field=None,
+                                     default='media/Transparent-gold.jpg')
+    venue_image = models.ImageField(upload_to='event/', height_field=None, width_field=None,
+                                    default='media/Transparent-gold.jpg')
     event_type = models.ForeignKey(EventType, on_delete=models.CASCADE)
     speakers = models.ManyToManyField(Speaker)
     sponsors = models.ManyToManyField(Sponsor)
