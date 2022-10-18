@@ -27,7 +27,8 @@ class Speaker(models.Model):
     expertise = models.ForeignKey(Expertise, null=False, on_delete=models.CASCADE)
     credentials = models.TextField(null=False)
     bio = models.TextField(null=False)
-    image = models.ImageField(upload_to=None, height_field=None, width_field=None, max_length=100)
+    image = models.ImageField(upload_to='speaker/', height_field=None, width_field=None, max_length=100,
+                              default='Transparent-gold.jpg')
     active = models.BooleanField()
 
     def __str__(self):
@@ -45,7 +46,8 @@ class Sponsor(models.Model):
     zip = models.CharField(max_length=10, null=False)
     country = models.ForeignKey(Country, on_delete=models.CASCADE, null=False)
     bio = models.TextField(null=False)
-    logo = models.ImageField(upload_to='/sponsor', height_field=None, width_field=None, null=True)
+    logo = models.ImageField(upload_to='sponsor/', height_field=None, width_field=None,
+                             default='Transparent-gold.jpg')
     active = models.BooleanField()
 
 
@@ -65,12 +67,15 @@ class Event(models.Model):
     event_end_time = models.TimeField(null=True)
     event_location = models.CharField(max_length=150, null=False)
     event_venue = models.CharField(max_length=150, null=False)
+    #venue_image = models.ImageField(upload_to='event/', height_field=None, width_field=None,
+                                    # default='Transparent-gold.jpg')
     venue_details = models.TextField(null=False)
     venue_location = models.TextField(null=False)
     venue_directions = models.TextField(null=False)
     accomodations = models.TextField(null=False)
     active = models.BooleanField()
-    #header_image = models.ImageField(upload_to=None, height_field=None, width_field=None, null=True)
+    #header_image = models.ImageField(upload_to='event/', height_field=None, width_field=None,
+                                    # default='Transparent-gold.jpg')
     event_type = models.ForeignKey(EventType, on_delete=models.CASCADE)
     speakers = models.ManyToManyField(Speaker)
     sponsors = models.ManyToManyField(Sponsor)
