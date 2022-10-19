@@ -36,8 +36,8 @@ class Team(models.Model):
     credentials = models.CharField(max_length=10, null=True)
     founder = models.BooleanField()
     title = models.CharField(max_length=50, null=False)
-    #picture = models.ImageField(upload_to='index/', height_field=None, width_field=None,
-                                # default='Transparent-gold.jpg')
+    picture = models.ImageField(upload_to='index/', height_field=None, width_field=None,
+                                default='Transparent-gold.jpg')
     active = models.BooleanField()
 
     def __str__(self):
@@ -48,8 +48,8 @@ class StrategicPartner(models.Model):
     first_name = models.CharField(max_length=100, null=False)
     last_name = models.CharField(max_length=100, null=False)
     credentials = models.CharField(max_length=10, null=True)
-    #logo = models.ImageField(upload_to='index/', height_field=None, width_field=None,
-                            # default='Transparent-gold.jpg')
+    logo = models.ImageField(upload_to='index/', height_field=None, width_field=None,
+                             default='Transparent-gold.jpg')
     active = models.BooleanField()
 
     def __str__(self):
@@ -58,8 +58,8 @@ class StrategicPartner(models.Model):
 
 class SupportPartners(models.Model):
     company_name = models.CharField(max_length=100, null=False)
-    #logo = models.ImageField(upload_to='index', height_field=None, width_field=None, max_length=100,
-                            # default='Transparent-gold.jpg')
+    logo = models.ImageField(upload_to='index', height_field=None, width_field=None, max_length=100,
+                             default='Transparent-gold.jpg')
     url = models.CharField(max_length=100, null=False)
 
     def __str__(self):
