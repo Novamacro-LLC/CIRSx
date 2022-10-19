@@ -60,7 +60,7 @@ class SupportPartners(models.Model):
     company_name = models.CharField(max_length=100, null=False)
     logo = models.ImageField(upload_to='index', height_field=None, width_field=None, max_length=100,
                              default='Transparent-gold.jpg')
-    url = models.CharField(max_length=100, null=False)
+    web_address = models.CharField(max_length=100, null=False)
 
     def __str__(self):
         return self.company_name

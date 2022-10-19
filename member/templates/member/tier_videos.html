@@ -26,7 +26,19 @@
             {% for group in request.user.groups.all %}
             {% if 'Professional Tier' == group.name or 'CIRSx Staff' == group.name %}
 
-     <div class="px-4 pt-5 text-center border-bottom">
+                <div class="px-4 pt-5 text-center border-bottom">
+                <div class="container-fluid py-5">
+                    {% for d in dr %}
+                        <h1 class="display-3 text-primary"> {{ d.document_route }}</h1>
+                        <p> {{ d.dr_description }}</p>
+                        <a class="btn btn-dark btn-lg btn-outline-secondary text-white" href="{% url 'doc_route'  d.document_route %}"> {{ d.document_route }}</a>
+                    {% endfor %}
+                </div>
+                </div>
+
+
+
+ <!--    <div class="px-4 pt-5 text-center border-bottom">
      <div class="container-fluid py-5">
       <h1 class="display-3 text-primary">
           2022 SurvivingMold/CIRSx In-Person and Live Streamed Conference </h1>
@@ -41,13 +53,13 @@
          <p class="fs-3"><i>Our experts select a <q>must know</q> research paper from our library to discuss.  Gain a better understanding
              of the paper’s content and understand how it  impacts your practice/business.</i></p>
 
-        <a class="btn btn-dark btn-lg btn-outline-secondary text-white" href="{% url "deeper_dive" %}"> Deeper Dive Series » </a>
+        <a class="btn btn-dark btn-lg btn-outline-secondary text-white" href="{% url "doc_route" name='Deeper Dive' %}"> Deeper Dive Series » </a>
      </div>
      </div>
 
             {% endif %}
             {% endfor %}
-
+-->
      <div class="px-4 pt-5 text-center border-bottom">
   <h1 class="display-3 text-primary">
       Medical Glossary / Environmental Glossary </h1>
