@@ -112,24 +112,28 @@
 
 
     <div class="pt-5 bg-primary rounded-3">
-    <div class="container">
-        <!-- 4.1.1.2.4.1 Title -->
-        <h1 class="display-5 fw-bold text-center text-warning fs-1"> Meet the Team </h1>
-        <br>
-        {% for team in  %}
+        <div class="container">
+            <!-- 4.1.1.2.4.1 Title -->
+            <h1 class="display-5 fw-bold text-center text-warning fs-1"> Meet the Team </h1>
+            <br>
+            {% for t in team %}
 
-        <div class="row">
-            <div class="col-md-4  col-sm-6 order-first text-center">
-                <img src="{{ team.picture.url }}" class="card-img-top img-responsive" alt=""
-                     height="70%"
-                     width="60%">
-                <div class="card-body">
-                    <h5 class="card-title text-warning fs-3 text-center">{{ team.first_name }} {{ team.last_name }} {{ team.credentials }}</h5>
-                    <p class="fs-4 text-white text-center pb-3"> {{ team.title }} </p>
+            <div class="row">
+                <div class="col-md-4  col-sm-6 order-first text-center">
+                    <img src="{{ t.picture.url }}" class="card-img-top img-responsive" alt=""
+                         height="70%"
+                         width="60%">
+                    <div class="card-body">
+                        <h5 class="card-title text-warning fs-3 text-center">{{ t.first_name }} {{ t.last_name }} {{ t.credentials }}</h5>
+                        <p class="fs-4 text-white text-center pb-3"> {{ t.title }} </p>
+                    </div>
                 </div>
             </div>
-
             {% endfor %}
+        </div>
+    </div>
+
+
 <!--<div class="pt-5 bg-primary rounded-3">
     <div class="container">
 
@@ -193,26 +197,25 @@
 </div>
 -->
 <!-- 4.1.1.2.4.3 Team Management -->
-    <div class="pt-5 bg-primary rounded-3">
-    <div class="container">
-        <!-- 4.1.1.2.4.1 Title -->
-        <h1 class="display-5 fw-bold text-center text-warning fs-1"> Strategic Partners </h1>
-        <br>
-        {% for strategic_partner in  %}
+    <div class="pt-5 bg-light rounded-3">
+        <div class="container">
+            <!-- 4.1.1.2.4.1 Title -->
+            <h1 class="display-4 fw-bold text-center"> Strategic Partners </h1>
+            <br>
+            {% for strat_p in strategic_parnter %}
 
-        <div class="row">
-            <div class="col-md-4  col-sm-6 order-first text-center">
-                <img src="{{ strategic_partner.logo.url }}" class="card-img-top img-responsive" alt=""
-                     height="70%"
-                     width="60%">
-                <div class="card-body">
-                    <h5 class="card-title text-warning fs-3 text-center">{{ strategic_partner.first_name }} {{ strategic_partner.last_name }} {{ strategic_partner.credentials }}</h5>
+            <div class="row">
+                <div class="col-md-4  col-sm-6 order-first text-center">
+                    <img src="{{ strat_p.logo.url }}" class="card-img-top img-responsive" alt=""
+                         height="70%"
+                         width="60%">
+                    <div class="card-body">
+                        <h5 class="card-title text-warning fs-3 text-center">{{ strat_p.first_name }} {{ strat_p.last_name }} {{ strat_p.credentials }}</h5>
+                    </div>
                 </div>
             </div>
-
             {% endfor %}
         </div>
-    </div>
     </div>
 
 
@@ -252,28 +255,27 @@
 </div>
 -->
 
-        <div class="pt-5 bg-primary rounded-3">
-    <div class="container">
-        <h1 class="display-5 fw-bold text-center text-warning fs-1"> Support Partners </h1>
-        <br>
-        {% for support_partner in  %}
+        <div class="pt-5 bg-white rounded-3">
+            <div class="container">
+                <h1 class="display-2 fw-bold text-center"> Support Partners </h1>
+                <br>
+                {% for sup_p in support_parnter %}
 
-        <div class="row">
-            <div class="col-md-4  col-sm-6 order-first text-center">
-                <a href="{{ support_partner.url }}">
-                <img src="{{ support_partner.logo.url }}" class="card-img-top img-responsive" alt=""
-                     height="70%"
-                     width="60%">
-                </a>
-                <div class="card-body">
-                    <h5 class="card-title text-warning fs-3 text-center">{{ support_partner.company_name }}</h5>
+                <div class="row">
+                    <div class="col-md-4  col-sm-6 order-first text-center">
+                        <a href="{{ sup_p.web_address }}">
+                        <img src="{{ sup_p.logo.url }}" class="card-img-top img-responsive" alt=""
+                             height="70%"
+                             width="60%">
+                        </a>
+                        <div class="card-body">
+                            <h5 class="card-title text-warning fs-3 text-center">{{ sup_p.company_name }}</h5>
+                        </div>
+                    </div>
                 </div>
+                {% endfor %}
             </div>
-
-            {% endfor %}
         </div>
-    </div>
-    </div>
 <!--
 <div class="bg-white rounded-3">
     <div class="container">
@@ -309,7 +311,7 @@
         </div>
     </div>
 </div>
-
+-->
 
 
 

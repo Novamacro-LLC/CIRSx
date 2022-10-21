@@ -44,7 +44,7 @@ def research_papers(request):
 @login_required()
 def archived_events(request):
     event = active_events()
-    dr =droute
+    dr = droute
     context = {'event': event, 'dr': dr}
     return render(request, 'member/archived_events.html', context)
 
@@ -85,7 +85,7 @@ def doc_route(request, name):
     event = active_events()
     dr = droute()
     dr_info = DocumentRoute.objects.get(document_route=name)
-    content = Document.object.filter(doc_route_id=dr_info.id, doctyp_num_id=3)
+    content = Document.objects.filter(doc_route_id=dr_info.id, doctyp_num_id=3)
     context = {'base_template_name': base_template_name, 'event': event, 'dr_info': dr_info, 'dr': dr,
                'content': content}
     return render(request, 'member/doc_route.html', context)

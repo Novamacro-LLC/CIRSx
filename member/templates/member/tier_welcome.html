@@ -36,7 +36,8 @@
         Saturday - <a class="text-black" href="https://cirsx.wufoo.com/forms/m1eskvq517f7dkb/"> https://cirsx.wufoo.com/forms/m1eskvq517f7dkb/</a>
         <br>
         Sunday - <a class="text-black" href="https://cirsx.wufoo.com/forms/mm4po5g0rkg4sw/"> https://cirsx.wufoo.com/forms/mm4po5g0rkg4sw/</a>
-    </p> -->
+    </p>   </div>
+  </div> -->
 
              {% endif %}
                {% if 'Patient Tier' == group.name %}
@@ -44,8 +45,7 @@
                {% endif %}
             {% endfor %}
 
-    </div>
-  </div>
+
 
 
 
@@ -144,12 +144,12 @@
                         <q>I Dream of GENIE</q> and <q>House Calls</q> Web Conferences, podcasts, interviews, discussions.</li>
                 <li></li>
             </ul>
-                {% for e in event %}
-                <div class="card-footer bg-light border-light">
-                    <a href="{% url "conference" e.event_name %}"> <button type="button" class="btn btn-dark btn-lg btn-outline-secondary text-white">{{ e.event_name }}</button></a>
-                </div>
-                {% endfor %}
 
+            {% for e in event %}
+                <div class="card-footer bg-light border-light">
+            <a href="{% url "conference" e.event_name %}"> <button type="button" class="btn btn-dark btn-lg btn-outline-secondary text-white"> {{ e.event_name }}</button></a>
+                </div>
+            {% endfor %}
                     {% endif %}
                 {% if 'Patient Tier' == group.name %}
 
