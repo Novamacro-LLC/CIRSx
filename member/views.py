@@ -85,5 +85,7 @@ def doc_route(request, name):
     event = active_events()
     dr = droute()
     dr_info = DocumentRoute.objects.get(document_route=name)
-    context = {'base_template_name': base_template_name, 'event': event, 'dr_info': dr_info, 'dr': dr}
+    content = Document.object.filter(doc_route_id=dr_info.id, doctyp_num_id=3)
+    context = {'base_template_name': base_template_name, 'event': event, 'dr_info': dr_info, 'dr': dr,
+               'content': content}
     return render(request, 'member/doc_route.html', context)
