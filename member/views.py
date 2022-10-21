@@ -4,6 +4,7 @@ from django.contrib.postgres.search import SearchQuery, SearchVector, SearchRank
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from index.views import active_events, droute
+from event.models import Event
 
 
 
@@ -42,12 +43,18 @@ def research_papers(request):
 
 
 @login_required()
-def archived_events(request):
+def archived_events(request, name=None):
     event = active_events()
     dr = droute
-    context = {'event': event, 'dr': dr}
-    return render(request, 'member/archived_events.html', context)
-
+    past_events = Event.objects.filter(active=False)
+    if name==None:
+        context = {'event': event, 'dr': dr, 'past_event': past_events}
+        return render(request, 'member/archived_events.html', context)
+    else:
+        event_details = Event.objects.filter(event_name=name).first
+        docs = Document.objects.filter(event=event_details.id)
+        context = {'event': event, 'dr': dr, 'past_event': past_events, 'event_details': event_details, 'docs': docs}
+        return render(request, 'member/archived_events.html', context)
 
 
 @login_required()

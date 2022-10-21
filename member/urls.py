@@ -7,7 +7,7 @@ urlpatterns = [
     path('bibliographies/', views.bibliographies, name='bibliographies'),
     path('research_papers/', views.research_papers, name='research_papers'),
     path('', include('index.urls')),
-    path('archived_events/', views.archived_events, name='archived_events'),
+    path('archived_events/<str:name>/', views.archived_events, name='archived_events'),
     path('doc_route/<str:name>/', views.doc_route, name='doc_route'),
     path('search/', views.doc_search, name='search'),
 

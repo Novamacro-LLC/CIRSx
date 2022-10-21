@@ -33,12 +33,12 @@ class Document(models.Model):
     doc_path = models.CharField(max_length=250)
     title = models.CharField(max_length=500, null=False)
     author = models.CharField(max_length=150, null=True)
-    keywords = models.CharField(max_length=250, null=True)
-    pub_dt = models.DateField(null=True)
-    doc_abs = models.TextField(null=True)
-    doc_txt = models.TextField(null=True)
-    event = models.ForeignKey(Event, null=True, on_delete=models.SET_NULL)
-    tier = models.ForeignKey(Group, null=True, on_delete=models.SET_NULL)
+    keywords = models.CharField(max_length=250, null=True, blank=True)
+    pub_dt = models.DateField(null=True, blank=True)
+    doc_abs = models.TextField(null=True, blank=True)
+    doc_txt = models.TextField(null=True, blank=True)
+    event = models.ForeignKey(Event, null=True, on_delete=models.SET_NULL, blank=True)
+    tier = models.ForeignKey(Group, null=True, on_delete=models.SET_NULL, blank=True)
     doc_route = models.ForeignKey(DocumentRoute, null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
