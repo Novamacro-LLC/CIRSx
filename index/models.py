@@ -47,7 +47,7 @@ class Team(models.Model):
 class StrategicPartner(models.Model):
     first_name = models.CharField(max_length=100, null=False)
     last_name = models.CharField(max_length=100, null=False)
-    credentials = models.CharField(max_length=10, null=True)
+    credentials = models.CharField(max_length=10, null=True) #Is still being required
     logo = models.ImageField(upload_to='index/', height_field=None, width_field=None,
                              default='Transparent-gold.jpg')
     active = models.BooleanField()

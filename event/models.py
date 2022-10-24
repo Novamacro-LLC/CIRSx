@@ -50,6 +50,9 @@ class Sponsor(models.Model):
                              default='Transparent-gold.jpg')
     active = models.BooleanField()
 
+    def __str__(self):
+        return self.sponsor_name
+
 
 class EventType(models.Model):
     event_type = models.CharField(max_length=100, null=False)
