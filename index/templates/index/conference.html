@@ -287,13 +287,15 @@
         <!-- 4.1.1.2.4.1 Title -->
         <h1 class="display-5 fw-bold text-center text-warning fs-1">Speakers</h1>
         <br>
+
+     <div class="row">
         {% for speaker in speakers %}
 
-        <div class="row">
-            <div class="col-md-4  col-sm-6 order-first text-center">
+
+            <div class="col-md-4  col-sm-6 order-first text-center pb-5">
                 <img src="{{ speaker.image.url }}" class="card-img-top img-responsive" alt=""
                      height="70%"
-                     width="60%">
+                     width="auto">
                 <div class="card-body">
                     <h5 class="card-title text-warning fs-3 text-center">{{ speaker.first_name }} {{ speaker.last_name }} {{ speaker.credentials }}</h5>
                     <p class="fs-4 text-white text-center pb-3"> {{ speaker.bio }} </p>
