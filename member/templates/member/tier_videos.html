@@ -25,13 +25,6 @@
 
             {% for group in request.user.groups.all %}
             {% if 'Professional Tier' == group.name or 'CIRSx Staff' == group.name %}
-                {% for d in dr %}
-                    <div>
-                        <h1>{{ d.document_route }}</h1>
-                        <p>{{ d.dr_description }}</p>
-                        <a href="{% url 'doc_route' d.document_route %}">{{ d.document_route }}</a>
-                    </div>
-                {% endfor %}
 
                 <div class="px-4 pt-5 text-center border-bottom">
                 <div class="container-fluid py-5">
