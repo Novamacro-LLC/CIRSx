@@ -1,6 +1,5 @@
 from django.shortcuts import render
 from django.core.mail import send_mail, BadHeaderError
-from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from .models import News
 from event.models import Event
@@ -59,11 +58,12 @@ def conference(request, name):
     else:
         base_template_name = 'index/base.html'
     event = active_events()
+    dr = droute()
     event_info = Event.objects.get(event_name=name)
     speakers = event_info.speakers.all()
     sponsor = event_info.sponsors.all()
     context = {'base_template_name': base_template_name, 'event': event, 'event_info': event_info, 'speakers': speakers,
-               'sponsor': sponsor}
+               'sponsor': sponsor, 'dr': dr}
     return render(request, 'index/conference.html', context)
 
 
