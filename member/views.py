@@ -7,7 +7,6 @@ from index.views import active_events, droute
 from event.models import Event
 
 
-
 @login_required()
 def tier_welcome(request):
     event = active_events()
@@ -64,15 +63,13 @@ def archived_events(request, name=None):
     else:
         context = {'event': event, 'dr': dr, 'past_events': past_events}
         return render(request, 'member/archived_events.html', context)
-    else:
-        context = {'event': event, 'dr': dr, 'past_events': past_events}
-        return render(request, 'member/archived_events.html', context)
 
 
 @login_required()
 def doc_search(request):
+    event = active_events()
+    dr = droute()
     q = request.GET.get('q')
-
 
     if q:
         vector = SearchVector('title', 'author', 'keywords', 'doc_txt')
@@ -89,12 +86,11 @@ def doc_search(request):
         page = request.GET.get('page')
         docs = p.get_page(page)
 
-
     else:
         docs = None
         q = None
 
-    context = {'q': q, 'docs': docs}
+    context = {'q': q, 'docs': docs, 'event': event, 'dr': dr}
     return render(request, 'member/search.html', context)
 
 
