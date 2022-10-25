@@ -102,7 +102,7 @@
 <!-- 4.1.1.4.3 Sponsor Carousel -->
 <!-- 4.1.1.4.3.1 Header -->
     <div class="container-fluid my-5">
-    <div class="row align-items-center rounded-3 border bg-secondary shadow-lg" style="height: 600px">
+    <div class="row align-items-center rounded-3 border bg-light shadow-lg" style="height: 600px">
         <div class="p-3 text-center">
         <h2>Premiere Partners</h2>
             <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
@@ -414,13 +414,14 @@
 </div>
 -->
 <!-- 4.1.1.4.7.4 Sponsor Album -->
-<div class="text-center">
-    <h3 class="fs-3 text-center">Sign up for this event</h3>
-        {% if user.is_authenticated %}
-            <a class="btn btn-dark btn-lg btn-outline-secondary text-white" href="{% url "events_register" %}"> Sign Up »</a>
-        {% else %}
-            <a class="btn btn-dark btn-lg btn-outline-secondary text-white" href="{% url "guest_register" %}"> Sign Up »</a>
-        {% endif %}
-</div>
-
+  <!--
+    <div class="text-center">
+        <h3 class="fs-3 text-center">Sign up for this event</h3>
+            {% if user.is_authenticated %}
+                <a class="btn btn-dark btn-lg btn-outline-secondary text-white" href="{% url "events_register" %}"> Sign Up »</a>
+            {% else %}
+                <a class="btn btn-dark btn-lg btn-outline-secondary text-white" href="{% url "guest_register" %}"> Sign Up »</a>
+            {% endif %}
+    </div>
+  -->
 {% endblock content %}
