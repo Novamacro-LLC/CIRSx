@@ -292,13 +292,13 @@
         {% for speaker in speakers %}
 
 
-            <div class="col-md-4  col-sm-6 order-first text-center pb-5">
+            <div class="col-md-4 col-sm-6 order-first text-center pb-5">
                 <img src="{{ speaker.image.url }}" class="card-img-top img-responsive" alt=""
-                     height="70%"
+                     height="350px"
                      width="auto">
                 <div class="card-body">
                     <h5 class="card-title text-warning fs-3 text-center">{{ speaker.first_name }} {{ speaker.last_name }} {{ speaker.credentials }}</h5>
-                    <p class="fs-4 text-white text-center pb-3"> {{ speaker.bio }} </p>
+                    <p class="fs-3 text-white text-center pb-3"> {{ speaker.bio }} </p>
                 </div>
             </div>
 
