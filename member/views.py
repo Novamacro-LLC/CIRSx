@@ -64,6 +64,9 @@ def archived_events(request, name=None):
     else:
         context = {'event': event, 'dr': dr, 'past_events': past_events}
         return render(request, 'member/archived_events.html', context)
+    else:
+        context = {'event': event, 'dr': dr, 'past_events': past_events}
+        return render(request, 'member/archived_events.html', context)
 
 
 @login_required()
