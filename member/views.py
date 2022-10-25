@@ -58,7 +58,10 @@ def archived_events(request, name=None):
     if name:
         event_details = Event.objects.filter(event_name=name).first()
         docs = Document.objects.filter(event=event_details.id)
-        context = {'event': event, 'dr': dr, 'past_events': past_events, 'event_details': event_details, 'docs': docs}
+        sponsor = event_details.sponsors.all()
+        speaker = event_details.speakers.all()
+        context = {'event': event, 'dr': dr, 'past_events': past_events, 'event_details': event_details, 'docs': docs,
+                   'sponsor': sponsor, 'speaker': speaker}
         return render(request, 'member/archived_events.html', context)
     else:
         context = {'event': event, 'dr': dr, 'past_events': past_events}
