@@ -7,6 +7,7 @@ from index.views import active_events, droute
 from event.models import Event
 
 
+
 @login_required()
 def tier_welcome(request):
     event = active_events()
@@ -51,23 +52,24 @@ def past_events(request):
 
 
 @login_required()
-def archived_events(request, name):
+def archived_events(request, name=None):
     event = active_events()
     dr = droute
     past_events = Event.objects.filter(active=False)
     if name:
-        context = {'event': event, 'dr': dr, 'past_events': past_events}
-        return render(request, 'member/archived_events.html', context)
-    else:
         event_details = Event.objects.filter(event_name=name).first()
         docs = Document.objects.filter(event=event_details.id)
-        context = {'event': event, 'dr': dr, 'past_events': past_events, 'event_details':event_details, 'docs':docs}
+        context = {'event': event, 'dr': dr, 'past_events': past_events, 'event_details': event_details, 'docs': docs}
+        return render(request, 'member/archived_events.html', context)
+    else:
+        context = {'event': event, 'dr': dr, 'past_events': past_events}
         return render(request, 'member/archived_events.html', context)
 
 
 @login_required()
 def doc_search(request):
     q = request.GET.get('q')
+
 
     if q:
         vector = SearchVector('title', 'author', 'keywords', 'doc_txt')
@@ -83,6 +85,7 @@ def doc_search(request):
         p = Paginator(doc, 10)
         page = request.GET.get('page')
         docs = p.get_page(page)
+
 
     else:
         docs = None

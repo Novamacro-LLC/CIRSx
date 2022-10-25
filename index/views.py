@@ -60,7 +60,10 @@ def conference(request, name):
         base_template_name = 'index/base.html'
     event = active_events()
     event_info = Event.objects.get(event_name=name)
-    context = {'base_template_name': base_template_name, 'event': event, 'event_info': event_info}
+    speakers = event_info.speakers.all()
+    sponsor = event_info.sponsors.all()
+    context = {'base_template_name': base_template_name, 'event': event, 'event_info': event_info, 'speakers': speakers,
+               'sponsor': sponsor}
     return render(request, 'index/conference.html', context)
 
 

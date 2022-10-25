@@ -70,15 +70,15 @@ class Event(models.Model):
     event_end_time = models.TimeField(null=True)
     event_location = models.CharField(max_length=150, null=False)
     event_venue = models.CharField(max_length=150, null=False)
-    #venue_image = models.ImageField(upload_to='event/', height_field=None, width_field=None,
-                                    # default='Transparent-gold.jpg')
+    venue_image = models.ImageField(upload_to='event/', height_field=None, width_field=None,
+                                    default='Transparent-gold.jpg')
     venue_details = models.TextField(null=False)
     venue_location = models.TextField(null=False)
     venue_directions = models.TextField(null=False)
     accomodations = models.TextField(null=False)
     active = models.BooleanField()
-    #header_image = models.ImageField(upload_to='event/', height_field=None, width_field=None,
-                                    # default='Transparent-gold.jpg')
+    header_image = models.ImageField(upload_to='event/', height_field=None, width_field=None,
+                                     default='Transparent-gold.jpg')
     event_type = models.ForeignKey(EventType, on_delete=models.CASCADE)
     speakers = models.ManyToManyField(Speaker)
     sponsors = models.ManyToManyField(Sponsor)
