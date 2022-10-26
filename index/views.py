@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
-from .models import News
+from .models import News, Team, SupportPartners, StrategicPartner
 from event.models import Event
 from .form import ContactForm
 from member.models import DocumentRoute
@@ -48,7 +48,12 @@ def about_us(request):
     else:
         base_template_name = 'index/base.html'
     event = active_events()
-    context = {'base_template_name': base_template_name, 'event': event}
+    dr = droute()
+    team = Team.objects.filter(active=True)
+    strategic_partner = StrategicPartner.objects.filter(active=True)
+    support_partner = SupportPartners.objects.all()
+    context = {'base_template_name': base_template_name, 'event': event, 'dr': dr, 'team': team, 'strategic_partner': strategic_partner,
+               'support_partner': support_partner}
     return render(request, 'index/about_us.html', context)
 
 
