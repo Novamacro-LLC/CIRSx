@@ -46,7 +46,8 @@ def past_events(request):
     event = active_events()
     dr = droute
     past_events = Event.objects.filter(active=False)
-    context = {'event': event, 'dr': dr, 'past_events': past_events}
+    event_details = past_events.last()
+    context = {'event': event, 'dr': dr, 'past_events': past_events, 'event_details': event_details}
     return render(request, 'member/archived_events.html', context)
 
 

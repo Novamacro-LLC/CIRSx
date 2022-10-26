@@ -78,7 +78,8 @@ def sponsor(request):
     else:
         base_template_name = 'index/base.html'
     event = active_events()
-    context = {'base_template_name': base_template_name, 'event': event}
+    dr = droute()
+    context = {'base_template_name': base_template_name, 'event': event, 'dr': dr}
     return render(request, 'index/sponsor.html', context)
 
 
