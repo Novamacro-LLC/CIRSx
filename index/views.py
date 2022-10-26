@@ -78,7 +78,7 @@ def sponsor(request):
     else:
         base_template_name = 'index/base.html'
     event = active_events()
-    dr = droute()
+    dr = droute ()
     context = {'base_template_name': base_template_name, 'event': event, 'dr': dr}
     return render(request, 'index/sponsor.html', context)
 
@@ -89,7 +89,8 @@ def medical_glossary(request):
     else:
         base_template_name = 'index/base.html'
     event = active_events()
-    context = {'base_template_name': base_template_name, 'event': event}
+    dr = droute()
+    context = {'base_template_name': base_template_name, 'event': event, 'dr':dr}
     return render(request, 'index/medical_glossary.html', context)
 
 
@@ -99,7 +100,8 @@ def speakers(request):
     else:
         base_template_name = 'index/base.html'
     event = active_events()
-    context = {'base_template_name': base_template_name, 'event': event}
+    dr = droute()
+    context = {'base_template_name': base_template_name, 'event': event, 'dr': dr}
     return render(request, 'index/speakers.html', context)
 
 
@@ -124,7 +126,8 @@ def contact_us(request):
             return HttpResponse('Message has been sent')
 
     event = active_events()
-    context = {'base_template_name': base_template_name, 'event': event, 'form': form}
+    dr = droute()
+    context = {'base_template_name': base_template_name, 'event': event, 'form': form, 'dr':dr}
     return render(request, 'index/contact_us.html', context)
 
 
@@ -134,7 +137,8 @@ def environmental_glossary(request):
     else:
         base_template_name = 'index/base.html'
     event = active_events()
-    context = {'base_template_name': base_template_name, 'event': event}
+    dr = droute()
+    context = {'base_template_name': base_template_name, 'event': event, 'dr': dr}
     return render(request, 'index/environmental_glossary.html', context)
 
 
@@ -144,25 +148,29 @@ def shoey(request):
     else:
         base_template_name = 'index/base.html'
     event = active_events()
-    context = {'base_template_name': base_template_name, 'event': event}
+    dr = droute()
+    context = {'base_template_name': base_template_name, 'event': event, 'dr': dr}
     return render(request, 'index/shoey.html', context)
 
 
 def stripe_pro(request):
     event = active_events()
-    context = {'event': event}
+    dr = droute()
+    context = {'event': event, 'dr': dr}
     return render(request, 'index/stripe_pro.html', context)
 
 
 def stripe_patient(request):
     event = active_events()
-    context = {'event': event}
+    dr = droute()
+    context = {'event': event, 'dr': dr}
     return render(request, 'index/stripe_patient.html', context)
 
 
 def stripe_events(request):
     event = active_events()
-    context = {'event': event}
+    dr = droute()
+    context = {'event': event, 'dr': dr}
     return render(request, 'index/stripe_events.html', context)
 
 
@@ -172,7 +180,8 @@ def placeholder(request):
     else:
         base_template_name = 'index/base.html'
     event = active_events()
-    context = {'base_template_name': base_template_name, 'event': event}
+    dr =droute()
+    context = {'base_template_name': base_template_name, 'event': event, 'dr': dr}
     return render(request, 'index/placeholder.html', context)
 
 
