@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from index.views import active_events, droute
 from event.models import Event
-
+from embed_video.backends import VideoBackend
 
 @login_required()
 def tier_welcome(request):
@@ -103,8 +103,12 @@ def doc_route(request, name):
     base_template_name = 'member/base.html'
     event = active_events()
     dr = droute()
+    vid = []
     dr_info = DocumentRoute.objects.get(document_route=name)
     content = Document.objects.filter(doc_route_id=dr_info.id, doctyp_num_id=3)
+    for video in content:
+        embed = VideoBackend.get_embed_code(video.doc_path)
+        vid.append(embed)
     context = {'base_template_name': base_template_name, 'event': event, 'dr_info': dr_info, 'dr': dr,
-               'content': content}
+               'content': content, 'vid': vid}
     return render(request, 'member/doc_route.html', context)

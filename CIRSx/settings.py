@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'embed_video',
 
     #Created Apps
     'index',
@@ -75,6 +76,11 @@ TEMPLATES = [
         },
     },
 ]
+
+
+EMBED_VIDEO_BACKENDS = (
+    'embed_video.backend.VimeoBackend',
+)
 
 AUTH_USER_MODEL = 'account.Account'
 
