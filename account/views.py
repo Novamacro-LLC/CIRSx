@@ -27,7 +27,7 @@ def register(request, tier):
             return HttpResponse('Data is not clean', form.errors)
     else:
         event = active_events()
-        context = {'event': event}
+        context = {'event': event, 'form': form, 'tier': tier}
         return render(request, 'registration/register.html', context)
 
 
