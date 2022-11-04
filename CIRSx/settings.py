@@ -77,9 +77,8 @@ TEMPLATES = [
     },
 ]
 
-
 EMBED_VIDEO_BACKENDS = (
-    'embed_video.backend.VimeoBackend',
+    'embed_video.backends.VimeoBackend',
 )
 
 AUTH_USER_MODEL = 'account.Account'

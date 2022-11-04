@@ -20,7 +20,7 @@ def events_register(request):
         else:
             HttpResponse('Form did not go through, there was an error.')
     else:
-        initial_data = {'member': user, 'event': event}
+        initial_data = {'member': user, 'active_events': event}
         form = EventRegisterForm(initial=initial_data)
         context = {'form': form, 'base_template_name': base_template_name, 'event': event, 'dr': dr, 'user': user}
         return render(request, 'event/events_register.html', context)
