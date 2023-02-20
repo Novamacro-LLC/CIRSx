@@ -18,18 +18,18 @@ class Speaker(models.Model):
     first_name = models.CharField(max_length=100, null=False)
     last_name = models.CharField(max_length=100, null=False)
     email = models.EmailField(max_length=150, null=False)
-    phone = models.CharField(max_length=10, null=False)
-    address = models.CharField(max_length=150, null=False)
-    city = models.CharField(max_length=75, null=False)
-    state = models.CharField(max_length=2, null=False)
-    zip = models.CharField(max_length=10, null=False)
+    phone = models.CharField(max_length=10, null=False, default='000-000-0000')
+    address = models.CharField(max_length=150)
+    city = models.CharField(max_length=75)
+    state = models.CharField(max_length=2)
+    zip = models.CharField(max_length=10)
     country = models.ForeignKey(Country, on_delete=models.CASCADE, null=False)
     expertise = models.ForeignKey(Expertise, null=False, on_delete=models.CASCADE)
-    credentials = models.TextField(null=False)
-    bio = models.TextField(null=False)
+    credentials = models.TextField()
+    bio = models.TextField()
     image = models.ImageField(upload_to='speaker/', height_field=None, width_field=None, max_length=100,
                               default='Transparent-gold.jpg')
-    active = models.BooleanField()
+    active = models.BooleanField(default=True)
 
     def __str__(self):
         return self.last_name + "," + self.first_name

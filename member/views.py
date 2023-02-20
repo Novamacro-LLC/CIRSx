@@ -86,6 +86,7 @@ def doc_search(request):
         # videos = Video.objects.annotate(rank=SearchRank(vector, query)).filter(rank__gte=0.001).order_by('-rank')
         doc = Document.objects.annotate(rank=SearchRank(vector, query)).annotate(headline=search_headline).filter(
             rank__gte=0.001).order_by('-rank')
+        docu = doc.get()
 
         p = Paginator(doc, 10)
         page = request.GET.get('page')
@@ -95,7 +96,7 @@ def doc_search(request):
         docs = None
         q = None
 
-    context = {'q': q, 'docs': docs, 'event': event, 'dr': dr}
+    context = {'q': q, 'docs': docs, 'event': event, 'dr': dr, 'docu': docu}
     return render(request, 'member/search.html', context)
 
 
